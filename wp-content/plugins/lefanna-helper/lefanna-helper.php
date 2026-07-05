@@ -80,6 +80,10 @@ function lefanna_active_menu_indicator() {
         
         var navLinks = document.querySelectorAll('.nav-link, .nav-dropdown a, .drawer-menu-list a');
         navLinks.forEach(function(link) {
+            var rawHref = link.getAttribute('href');
+            if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('javascript:')) {
+                return;
+            }
             try {
                 var linkPath = new URL(link.href).pathname;
                 if (linkPath.endsWith('/') && linkPath.length > 1) {
