@@ -1,0 +1,928 @@
+<!-- wp:html -->
+<style>
+  /* Base Styles & Fonts */
+  body {
+    background-color: #FAF8F5;
+    color: #2C2621;
+  }
+
+    /* Header Wrapper & Layout */
+  .lefanna-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #FAF8F5;
+    border-bottom: 1px solid #EAE3D2;
+    font-family: 'Jost', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  .header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Left: Hamburger Trigger */
+  .menu-trigger-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 12px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #2C2621;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+  .menu-trigger-btn:hover {
+    color: #C5A880;
+  }
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hamburger-line {
+    width: 20px;
+    height: 1.5px;
+    background-color: #2C2621;
+    transition: background-color 0.3s ease;
+  }
+  .menu-trigger-btn:hover .hamburger-line {
+    background-color: #C5A880;
+  }
+
+    /* Center: Lefanna Brand Logo */
+  .lefanna-logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .lefanna-logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C5A880;
+    line-height: 1;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .lefanna-logo-subtext {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.42rem;
+    font-weight: 500;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: #948b81;
+    line-height: 1;
+    margin-top: 2px;
+    text-align: center;
+  }
+
+  /* Right: Pill Buttons */
+  .header-btn-group {
+    display: flex;
+    gap: 12px;
+  }
+  .pill-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px; /* Pill Shape */
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: transparent;
+    line-height: 1;
+    font-family: 'Jost', sans-serif;
+  }
+  .pill-btn-reserve {
+    color: #2C2621;
+    border: 1px solid #9E978E;
+  }
+  .pill-btn-reserve:hover {
+    border-color: #C5A880;
+    color: #C5A880;
+  }
+  .pill-btn-member {
+    color: #2C2621;
+    border: 1px solid #9E978E;
+  }
+  .pill-btn-member:hover {
+    border-color: #C5A880;
+    color: #C5A880;
+  }
+
+  /* Top Navigation Menu (Desktop) */
+  .top-nav-menu {
+    display: none; /* Hidden by default (mobile) */
+  }
+  .desktop-logo {
+    display: none;
+  }
+  .mobile-logo {
+    display: flex;
+  }
+
+  @media(min-width: 1024px) {
+    .top-nav-menu {
+      display: block;
+      margin-left: 20px;
+    }
+    .menu-trigger-btn {
+      display: none; /* Hide hamburger on desktop */
+    }
+    .desktop-logo {
+      display: flex;
+      margin-top: -8px; /* Visually aligns the vertical logo with the horizontal menu */
+    }
+    .mobile-logo {
+      display: none;
+    }
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .nav-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #2C2621;
+    text-decoration: none;
+    padding: 10px 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  .nav-link:hover {
+    color: #C5A880;
+  }
+  .nav-arrow {
+    font-size: 0.7rem;
+    margin-left: 3px;
+  }
+
+  /* Dropdown List */
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FCFBF9;
+    border: 1px solid #EAE3D2;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    min-width: 220px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+  }
+  .nav-dropdown li {
+    width: 100%;
+  }
+  .nav-dropdown a {
+    display: block;
+    padding: 8px 25px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #645D55;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .nav-dropdown a:hover {
+    background-color: #FAF8F5;
+    color: #C5A880;
+  }
+  .nav-item:hover .nav-dropdown {
+    display: block;
+  }
+
+
+  /* Drawer Overlay */
+  .drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 9998;
+  }
+  .drawer-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Sidebar Drawer Container */
+  .lefanna-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 380px;
+    max-width: 85vw;
+    height: 100vh;
+    background-color: #FCFBF9;
+    box-shadow: 10px 0 45px rgba(0, 0, 0, 0.06);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+    padding: 50px 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .lefanna-drawer.is-active {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .drawer-close-btn {
+    font-size: 1.8rem;
+    color: #C5A880;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    transition: transform 0.3s ease;
+    line-height: 1;
+  }
+  .drawer-close-btn:hover {
+    transform: scale(1.1);
+  }
+
+  /* Drawer Menu Items */
+  .drawer-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .drawer-menu-item {
+    position: relative;
+  }
+  .drawer-menu-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    color: #C5A880;
+    text-decoration: none;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  .drawer-menu-link:hover {
+    color: #C5A880;
+  }
+  
+  /* Collapsible Submenus */
+  .drawer-submenu {
+    list-style: none;
+    padding: 5px 0 5px 20px;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    border-left: 1px solid #EAE3D2;
+    margin-top: 10px;
+  }
+  .drawer-menu-item.is-expanded .drawer-submenu {
+    display: flex;
+  }
+  .drawer-submenu-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #645D55;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .drawer-submenu-link:hover {
+    color: #C5A880;
+  }
+  .arrow-indicator {
+    font-size: 0.9rem;
+    color: #9E978E;
+    transition: color 0.3s ease;
+  }
+  .drawer-menu-link:hover .arrow-indicator {
+    color: #C5A880;
+  }
+
+      /* Corporate Page Banner */
+  @keyframes corporateSlideshow {
+    0%, 20% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
+    }
+    25%, 45% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+    }
+    50%, 70% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&q=80');
+    }
+    75%, 95% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
+    }
+    100% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
+    }
+  }
+
+  .corporate-banner {
+    position: relative;
+    padding: 120px 40px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #EAE3D2;
+    margin-bottom: 60px;
+    animation: corporateSlideshow 24s infinite ease-in-out;
+  }
+  .banner-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #C5A880;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  .banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.8rem;
+    font-weight: 300;
+    color: #FFFFFF;
+    letter-spacing: 0.05em;
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Content Wrapper */
+  .corporate-content {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+    font-family: 'Jost', sans-serif;
+    line-height: 1.8;
+    color: #645D55;
+  }
+
+  .corporate-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #2C2621;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .corporate-paragraph {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+  }
+
+  /* Highlights / Values Grid */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .value-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    padding: 30px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  .value-card:hover {
+    border-color: #C5A880;
+    box-shadow: 0 10px 25px rgba(138, 115, 85, 0.05);
+  }
+  .value-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #2C2621;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .value-desc {
+    font-size: 0.9rem;
+    color: #645D55;
+  }
+
+  @media(max-width: 768px) {
+    .lefanna-header {
+      padding: 15px 20px;
+    }
+    .header-btn-group {
+      display: none;
+    }
+  }
+  
+
+  /* Responsive Adjustments for Mobile and Tablet */
+  @media(max-width: 768px) {
+    .hotels-banner, .villas-banner, .offers-banner, .experiences-banner, .corporate-banner {
+      padding: 80px 20px !important;
+    }
+    .banner-title {
+      font-size: 2.3rem !important;
+    }
+    .banner-subtitle {
+      font-size: 0.75rem !important;
+      letter-spacing: 0.15em !important;
+    }
+    .footer-container {
+      padding: 50px 20px 30px 20px !important;
+    }
+  }
+  /* Premium Footer Styles */
+  .footer-container {
+    background-color: #1A1613;
+    color: #D8D1C5;
+    font-family: 'Jost', sans-serif;
+    padding: 80px 40px 40px 40px;
+    border-top: 1px solid #2C2621;
+    text-align: left;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media(min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media(min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      gap: 50px;
+    }
+  }
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-logo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C5A880;
+    margin: 0;
+    font-weight: 300;
+  }
+  .footer-logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #9E978E;
+    margin-top: 5px;
+  }
+  .footer-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #B5AEA4;
+  }
+  .footer-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #C5A880;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-links a {
+    color: #B5AEA4;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: #C5A880;
+  }
+  .footer-contact-item {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #B5AEA4;
+  }
+  .footer-contact-item a {
+    color: #C5A880;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-contact-item a:hover {
+    color: #FFFFFF;
+  }
+  .footer-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .footer-input {
+    background-color: #25201C;
+    border: 1px solid #3E3630;
+    padding: 12px 18px;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    flex: 1;
+    transition: border-color 0.3s ease;
+  }
+  .footer-input:focus {
+    outline: none;
+    border-color: #C5A880;
+  }
+  .footer-submit {
+    background-color: #C5A880;
+    border: none;
+    padding: 12px 25px;
+    color: #1A1613;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .footer-submit:hover {
+    background-color: #D8D1C5;
+  }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid #2C2621;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+  @media(min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+  .footer-copy {
+    font-size: 0.8rem;
+    color: #8E867E;
+  }
+</style>
+<!-- /wp:html -->
+
+<!-- Drawer Overlay -->
+<div class="drawer-overlay" id="lefanna-drawer-overlay"></div>
+
+<!-- Sidebar Drawer -->
+<div class="lefanna-drawer" id="lefanna-sidebar-drawer">
+  <div class="drawer-header">
+    <div style="display:flex; flex-direction:column; align-items:flex-start;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="40" height="32" style="fill:none; stroke:#C5A880; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;">
+        <path d="M50,15 C45,35 45,55 50,70 C55,55 55,35 50,15 Z" />
+        <path d="M50,30 C30,45 35,60 50,70 C42,55 42,40 50,30 Z" />
+        <path d="M50,30 C70,45 65,60 50,70 C58,55 58,40 50,30 Z" />
+      </svg>
+      <div style="font-family:'Cormorant Garamond', serif; font-size:1.15rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#C5A880; line-height:1; margin-top:4px;">Lefanna</div>
+      <div style="font-family:'Jost', sans-serif; font-size:0.45rem; font-weight:500; letter-spacing:0.3em; text-transform:uppercase; color:#8A7355; line-height:1; margin-top:2px;">Experience</div>
+    </div>
+    <button class="drawer-close-btn" id="lefanna-drawer-close">✕</button>
+  </div>
+
+  <ul class="drawer-menu-list">
+    <li class="drawer-menu-item">
+      <a href="/" class="drawer-menu-link">Home</a>
+    </li>
+    <li class="drawer-menu-item">
+      <a href="#" class="drawer-menu-link drawer-parent-link">Find & Reserve <span class="arrow-indicator">▾</span></a>
+      <ul class="drawer-submenu">
+        <li><a href="/hotels-resorts/" class="drawer-submenu-link">Find A Hotels & Resorts</a></li>
+        <li><a href="/villas-in-bali/" class="drawer-submenu-link">GenuineHost</a></li>
+      </ul>
+    </li>
+    <li class="drawer-menu-item">
+      <a href="/offers/" class="drawer-menu-link">Offers</a>
+    </li>
+    
+    <li class="drawer-menu-item">
+      <a href="#" class="drawer-menu-link drawer-parent-link">Experiences <span class="arrow-indicator">▾</span></a>
+      <ul class="drawer-submenu">
+        <li><a href="/experiences/journeys/" class="drawer-submenu-link">Journeys</a></li>
+        <li><a href="/experiences/celebrations/" class="drawer-submenu-link">Celebrations</a></li>
+        <li><a href="/experiences/culture-conservations/" class="drawer-submenu-link">Culture & Conservations</a></li>
+        <li><a href="/experiences/active-adventure/" class="drawer-submenu-link">Active Adventure</a></li>
+        <li><a href="/experiences/wellness/" class="drawer-submenu-link">Wellness</a></li>
+      </ul>
+    </li>
+    <li class="drawer-menu-item">
+      <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">▾</span></a>
+      <ul class="drawer-submenu">
+        <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
+        <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
+        <li><a href="/careers/" class="drawer-submenu-link">Careers</a></li>
+        <li><a href="/newsrooms/" class="drawer-submenu-link">Newsroom</a></li>
+        <li><a href="/contact-us/" class="drawer-submenu-link">Contact Us</a></li>
+      </ul>
+    </li>
+    <li class="drawer-menu-item">
+      <a href="/lefanna-leisure-unlimited-services/" class="drawer-menu-link">Plus</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Header -->
+<header class="lefanna-header">
+  <div class="header-left">
+    <button class="menu-trigger-btn" id="lefanna-menu-trigger">
+      <div class="hamburger-icon">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+      <span>Menu</span>
+    </button>
+
+    <a href="/" class="lefanna-logo-wrapper desktop-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="38" height="30" style="fill:none; stroke:#C5A880; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;">
+        <path d="M50,15 C45,35 45,55 50,70 C55,55 55,35 50,15 Z" />
+        <path d="M50,30 C30,45 35,60 50,70 C42,55 42,40 50,30 Z" />
+        <path d="M50,30 C70,45 65,60 50,70 C58,55 58,40 50,30 Z" />
+        <path d="M50,45 C15,55 25,72 50,70 C30,65 35,55 50,45 Z" />
+        <path d="M50,45 C85,55 75,72 50,70 C70,65 65,55 50,45 Z" />
+      </svg>
+      <div class="lefanna-logo-text">Lefanna</div>
+      <div class="lefanna-logo-subtext">Experience</div>
+    </a>
+  </div>
+
+  <div class="header-center">
+    <a href="/" class="lefanna-logo-wrapper mobile-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="38" height="30" style="fill:none; stroke:#C5A880; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;">
+        <path d="M50,15 C45,35 45,55 50,70 C55,55 55,35 50,15 Z" />
+        <path d="M50,30 C30,45 35,60 50,70 C42,55 42,40 50,30 Z" />
+        <path d="M50,30 C70,45 65,60 50,70 C58,55 58,40 50,30 Z" />
+        <path d="M50,45 C15,55 25,72 50,70 C30,65 35,55 50,45 Z" />
+        <path d="M50,45 C85,55 75,72 50,70 C70,65 65,55 50,45 Z" />
+      </svg>
+      <div class="lefanna-logo-text">Lefanna</div>
+      <div class="lefanna-logo-subtext">Experience</div>
+    </a>
+
+    <nav class="top-nav-menu">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Find & Reserve <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="/hotels-resorts/">Find A Hotels & Resorts</a></li>
+            <li><a href="/villas-in-bali/">GenuineHost</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Experiences <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="/experiences/journeys/">Journeys</a></li>
+            <li><a href="/experiences/celebrations/">Celebrations</a></li>
+            <li><a href="/experiences/culture-conservations/">Culture & Conservations</a></li>
+            <li><a href="/experiences/active-adventure/">Active Adventure</a></li>
+            <li><a href="/experiences/wellness/">Wellness</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="/about-us/">About Us</a></li>
+            <li><a href="/investor-relations/">Investor Relations</a></li>
+            <li><a href="/careers/">Careers</a></li>
+            <li><a href="/newsrooms/">Newsroom</a></li>
+            <li><a href="/contact-us/">Contact Us</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="/lefanna-leisure-unlimited-services/" class="nav-link">Plus</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="header-right">
+    <div class="header-btn-group">
+      <a href="/wp-admin/" class="pill-btn pill-btn-reserve">Reserve</a>
+      <a href="/wp-admin/" class="pill-btn pill-btn-member">Member</a>
+    </div>
+  </div>
+</header>
+
+<!-- Main Page Content -->
+<main>
+  <!-- Hero Banner -->
+  <section class="corporate-banner">
+    <span class="banner-subtitle">Corporate Profile</span>
+    <h2 class="banner-title">About Us</h2>
+  </section>
+
+  <!-- Corporate Content -->
+  <article class="corporate-content">
+    <h3 class="corporate-section-title">Who We Are</h3>
+    <p class="corporate-paragraph">Lefanna Experience is an award-winning Balinese hotel and villa management company, founded on the values of traditional Balinese wisdom, environmental conservation, and local community empowerment.</p>
+    <p class="corporate-paragraph">We specialize in boutique hotels, luxury resorts, and private pool villa retreats located in some of Bali's and Lombok's most mystical spots—from the lush rainforest slopes of Ubud to the cold mountain mist of Kintamani and beachside sunsets of Gili Trawangan.</p>
+    
+    <div style="border-left: 2px solid #C5A880; padding-left: 25px; margin: 40px 0; font-style: italic;">
+      <h4 style="font-family:'Cormorant Garamond', serif; font-size: 1.4rem; color: #2C2621; font-weight: 500; margin-bottom: 10px;">Our Vision</h4>
+      <p style="font-size: 1.05rem; margin: 0;">"To be a leader in authentic Balinese hospitality that creates unique experiences for travelers while maintaining harmony with nature, local culture, and community spiritual values."</p>
+    </div>
+
+    <h3 class="corporate-section-title">Our Values</h3>
+    <div class="values-grid">
+      <div class="value-card">
+        <h4 class="value-title">Culture</h4>
+        <p class="value-desc">Preserving traditional arts, Balinese rituals, and native village aesthetics.</p>
+      </div>
+      <div class="value-card">
+        <h4 class="value-title">Conservation</h4>
+        <p class="value-desc">Protecting natural river basins, rice fields, and minimizing plastic waste.</p>
+      </div>
+      <div class="value-card">
+        <h4 class="value-title">Community</h4>
+        <p class="value-desc">Partnering with local villagers and generating shared economic progress.</p>
+      </div>
+    </div>
+  </article>
+</main>
+
+<!-- Footer -->
+<footer class="footer-container">
+  <div class="footer-grid">
+    <!-- Col 1: Brand Info -->
+    <div class="footer-col">
+      <div>
+        <h4 class="footer-logo-title">Lefanna</h4>
+        <div class="footer-logo-sub">Experience</div>
+      </div>
+      <p class="footer-text">Lefanna Experience is a premier hospitality management company specializing in boutique resorts, hotels, and luxury private villas across Bali and Indonesia. We combine traditional Balinese values with modern luxury standards.</p>
+    </div>
+    
+    <!-- Col 2: Quick Links -->
+    <div class="footer-col">
+      <h5 class="footer-heading">Explore</h5>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/hotels-resorts/">Hotels & Resorts</a></li>
+        <li><a href="/villas-in-bali/">Villas in Bali</a></li>
+        <li><a href="/offers/">Offers</a></li>
+      </ul>
+    </div>
+    
+    <!-- Col 3: Experiences -->
+    <div class="footer-col">
+      <h5 class="footer-heading">Experiences</h5>
+      <ul class="footer-links">
+        <li><a href="/experiences/journeys/">Journeys</a></li>
+        <li><a href="/experiences/celebrations/">Celebrations</a></li>
+        <li><a href="/experiences/culture-conservations/">Culture</a></li>
+        <li><a href="/experiences/active-adventure/">Adventure</a></li>
+        <li><a href="/experiences/wellness/">Wellness</a></li>
+      </ul>
+    </div>
+    
+    <!-- Col 4: Contact & Newsletter -->
+    <div class="footer-col">
+      <h5 class="footer-heading">Get in Touch</h5>
+      <p class="footer-contact-item">
+        Jl. Padang Getas, Singakerta, Ubud, Bali – Indonesia<br>
+        Phone: <a href="tel:+62361975950">+62 361 975 950</a><br>
+        Email: <a href="mailto:info@lefannaexperience.com">info@lefannaexperience.com</a>
+      </p>
+      <div>
+        <h5 class="footer-heading" style="font-size:0.9rem; margin-top:10px;">Newsletter</h5>
+        <form class="footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+          <input type="email" placeholder="Your Email Address" class="footer-input" required>
+          <button type="submit" class="footer-submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <span class="footer-copy">Copyright © 2026 Lefanna Experience | Powered by WordPress Playground & Antigravity</span>
+    <span class="footer-copy" style="color: #6E665E;">Handcrafted Balinese Hospitality</span>
+  </div>
+</footer>
+
+<!-- wp:html -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('lefanna-menu-trigger');
+    const closeBtn = document.getElementById('lefanna-drawer-close');
+    const drawer = document.getElementById('lefanna-sidebar-drawer');
+    const overlay = document.getElementById('lefanna-drawer-overlay');
+
+    if (menuBtn && closeBtn && drawer && overlay) {
+      menuBtn.addEventListener('click', function() {
+        drawer.classList.add('is-active');
+        overlay.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const closeDrawer = function() {
+        drawer.classList.remove('is-active');
+        overlay.classList.remove('is-active');
+        document.body.style.overflow = '';
+      };
+
+      closeBtn.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+    }
+
+    const parentLinks = document.querySelectorAll('.drawer-parent-link');
+    parentLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const parentLi = this.parentElement;
+        parentLi.classList.toggle('is-expanded');
+        
+        const indicator = this.querySelector('.arrow-indicator');
+        if (indicator) {
+          if (parentLi.classList.contains('is-expanded')) {
+            indicator.textContent = ' ▴';
+          } else {
+            indicator.textContent = ' ▾';
+          }
+        }
+      });
+    });
+  });
+</script>
+<!-- /wp:html -->

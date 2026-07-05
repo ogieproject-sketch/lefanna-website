@@ -1,0 +1,141 @@
+{
+  "version": 3,
+  "title": "Antigravity Theme Config",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "background",
+          "color": "#FAF8F5",
+          "name": "Cream Background"
+        },
+        {
+          "slug": "foreground",
+          "color": "#2C2621",
+          "name": "Charcoal Text"
+        },
+        {
+          "slug": "primary",
+          "color": "#C5A880",
+          "name": "Brushed Gold"
+        },
+        {
+          "slug": "secondary",
+          "color": "#8A7355",
+          "name": "Brown Gold"
+        },
+        {
+          "slug": "tertiary",
+          "color": "#F3EFE9",
+          "name": "Soft Beige"
+        },
+        {
+          "slug": "muted",
+          "color": "#9E978E",
+          "name": "Muted Slate"
+        },
+        {
+          "slug": "card-bg",
+          "color": "#FFFFFF",
+          "name": "Card Background"
+        }
+      ],
+      "gradients": [
+        {
+          "slug": "primary-gradient",
+          "gradient": "linear-gradient(135deg, #FAF8F5 0%, #F5F1E9 100%)",
+          "name": "Cream Soft Gradient"
+        },
+        {
+          "slug": "gold-gradient",
+          "gradient": "linear-gradient(135deg, #E2C799 0%, #C5A880 100%)",
+          "name": "Brushed Gold Gradient"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "900px",
+      "wideSize": "1200px"
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Cormorant Garamond\", serif",
+          "name": "Cormorant Garamond",
+          "slug": "cormorant-garamond"
+        },
+        {
+          "fontFamily": "\"Jost\", system-ui, sans-serif",
+          "name": "Jost",
+          "slug": "jost"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--background)",
+      "text": "var(--wp--preset--color--foreground)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--jost)",
+      "fontSize": "1.05rem",
+      "lineHeight": "1.7"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--cormorant-garamond)",
+          "fontWeight": "600",
+          "lineHeight": "1.3"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--foreground)"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--primary)",
+          "text": "#ffffff"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.75rem",
+            "bottom": "0.75rem",
+            "left": "2rem",
+            "right": "2rem"
+          }
+        },
+        "border": {
+          "radius": "2px",
+          "style": "solid",
+          "width": "1px",
+          "color": "var(--wp--preset--color--primary)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--jost)",
+          "fontWeight": "500",
+          "textDecoration": "none",
+          "letterSpacing": "0.15em",
+          "textTransform": "uppercase",
+          "fontSize": "0.85rem"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--secondary)"
+        },
+        "typography": {
+          "textDecoration": "none"
+        }
+      }
+    },
+    "blocks": {
+      "core/group": {
+        "border": {
+          "radius": "0px"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+*.zip
+.wordpress-playground/
+temp_theme/
+temp_plugin/
+.DS_Store

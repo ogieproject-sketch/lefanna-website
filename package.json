@@ -1,0 +1,22 @@
+{
+  "name": "wordpress-lokal-playground",
+  "version": "1.0.0",
+  "description": "WordPress local development environment powered by WordPress Playground CLI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wp-playground-cli start --mount=wp-content/themes/lefanna:/wordpress/wp-content/themes/lefanna --mount=wp-content/plugins/lefanna-helper:/wordpress/wp-content/plugins/lefanna-helper --blueprint=blueprint.json",
+    "start": "wp-playground-cli start --mount=wp-content/themes/lefanna:/wordpress/wp-content/themes/lefanna --mount=wp-content/plugins/lefanna-helper:/wordpress/wp-content/plugins/lefanna-helper --blueprint=blueprint.json",
+    "reset": "wp-playground-cli start --mount=wp-content/themes/lefanna:/wordpress/wp-content/themes/lefanna --mount=wp-content/plugins/lefanna-helper:/wordpress/wp-content/plugins/lefanna-helper --blueprint=blueprint.json --reset"
+  },
+  "keywords": [
+    "wordpress",
+    "playground",
+    "wasm",
+    "sqlite"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "@wp-playground/cli": "^3.1.43"
+  }
+}
