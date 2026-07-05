@@ -62,4 +62,101 @@ function lefanna_status_shortcode() {
          . '⚡ Lefanna System Status: ONLINE & POWERED BY PLAYGROUND'
          . '</div>';
 }
-add_shortcode('lefanna_status', 'lefanna_status_shortcode');
+add_shortcode('lefanna', 'lefanna_status_shortcode');
+
+/**
+ * Menambahkan indikator menu aktif secara dinamis melalui script & style di footer.
+ */
+function lefanna_active_menu_indicator() {
+    ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var currentUrl = window.location.pathname;
+        
+        // Bersihkan slash di akhir url jika ada
+        if (currentUrl.endsWith('/') && currentUrl.length > 1) {
+            currentUrl = currentUrl.slice(0, -1);
+        }
+        
+        var navLinks = document.querySelectorAll('.nav-link, .nav-dropdown a, .drawer-menu-list a');
+        navLinks.forEach(function(link) {
+            try {
+                var linkPath = new URL(link.href).pathname;
+                if (linkPath.endsWith('/') && linkPath.length > 1) {
+                    linkPath = linkPath.slice(0, -1);
+                }
+                
+                if (currentUrl === linkPath) {
+                    link.classList.add('active-menu-item');
+                    
+                    // Jika item ini berada di dalam dropdown menu
+                    var parentDropdown = link.closest('.nav-dropdown');
+                    if (parentDropdown) {
+                        var parentLink = parentDropdown.parentElement.querySelector('.nav-link');
+                        if (parentLink) {
+                            parentLink.classList.add('active-menu-parent');
+                        }
+                    }
+                    
+                    // Jika item ini berada di dalam submenu drawer (mobile)
+                    var drawerSubmenu = link.closest('.drawer-submenu');
+                    if (drawerSubmenu) {
+                        var drawerParentLi = drawerSubmenu.parentElement;
+                        drawerParentLi.classList.add('is-expanded');
+                        var drawerParentLink = drawerParentLi.querySelector('.drawer-parent-link');
+                        if (drawerParentLink) {
+                            drawerParentLink.classList.add('active-menu-parent');
+                            var indicator = drawerParentLink.querySelector('.arrow-indicator');
+                            if (indicator) {
+                                indicator.textContent = ' ▴';
+                            }
+                        }
+                    }
+                }
+            } catch(e) {
+                // Abaikan jika ada link eksternal atau hash (#) saja
+            }
+        });
+    });
+    </script>
+    <style>
+    /* Indikator Menu Aktif (Sesuai Halaman Saat Ini) */
+    .nav-link.active-menu-item,
+    .nav-dropdown a.active-menu-item,
+    .drawer-menu-list a.active-menu-item {
+        color: #C5A880 !important; /* Warna Emas Khas Lefanna */
+        font-weight: 600 !important;
+    }
+    
+    /* Garis bawah premium untuk menu aktif di desktop */
+    @media(min-width: 1024px) {
+        .nav-link.active-menu-item,
+        .nav-link.active-menu-parent {
+            position: relative;
+            color: #C5A880 !important;
+        }
+        .nav-link.active-menu-item::after,
+        .nav-link.active-menu-parent::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background-color: #C5A880;
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            animation: slideInWidth 0.3s ease forwards;
+        }
+        .nav-link.active-menu-parent::after {
+            opacity: 0.7;
+        }
+    }
+    
+    @keyframes slideInWidth {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    </style>
+    <?php
+}
+add_action('wp_footer', 'lefanna_active_menu_indicator');
