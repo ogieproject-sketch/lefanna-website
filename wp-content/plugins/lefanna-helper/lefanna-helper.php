@@ -143,14 +143,22 @@ function lefanna_active_menu_indicator() {
         .nav-link.active-menu-parent::after {
             content: '';
             display: block;
-            width: 100%;
             height: 1.5px;
             background-color: #C5A880;
             position: absolute;
             bottom: 4px;
-            left: 0;
+            left: calc(50% - 0.075em); /* Mengimbangi letter-spacing 0.15em agar tepat di tengah */
+            transform: translateX(-50%);
+            width: 60%; /* Pendek dan elegan (60% lebar teks) */
             animation: slideInWidth 0.3s ease forwards;
         }
+        
+        /* Menggeser garis ke kiri sedikit jika menu memiliki panah dropdown */
+        .nav-link.active-menu-item:has(.nav-arrow)::after,
+        .nav-link.active-menu-parent:has(.nav-arrow)::after {
+            left: calc(50% - 8px);
+        }
+        
         .nav-link.active-menu-parent::after {
             opacity: 0.7;
         }
@@ -158,7 +166,7 @@ function lefanna_active_menu_indicator() {
     
     @keyframes slideInWidth {
         from { width: 0; }
-        to { width: 100%; }
+        to { width: 60%; }
     }
     </style>
     <?php
