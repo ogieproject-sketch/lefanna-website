@@ -22,9 +22,13 @@ jobs:
         exclude: |
           **/.git*
           **/.git*/**
+          **/.github*
+          **/.github*/**
           **/node_modules/**
+          wp-content/database/**
           package.json
           package-lock.json
           README.md
           blueprint.json
           *.zip
+
