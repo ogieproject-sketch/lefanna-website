@@ -42,6 +42,18 @@ if (is_dir($document_root)) {
     } else {
         echo "\n[INFO] No nested public_html directory found.\n";
     }
+    
+    // Force delete .ftp-deploy-sync-state.json to trigger full sync
+    $sync_state_file = $document_root . '/.ftp-deploy-sync-state.json';
+    if (is_file($sync_state_file)) {
+        if (unlink($sync_state_file)) {
+            echo "\n[OK] successfully DELETED .ftp-deploy-sync-state.json on server. Next deploy will be a FULL sync.\n";
+        } else {
+            echo "\n[ERROR] Failed to delete .ftp-deploy-sync-state.json\n";
+        }
+    } else {
+        echo "\n[INFO] No .ftp-deploy-sync-state.json file found to delete.\n";
+    }
 }
 
 echo "\nPHP Version: " . phpversion() . "\n";
