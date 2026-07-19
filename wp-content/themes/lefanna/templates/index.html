@@ -1026,6 +1026,193 @@
     </div>
   </section>
 
+  <!-- Tri Hita Karana Section -->
+  <section class="thk-section" style="background-color: #FAF8F5; padding: 100px 0; font-family: 'Jost', sans-serif;">
+    <style>
+      .thk-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      @media(min-width: 992px) {
+        .thk-grid {
+          flex-direction: row;
+          align-items: center;
+          gap: 0;
+        }
+      }
+      .thk-image-col {
+        width: 100%;
+        position: relative;
+      }
+      @media(min-width: 992px) {
+        .thk-image-col {
+          width: 58%;
+          z-index: 1;
+        }
+      }
+      .thk-slideshow {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+      @media(min-width: 992px) {
+        .thk-slideshow {
+          height: 650px;
+        }
+      }
+      .thk-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        object-fit: cover;
+      }
+      .thk-slide.active {
+        opacity: 1;
+      }
+      .thk-text-col {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      @media(min-width: 992px) {
+        .thk-text-col {
+          width: 42%;
+          margin-left: -50px; /* Slight overlap on desktop */
+          z-index: 2;
+        }
+      }
+      .thk-card {
+        background-color: #FFFFFF;
+        padding: 40px 30px;
+        border-radius: 4px;
+        box-shadow: 0 30px 60px rgba(44, 38, 33, 0.08);
+        border: 1px solid #F3EFE9;
+      }
+      @media(min-width: 992px) {
+        .thk-card {
+          padding: 60px 45px;
+        }
+      }
+      .thk-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.6rem;
+        font-weight: 300;
+        color: #2C2621;
+        margin: 0 0 20px 0;
+        letter-spacing: 0.05em;
+        line-height: 1.1;
+      }
+      .thk-intro {
+        font-size: 0.92rem;
+        color: #645D55;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .thk-pillar {
+        margin-bottom: 25px;
+      }
+      .thk-pillar:last-child {
+        margin-bottom: 0;
+      }
+      .thk-pillar-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #C5A880; /* Gold */
+        margin: 0 0 8px 0;
+        letter-spacing: 0.05em;
+      }
+      .thk-pillar-desc {
+        font-size: 0.88rem;
+        color: #645D55;
+        line-height: 1.7;
+        margin: 0;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    </style>
+    
+    <div class="thk-grid">
+      <!-- Left side: Slideshow -->
+      <div class="thk-image-col">
+        <div class="thk-slideshow">
+          <!-- Slide 1 -->
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=80" alt="Tri Hita Karana - Parahyangan" class="thk-slide active">
+          <!-- Slide 2 -->
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80" alt="Tri Hita Karana - Pawongan" class="thk-slide">
+          <!-- Slide 3 -->
+          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1000&q=80" alt="Tri Hita Karana - Palemahan" class="thk-slide">
+        </div>
+      </div>
+      
+      <!-- Right side: Text Content Card -->
+      <div class="thk-text-col">
+        <div class="thk-card">
+          <h3 class="thk-title">Tri Hitakarana</h3>
+          <div style="width: 50px; height: 1.5px; background-color: #C5A880; margin-bottom: 25px;"></div>
+          
+          <div class="thk-intro">
+            <p style="margin: 0 0 15px 0;">
+              LEFANNA embraces the philosophy of Tri Hita Karana as more than a cultural value, it becomes a way of shaping meaningful hospitality experiences with intention, balance, and harmony. Inspired by the connection between spirituality, humanity, and nature, this philosophy guides the way LEFANNA manages its properties, curates guest experiences, and creates spaces that feel deeply connected to their surroundings.
+            </p>
+            <p style="margin: 0;">
+              Through a thoughtful and refined approach, LEFANNA believes that true hospitality is not only about beautiful destinations, but also about creating a sense of presence, genuine connection, and lasting emotional experiences. Every detail is designed to bring comfort, tranquility, and harmony, allowing guests to experience Bali in a more meaningful and authentic way.
+            </p>
+          </div>
+          
+          <!-- Pillars -->
+          <div class="thk-pillar">
+            <h4 class="thk-pillar-title">Parahyangan — Elevated Presence</h4>
+            <p class="thk-pillar-desc">
+              A reflection of mindful hospitality, where every space is designed with intention, tranquility, and a deeper sense of presence that creates meaningful experiences beyond the physical stay.
+            </p>
+          </div>
+          
+          <div class="thk-pillar">
+            <h4 class="thk-pillar-title">Pawongan — Curated Connection</h4>
+            <p class="thk-pillar-desc">
+              An approach centered on genuine human connection, fostering warm relationships between guests, teams, communities, and every individual who becomes part of the LEFANNA journey.
+            </p>
+          </div>
+          
+          <div class="thk-pillar">
+            <h4 class="thk-pillar-title">Palemahan — Refined Nature</h4>
+            <p class="thk-pillar-desc">
+              A commitment to preserving the beauty and harmony of the surrounding environment through thoughtful design, natural integration, and hospitality experiences that remain connected to the essence of nature.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slideshow JS Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var currentSlide = 0;
+        var slides = document.querySelectorAll('.thk-slide');
+        if (slides.length > 0) {
+          setInterval(function() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+          }, 4500);
+        }
+      });
+    </script>
+  </section>
+
   <!-- Showcase / Query Section -->
   <!-- wp:heading {"level":3,"align":"center","style":{"typography":{"fontSize":"2.2rem","fontWeight":"300"}},"spacing":{"margin":{"bottom":"50px"}}} -->
   <h3 class="wp-block-heading has-text-align-center" style="font-family:'Cormorant Garamond', serif;font-size:2.2rem;font-weight:300;margin-bottom:50px;letter-spacing:0.05em;color:#2C2621">Featured Journals & News</h3>
