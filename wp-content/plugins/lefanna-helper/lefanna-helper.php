@@ -355,6 +355,6 @@ function lefanna_setup_database_pages() {
 }
 add_action('init', 'lefanna_setup_database_pages');
 
-// Deploy trigger tag: 1.0.2
+// Deploy trigger tag: 1.0.3
 
 
