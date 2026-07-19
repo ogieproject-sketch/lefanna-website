@@ -1027,21 +1027,19 @@
   </section>
 
   <!-- Tri Hita Karana Section -->
-  <section class="thk-section" style="background-color: #FAF8F5; padding: 100px 0; font-family: 'Jost', sans-serif;">
+  <section class="thk-section" style="background-color: #FAF8F5; padding: 100px 0; font-family: 'Jost', sans-serif; width: 100%; max-width: 100vw; overflow: hidden; margin: 80px 0 0 0;">
     <style>
       .thk-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 0;
       }
       @media(min-width: 992px) {
         .thk-grid {
           flex-direction: row;
-          align-items: center;
-          gap: 0;
+          align-items: stretch;
         }
       }
       .thk-image-col {
@@ -1050,21 +1048,19 @@
       }
       @media(min-width: 992px) {
         .thk-image-col {
-          width: 58%;
+          width: 55%;
           z-index: 1;
         }
       }
       .thk-slideshow {
         position: relative;
         width: 100%;
-        height: 400px;
+        height: 450px;
         overflow: hidden;
-        border-radius: 4px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       }
       @media(min-width: 992px) {
         .thk-slideshow {
-          height: 650px;
+          height: 700px;
         }
       }
       .thk-slide {
@@ -1083,24 +1079,33 @@
       .thk-text-col {
         width: 100%;
         box-sizing: border-box;
+        padding: 40px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FAF8F5;
       }
       @media(min-width: 992px) {
         .thk-text-col {
-          width: 42%;
-          margin-left: -50px; /* Slight overlap on desktop */
-          z-index: 2;
+          width: 45%;
+          padding: 60px 80px 60px 40px;
+          justify-content: flex-start;
         }
       }
       .thk-card {
         background-color: #FFFFFF;
         padding: 40px 30px;
         border-radius: 4px;
-        box-shadow: 0 30px 60px rgba(44, 38, 33, 0.08);
+        box-shadow: -15px 20px 40px rgba(44, 38, 33, 0.04);
         border: 1px solid #F3EFE9;
+        width: 100%;
+        max-width: 520px;
       }
       @media(min-width: 992px) {
         .thk-card {
-          padding: 60px 45px;
+          padding: 55px 45px;
+          margin-left: -120px; /* Overlap image on desktop */
+          z-index: 2;
         }
       }
       .thk-title {
@@ -1145,15 +1150,15 @@
     </style>
     
     <div class="thk-grid">
-      <!-- Left side: Slideshow -->
+      <!-- Left side: Full Bleed Slideshow -->
       <div class="thk-image-col">
         <div class="thk-slideshow">
           <!-- Slide 1 -->
-          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=80" alt="Tri Hita Karana - Parahyangan" class="thk-slide active">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Parahyangan" class="thk-slide active">
           <!-- Slide 2 -->
-          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80" alt="Tri Hita Karana - Pawongan" class="thk-slide">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Pawongan" class="thk-slide">
           <!-- Slide 3 -->
-          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1000&q=80" alt="Tri Hita Karana - Palemahan" class="thk-slide">
+          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Palemahan" class="thk-slide">
         </div>
       </div>
       
