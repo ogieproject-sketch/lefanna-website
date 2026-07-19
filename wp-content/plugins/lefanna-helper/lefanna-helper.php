@@ -172,3 +172,41 @@ function lefanna_active_menu_indicator() {
     <?php
 }
 add_action('wp_footer', 'lefanna_active_menu_indicator');
+
+/**
+ * Diagnostic check to inspect pages and database templates
+ */
+function lefanna_run_utility_check() {
+    if (isset($_GET['run_utility'])) {
+        header('Content-Type: text/plain');
+        echo "Lefanna Helper Utility check:\n\n";
+        
+        $pages = get_posts(array(
+            'post_type' => 'page',
+            'post_status' => 'any',
+            'posts_per_page' => -1
+        ));
+
+        echo "Pages found in database:\n";
+        foreach ($pages as $page) {
+            $template = get_post_meta($page->ID, '_wp_page_template', true);
+            echo "- ID: {$page->ID}, Title: {$page->post_title}, Slug: {$page->post_name}, Status: {$page->post_status}, Template: {$template}\n";
+        }
+        
+        // Also list custom templates in db
+        $args = array(
+            'post_type' => 'wp_template',
+            'post_status' => 'any',
+            'posts_per_page' => -1
+        );
+        $posts = get_posts($args);
+
+        echo "\nCustom templates found in database:\n";
+        foreach ($posts as $post) {
+            echo "- ID: {$post->ID}, Name: {$post->post_name}, Title: {$post->post_title}, Type: {$post->post_type}\n";
+        }
+        exit;
+    }
+}
+add_action('init', 'lefanna_run_utility_check');
+
