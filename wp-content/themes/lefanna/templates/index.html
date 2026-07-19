@@ -1263,185 +1263,25 @@
     </script>
   </section>
 
-  <!-- Why Partner with LEFANNA Section -->
-  <section class="partner-section" style="background-color: #FAF8F5; padding: 100px 0; font-family: 'Jost', sans-serif;">
-    <style>
-      .partner-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 60px;
-      }
-      @media(min-width: 992px) {
-        .partner-grid {
-          flex-direction: row;
-          align-items: center;
-          gap: 80px;
-        }
-      }
-      .partner-image-col {
-        width: 100%;
-        position: relative;
-      }
-      @media(min-width: 992px) {
-        .partner-image-col {
-          width: 42%;
-        }
-      }
-      .partner-image-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 125%; /* Vertical format */
-        overflow: hidden;
-        border-radius: 4px;
-        box-shadow: 0 20px 40px rgba(44, 38, 33, 0.08);
-      }
-      .partner-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.8s ease;
-      }
-      .partner-image-container:hover .partner-image {
-        transform: scale(1.03);
-      }
-      /* Floating decorative background card */
-      .partner-deco-box {
-        position: absolute;
-        bottom: -20px;
-        left: -20px;
-        width: 140px;
-        height: 140px;
-        background-color: #C5A880;
-        opacity: 0.15;
-        z-index: -1;
-        border-radius: 4px;
-      }
-      .partner-text-col {
-        width: 100%;
-      }
-      @media(min-width: 992px) {
-        .partner-text-col {
-          width: 58%;
-        }
-      }
-      .partner-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 2.8rem;
-        font-weight: 300;
-        color: #2C2621;
-        margin: 0 0 15px 0;
-        letter-spacing: 0.05em;
-        line-height: 1.1;
-      }
-      .partner-subtitle-line {
-        width: 60px;
-        height: 1.5px;
-        background-color: #C5A880;
-        margin-bottom: 45px;
-      }
-      .partner-list {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-      }
-      .partner-item {
-        display: flex;
-        gap: 25px;
-      }
-      .partner-num {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 2.2rem;
-        font-weight: 300;
-        color: #C5A880; /* Gold numbers */
-        line-height: 1;
-        margin-top: -3px;
-      }
-      .partner-item-title {
-        font-family: 'Jost', sans-serif;
-        font-size: 1.05rem;
-        font-weight: 600;
-        color: #2C2621;
-        margin: 0 0 8px 0;
-        letter-spacing: 0.05em;
-      }
-      .partner-item-desc {
-        font-size: 0.9rem;
-        color: #645D55;
-        line-height: 1.7;
-        margin: 0;
-        text-align: justify;
-        text-justify: inter-word;
-      }
-    </style>
-    
-    <div class="partner-grid">
-      <!-- Left: Image Column -->
-      <div class="partner-image-col">
-        <div class="partner-deco-box"></div>
-        <div class="partner-image-container">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Partner with Lefanna" class="partner-image">
-        </div>
+  <!-- Showcase / Query Section -->
+  <!-- wp:heading {"level":3,"align":"center","style":{"typography":{"fontSize":"2.2rem","fontWeight":"300"}},"spacing":{"margin":{"bottom":"50px"}}} -->
+  <h3 class="wp-block-heading has-text-align-center" style="font-family:'Cormorant Garamond', serif;font-size:2.2rem;font-weight:300;margin-bottom:50px;letter-spacing:0.05em;color:#2C2621">Featured Journals & News</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:query {"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-query">
+    <!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+      <!-- wp:group {"layout":{"type":"constrained"}} -->
+      <div class="wp-block-group resort-card" style="padding: 40px 30px;">
+        <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"1.8rem","fontWeight":"400"}},"textColor":"foreground"} /-->
+        <div class="gold-divider" style="margin:15px auto;"></div>
+        <!-- wp:post-date {"style":{"typography":{"fontSize":"0.8rem"}},"textColor":"muted"} /-->
+        <!-- wp:post-excerpt {"moreText":"Read Journey →","style":{"typography":{"fontSize":"0.95rem"}}} /-->
       </div>
-      
-      <!-- Right: Text Content Column -->
-      <div class="partner-text-col">
-        <h3 class="partner-title">Why Partner with LEFANNA?</h3>
-        <div class="partner-subtitle-line"></div>
-        
-        <div class="partner-list">
-          <!-- Item 1 -->
-          <div class="partner-item">
-            <span class="partner-num">01</span>
-            <div>
-              <h4 class="partner-item-title">Thoughtfully Curated Properties</h4>
-              <p class="partner-item-desc">
-                LEFANNA focuses on managing properties that reflect character, intention, and timeless hospitality. Every destination is carefully selected and managed with a personalized approach to ensure quality, consistency, and meaningful guest experiences.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Item 2 -->
-          <div class="partner-item">
-            <span class="partner-num">02</span>
-            <div>
-              <h4 class="partner-item-title">Elevated Hospitality Standards</h4>
-              <p class="partner-item-desc">
-                From daily operations to guest experiences, LEFANNA emphasizes attentive service, refined operational flow, and detail-oriented hospitality. Our team is committed to creating seamless experiences that feel effortless, warm, and genuinely memorable.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Item 3 -->
-          <div class="partner-item">
-            <span class="partner-num">03</span>
-            <div>
-              <h4 class="partner-item-title">Sustainable Property Value</h4>
-              <p class="partner-item-desc">
-                LEFANNA believes exceptional property management goes beyond maintaining operations. Through consistent care, strategic oversight, and long-term vision, we ensure every property continues to grow in value while preserving its unique identity and atmosphere.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Item 4 -->
-          <div class="partner-item">
-            <span class="partner-num">04</span>
-            <div>
-              <h4 class="partner-item-title">Intentional Guest Experiences</h4>
-              <p class="partner-item-desc">
-                LEFANNA believes memorable hospitality is created through thoughtful moments and genuine emotional connection. Every experience is designed with intention, allowing guests to feel comfort, tranquility, and a deeper sense of belonging throughout their stay.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- /wp:group -->
+    <!-- /wp:post-template -->
+  </div>
+  <!-- /wp:query -->
 
   <!-- Managed Properties Section -->
   <section class="managed-properties-section" style="max-width: 1200px; margin: 100px auto; padding: 0 20px; font-family: 'Jost', sans-serif;">
