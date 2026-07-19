@@ -54,6 +54,22 @@ if (is_dir($document_root)) {
     } else {
         echo "\n[INFO] No .ftp-deploy-sync-state.json file found to delete.\n";
     }
+
+    // Clean up utility files for security
+    if (isset($_GET['cleanup']) && $_GET['cleanup'] === '1') {
+        echo "\nPerforming cleanup of utility files for security:\n";
+        $setup_file = $document_root . '/setup-host.php';
+        if (is_file($setup_file)) {
+            unlink($setup_file);
+            echo "- Deleted setup-host.php\n";
+        }
+        $diag_file = $document_root . '/diag.php';
+        if (is_file($diag_file)) {
+            echo "- Deleted diag.php (self-delete)\n";
+            unlink($diag_file);
+        }
+        exit;
+    }
 }
 
 echo "\nPHP Version: " . phpversion() . "\n";
