@@ -981,6 +981,120 @@
     </div>
   </section>
 
+  <!-- What We Do Section -->
+  <section class="what-we-do-section" style="max-width: 1200px; margin: 100px auto; padding: 0 20px; font-family: 'Jost', sans-serif;">
+    <style>
+      .wwd-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .wwd-main-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: #2C2621;
+        margin: 0 0 15px 0;
+        letter-spacing: 0.05em;
+        text-transform: capitalize;
+      }
+      .wwd-divider {
+        width: 60px;
+        height: 1.5px;
+        background-color: #C5A880;
+        margin: 0 auto;
+      }
+      .wwd-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      @media(min-width: 768px) {
+        .wwd-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+      }
+      @media(min-width: 1024px) {
+        .wwd-grid {
+          gap: 50px;
+        }
+      }
+      .wwd-col {
+        background-color: #FFFFFF;
+        padding: 40px 30px;
+        border: 1px solid #F3EFE9;
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(44, 38, 33, 0.02);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .wwd-col:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(44, 38, 33, 0.06);
+        border-color: #C5A880;
+      }
+      .wwd-num {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: #C5A880; /* Gold */
+        line-height: 1;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .wwd-col-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: #2C2621;
+        margin: 0 0 15px 0;
+        line-height: 1.3;
+        letter-spacing: 0.02em;
+      }
+      .wwd-col-desc {
+        font-size: 0.9rem;
+        color: #645D55;
+        line-height: 1.7;
+        margin: 0;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    </style>
+
+    <div class="wwd-header">
+      <h3 class="wwd-main-title">What We Do</h3>
+      <div class="wwd-divider"></div>
+    </div>
+
+    <div class="wwd-grid">
+      <!-- Column 1 -->
+      <div class="wwd-col">
+        <span class="wwd-num">01</span>
+        <h4 class="wwd-col-title">Sales &amp; Marketing Strategy</h4>
+        <p class="wwd-col-desc">
+          LEFANNA develops tailored sales and marketing strategies to strengthen property visibility, attract the right audience, and enhance brand presence across relevant platforms. Through thoughtful positioning and strategic promotion, we ensure each property reaches its full market potential while maintaining its unique identity.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="wwd-col">
+        <span class="wwd-num">02</span>
+        <h4 class="wwd-col-title">Revenue &amp; Performance Optimization</h4>
+        <p class="wwd-col-desc">
+          Through strategic pricing, market analysis, and performance-driven planning, LEFANNA focuses on maximizing property potential while maintaining sustainable long-term growth and value.
+        </p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="wwd-col">
+        <span class="wwd-num">03</span>
+        <h4 class="wwd-col-title">Financial Reporting &amp; Transparency</h4>
+        <p class="wwd-col-desc">
+          LEFANNA prioritizes clear and transparent financial reporting to ensure property owners remain informed about operational and revenue performance. Through structured reporting and consistent communication, we provide valuable insights that support sustainable growth and informed decision-making.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Resort Collections Showcase Section -->
   <section style="max-width:1200px; margin:0 auto 80px auto; padding:0 20px;">
     <h3 style="font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:300; text-align:center; margin-bottom:50px; letter-spacing:0.05em; color:#2C2621;">Our Collections</h3>
