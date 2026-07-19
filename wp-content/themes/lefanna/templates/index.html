@@ -1283,6 +1283,148 @@
   </div>
   <!-- /wp:query -->
 
+  <!-- Managed Properties Section -->
+  <section class="managed-properties-section" style="max-width: 1200px; margin: 100px auto; padding: 0 20px; font-family: 'Jost', sans-serif;">
+    <style>
+      .prop-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 45px;
+      }
+      @media(min-width: 768px) {
+        .prop-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+      }
+      @media(min-width: 1024px) {
+        .prop-grid {
+          grid-template-columns: repeat(6, 1fr);
+          gap: 20px;
+        }
+      }
+      .prop-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 10px;
+        background-color: #FFFFFF;
+        border: 1px solid #F3EFE9;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .prop-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(44, 38, 33, 0.05);
+        border-color: #C5A880;
+      }
+      .prop-card:hover .prop-svg {
+        stroke: #C5A880;
+      }
+      .prop-svg {
+        margin-bottom: 20px;
+        transition: stroke 0.3s ease;
+      }
+      .prop-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: #2C2621;
+        margin: 0 0 3px 0;
+        line-height: 1.2;
+      }
+      .prop-sub {
+        font-size: 0.8rem;
+        color: #8A7355;
+        letter-spacing: 0.05em;
+        margin: 0 0 8px 0;
+      }
+      .prop-by {
+        font-size: 0.65rem;
+        font-weight: 500;
+        color: #C9C4BD;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .prop-card:hover .prop-by {
+        color: #C5A880;
+      }
+    </style>
+
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 30px;">
+      <div style="flex-grow: 1; height: 1px; background-color: #EAE3D2;"></div>
+      <span style="font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #8A7355; padding: 0 20px; text-align: center;">Our Managed Properties</span>
+      <div style="flex-grow: 1; height: 1px; background-color: #EAE3D2;"></div>
+    </div>
+
+    <div class="prop-grid">
+      <!-- 1. Amalla Lodge Penida -->
+      <div class="prop-card">
+        <svg class="prop-svg" viewBox="0 0 100 100" width="45" height="45" fill="none" stroke="#2C2621" stroke-width="1.5">
+          <path d="M20 70h60M30 60c10-15 30-15 40 0M40 50c5-7 15-7 20 0" stroke-linecap="round"/>
+        </svg>
+        <h4 class="prop-title">Amalla Lodge</h4>
+        <p class="prop-sub">Penida</p>
+        <p class="prop-by">by Lefanna</p>
+      </div>
+
+      <!-- 2. Kojong House -->
+      <div class="prop-card">
+        <svg class="prop-svg" viewBox="0 0 100 100" width="45" height="45" fill="none" stroke="#2C2621" stroke-width="1.5">
+          <path d="M50 20 L80 65 L20 65 Z M35 65 V80 M65 65 V80 M20 80 h60" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h4 class="prop-title">Kojong House</h4>
+        <p class="prop-sub">Ubud</p>
+        <p class="prop-by">by Lefanna</p>
+      </div>
+
+      <!-- 3. The Jungle Sari -->
+      <div class="prop-card">
+        <svg class="prop-svg" viewBox="0 0 100 100" width="45" height="45" fill="none" stroke="#2C2621" stroke-width="1.5">
+          <path d="M50 20c-15 15-20 35-5 55 15-20 20-35 5-55z M50 20v55 M38 45c10 5 12 5 12 5 M62 45c-10 5-12 5-12 5" stroke-linecap="round"/>
+        </svg>
+        <h4 class="prop-title">The Jungle Sari</h4>
+        <p class="prop-sub">Tegalalang</p>
+        <p class="prop-by">by Lefanna</p>
+      </div>
+
+      <!-- 4. Grita Apsari Lodge -->
+      <div class="prop-card">
+        <svg class="prop-svg" viewBox="0 0 100 100" width="45" height="45" fill="none" stroke="#2C2621" stroke-width="1.5">
+          <path d="M50 25c-5 15-15 25-25 30 15 5 25 15 25 25 0-10 10-20 25-25-15-5-25-15-25-30z M50 25v55 M25 55h50" stroke-linecap="round"/>
+        </svg>
+        <h4 class="prop-title">Grita Apsari</h4>
+        <p class="prop-sub">Lodge</p>
+        <p class="prop-by">by Lefanna</p>
+      </div>
+
+      <!-- 5. Navodaya Villa -->
+      <div class="prop-card">
+        <svg class="prop-svg" viewBox="0 0 100 100" width="45" height="45" fill="none" stroke="#2C2621" stroke-width="1.5">
+          <path d="M20 75h60 M50 35 M50 25v15M30 45l10 10M70 45l-10 10" stroke-linecap="round"/>
+          <circle cx="50" cy="60" r="15" />
+        </svg>
+        <h4 class="prop-title">Navodaya Villa</h4>
+        <p class="prop-sub">Payangan</p>
+        <p class="prop-by">by Lefanna</p>
+      </div>
+
+      <!-- 6. Umah Ukir -->
+      <div class="prop-card">
+        <svg class="prop-svg" viewBox="0 0 100 100" width="45" height="45" fill="none" stroke="#2C2621" stroke-width="1.5">
+          <path d="M50 15 L80 50 L50 85 L20 50 Z M50 15 V85 M20 50 H80" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h4 class="prop-title">Umah Ukir</h4>
+        <p class="prop-sub">Ubud</p>
+        <p class="prop-by">by Lefanna</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 <!-- /wp:group -->
 
