@@ -1026,14 +1026,36 @@
     </div>
   </section>
 
-  <!-- Tri Hita Karana Section (Split Screen) -->
-  <section class="thk-section" style="background-color: #FFFFFF; padding: 0; font-family: 'Jost', sans-serif; width: 100%; max-width: 100vw; overflow: hidden; margin: 80px 0 0 0;">
+  <!-- Tri Hita Karana Section (Pramana Style Full-Width Sliding Layout) -->
+  <section class="thk-section" style="position: relative; width: 100%; max-width: 100vw; overflow: hidden; margin: 80px 0 0 0; background-color: #FAF8F5; font-family: 'Jost', sans-serif;">
     <style>
-      .thk-grid {
+      .thk-bg-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        max-width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .thk-slides-container {
+        display: flex;
+        width: 300%; /* 3 slides */
+        height: 100%;
+        transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .thk-slide {
+        width: 33.3333%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .thk-grid {
+        position: relative;
+        z-index: 2;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        max-width: 100%;
         gap: 0;
       }
       @media(min-width: 992px) {
@@ -1042,62 +1064,78 @@
           align-items: stretch;
         }
       }
-      .thk-image-col {
+      .thk-spacer-col {
         width: 100%;
-        position: relative;
+        height: 350px; /* On mobile, slideshow is visible at the top */
+        background-color: transparent;
       }
       @media(min-width: 992px) {
-        .thk-image-col {
-          width: 50%;
+        .thk-spacer-col {
+          width: 58%; /* 58% of the viewport is the image area */
+          height: auto;
         }
-      }
-      .thk-slideshow {
-        position: relative;
-        width: 100%;
-        height: 450px;
-        overflow: hidden;
-      }
-      @media(min-width: 992px) {
-        .thk-slideshow {
-          height: 100%;
-          min-height: 750px;
-        }
-      }
-      .thk-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 1.5s ease-in-out;
-        object-fit: cover;
-      }
-      .thk-slide.active {
-        opacity: 1;
       }
       .thk-text-col {
         width: 100%;
         box-sizing: border-box;
-        padding: 60px 20px;
+        padding: 50px 30px;
         background-color: #FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        z-index: 3;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05); /* Shadow on top for mobile stack */
       }
       @media(min-width: 992px) {
         .thk-text-col {
-          width: 50%;
-          padding: 80px 100px;
+          width: 42%; /* 42% of the viewport is the white block */
+          padding: 80px 70px;
+          box-shadow: -15px 0 35px rgba(44, 38, 33, 0.08); /* Left shadow overlapping the image */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 780px;
         }
       }
       .thk-content-wrapper {
         width: 100%;
-        max-width: 520px;
+        max-width: 500px;
+      }
+      .thk-brand-header {
+        text-align: left;
+        margin-bottom: 35px;
+      }
+      .thk-brand-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: #2C2621;
+        line-height: 0.9;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .thk-brand-sub {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #C5A880; /* Gold */
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin: 5px 0 8px 0;
+      }
+      .thk-brand-tagline {
+        font-size: 0.8rem;
+        color: #8A7355;
+        letter-spacing: 0.05em;
+        font-style: italic;
+        margin: 0;
+      }
+      .thk-brand-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #EAE3D2;
+        margin-top: 20px;
       }
       .thk-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 2.6rem;
+        font-size: 2rem;
         font-weight: 300;
         color: #2C2621;
         margin: 0 0 20px 0;
@@ -1120,7 +1158,7 @@
       }
       .thk-pillar-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         font-weight: 500;
         color: #C5A880; /* Gold */
         margin: 0 0 8px 0;
@@ -1135,25 +1173,35 @@
         text-justify: inter-word;
       }
     </style>
+
+    <!-- Background Sliding Slideshow -->
+    <div class="thk-bg-slideshow">
+      <div class="thk-slides-container">
+        <!-- Slide 1 -->
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Parahyangan" class="thk-slide">
+        <!-- Slide 2 -->
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Pawongan" class="thk-slide">
+        <!-- Slide 3 -->
+        <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Palemahan" class="thk-slide">
+      </div>
+    </div>
     
     <div class="thk-grid">
-      <!-- Left side: Full Bleed Slideshow -->
-      <div class="thk-image-col">
-        <div class="thk-slideshow">
-          <!-- Slide 1 -->
-          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Parahyangan" class="thk-slide active">
-          <!-- Slide 2 -->
-          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Pawongan" class="thk-slide">
-          <!-- Slide 3 -->
-          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1200&q=80" alt="Tri Hita Karana - Palemahan" class="thk-slide">
-        </div>
-      </div>
+      <!-- Left side spacer: shows the background slideshow on desktop -->
+      <div class="thk-spacer-col"></div>
       
-      <!-- Right side: Text Content Wrapper -->
+      <!-- Right side: Text Content White Box -->
       <div class="thk-text-col">
         <div class="thk-content-wrapper">
+          <!-- Brand Header mimicking the PLUS logo design -->
+          <div class="thk-brand-header">
+            <h4 class="thk-brand-title">Lefanna</h4>
+            <div class="thk-brand-sub">Experience</div>
+            <p class="thk-brand-tagline">Where every moment naturally unfolds.</p>
+            <div class="thk-brand-divider"></div>
+          </div>
+
           <h3 class="thk-title">Tri Hitakarana</h3>
-          <div style="width: 50px; height: 1.5px; background-color: #C5A880; margin-bottom: 25px;"></div>
           
           <div class="thk-intro">
             <p style="margin: 0 0 15px 0;">
@@ -1189,17 +1237,18 @@
       </div>
     </div>
     
-    <!-- Slideshow JS Script -->
+    <!-- Slideshow JS Script (Sliding Left) -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var currentSlide = 0;
+        var container = document.querySelector('.thk-slides-container');
         var slides = document.querySelectorAll('.thk-slide');
-        if (slides.length > 0) {
+        if (container && slides.length > 0) {
           setInterval(function() {
-            slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-          }, 4500);
+            var translateXVal = -currentSlide * (100 / slides.length);
+            container.style.transform = 'translateX(' + translateXVal + '%)';
+          }, 5000);
         }
       });
     </script>
