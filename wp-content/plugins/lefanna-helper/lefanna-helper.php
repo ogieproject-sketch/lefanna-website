@@ -210,3 +210,137 @@ function lefanna_run_utility_check() {
 }
 add_action('init', 'lefanna_run_utility_check');
 
+/**
+ * Otomatis membuat dan mengatur halaman-halaman Lefanna jika belum ada di database.
+ * Dapat dipicu oleh admin dengan menambahkan parameter ?setup_lefanna_pages=1 di URL.
+ */
+function lefanna_setup_database_pages() {
+    if (isset($_GET['setup_lefanna_pages'])) {
+        if (!current_user_can('manage_options')) {
+            wp_die('Anda harus login sebagai Administrator untuk menggunakan fitur ini.', 'Akses Ditolak', array('response' => 403));
+        }
+        
+        header('Content-Type: text/plain; charset=utf-8');
+        echo "Lefanna Helper Page Setup:\n";
+        echo "==========================\n\n";
+        
+        // 1. Buat halaman selamat datang / beranda kustom jika belum ada
+        $homepage_title = 'Selamat Datang di Lefanna Experience';
+        $homepage = get_page_by_title($homepage_title);
+        if (!$homepage) {
+            $post_id = wp_insert_post(array(
+                'post_title'    => $homepage_title,
+                'post_content'  => '<!-- wp:paragraph -->\n<p>Selamat! Lingkungan WordPress Playground Anda berhasil dikonfigurasi. Anda dapat mulai mengedit tema di <code>wp-content/themes/lefanna</code> atau plugin di <code>wp-content/plugins/lefanna-helper</code>.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:buttons -->\n<div class="wp-block-buttons"><!-- wp:button -->\n<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/wp-admin/">Masuk ke Dashboard</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->',
+                'post_status'   => 'publish',
+                'post_type'     => 'page'
+            ));
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', $post_id);
+            echo "[OK] Halaman utama dibuat: \"{$homepage_title}\" (ID: {$post_id})\n";
+        } else {
+            echo "[INFO] Halaman utama \"{$homepage_title}\" sudah ada.\n";
+        }
+
+        // 2. Buat halaman Hotels & Resorts jika belum ada
+        $hotels_page_title = 'Hotels & Resorts';
+        $hotels_page = get_page_by_title($hotels_page_title);
+        if (!$hotels_page) {
+            $post_id = wp_insert_post(array(
+                'post_title'    => $hotels_page_title,
+                'post_content'  => '<!-- wp:paragraph -->\n<p>Explore our premium collections of boutique hotels and luxury resorts.</p>\n<!-- /wp:paragraph -->',
+                'post_status'   => 'publish',
+                'post_type'     => 'page'
+            ));
+            echo "[OK] Halaman dibuat: \"{$hotels_page_title}\" (ID: {$post_id})\n";
+        } else {
+            echo "[INFO] Halaman \"{$hotels_page_title}\" sudah ada.\n";
+        }
+
+        // 3. Buat halaman Villas in Bali jika belum ada
+        $villas_page_title = 'Villas in Bali';
+        $villas_page = get_page_by_title($villas_page_title);
+        if (!$villas_page) {
+            $post_id = wp_insert_post(array(
+                'post_title'    => $villas_page_title,
+                'post_content'  => '<!-- wp:paragraph -->\n<p>Explore our premium collections of private villas in Bali.</p>\n<!-- /wp:paragraph -->',
+                'post_status'   => 'publish',
+                'post_type'     => 'page'
+            ));
+            echo "[OK] Halaman dibuat: \"{$villas_page_title}\" (ID: {$post_id})\n";
+        } else {
+            echo "[INFO] Halaman \"{$villas_page_title}\" sudah ada.\n";
+        }
+
+        // 4. Buat parent page Experiences jika belum ada
+        $exp_parent_title = 'Experiences';
+        $exp_parent = get_page_by_title($exp_parent_title);
+        if (!$exp_parent) {
+            $parent_id = wp_insert_post(array(
+                'post_title'    => $exp_parent_title,
+                'post_content'  => '<!-- wp:paragraph -->\n<p>Discover unique experiences masterfully tailored by Lefanna.</p>\n<!-- /wp:paragraph -->',
+                'post_status'   => 'publish',
+                'post_type'     => 'page'
+            ));
+            echo "[OK] Halaman Induk dibuat: \"{$exp_parent_title}\" (ID: {$parent_id})\n";
+        } else {
+            $parent_id = $exp_parent->ID;
+            echo "[INFO] Halaman Induk \"{$exp_parent_title}\" sudah ada.\n";
+        }
+
+        // 5. Buat child pages di bawah Experiences
+        $experiences_subpages = array(
+            'Journeys' => 'Explore unique journeys.',
+            'Celebrations' => 'Boutique weddings and private dinners.',
+            'Culture & Conservations' => 'Balinese dance, woodcarving, and village walks.',
+            'Active Adventure' => 'Volcano trekking and river rafting.',
+            'Wellness' => 'Daily yoga, spa treatment, and meditation.'
+        );
+
+        foreach ($experiences_subpages as $sub_title => $sub_desc) {
+            $subpage = get_page_by_title($sub_title);
+            if (!$subpage) {
+                $post_id = wp_insert_post(array(
+                    'post_title'    => $sub_title,
+                    'post_content'  => '<!-- wp:paragraph -->\n<p>' . $sub_desc . '</p>\n<!-- /wp:paragraph -->',
+                    'post_status'   => 'publish',
+                    'post_type'     => 'page',
+                    'post_parent'   => $parent_id
+                ));
+                echo "[OK] Halaman Anak dibuat: \"{$sub_title}\" (ID: {$post_id}) di bawah parent ID: {$parent_id}\n";
+            } else {
+                echo "[INFO] Halaman Anak \"{$sub_title}\" sudah ada.\n";
+            }
+        }
+
+        // 6. Buat Halaman Corporate & PLUS jika belum ada
+        $corporate_pages = array(
+            'About Us' => 'About Lefanna Experience.',
+            'Offers' => 'Explore exclusive packages.',
+            'Investor Relations' => 'Investor and partnership information.',
+            'Careers' => 'Explore hotel job vacancies.',
+            'Newsrooms' => 'Latest press releases and awards.',
+            'Contact Us' => 'Get in touch with our office.',
+            'Lefanna Leisure Unlimited Services' => 'PLUS corporate services.'
+        );
+
+        foreach ($corporate_pages as $corp_title => $corp_desc) {
+            $page = get_page_by_title($corp_title);
+            if (!$page) {
+                $post_id = wp_insert_post(array(
+                    'post_title'    => $corp_title,
+                    'post_content'  => '<!-- wp:paragraph -->\n<p>' . $corp_desc . '</p>\n<!-- /wp:paragraph -->',
+                    'post_status'   => 'publish',
+                    'post_type'     => 'page'
+                ));
+                echo "[OK] Halaman dibuat: \"{$corp_title}\" (ID: {$post_id})\n";
+            } else {
+                echo "[INFO] Halaman \"{$corp_title}\" sudah ada.\n";
+            }
+        }
+        
+        echo "\nSetup selesai dengan sukses!\n";
+        exit;
+    }
+}
+add_action('init', 'lefanna_setup_database_pages');
+
