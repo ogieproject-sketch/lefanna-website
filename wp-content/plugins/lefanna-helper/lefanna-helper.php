@@ -225,6 +225,14 @@ function lefanna_setup_database_pages() {
         echo "Lefanna Helper Page Setup:\n";
         echo "==========================\n\n";
         
+        // 0. Pastikan tema "lefanna" aktif
+        if (get_stylesheet() !== 'lefanna') {
+            switch_theme('lefanna');
+            echo "[OK] Tema diubah secara aktif ke \"lefanna\".\n";
+        } else {
+            echo "[INFO] Tema \"lefanna\" sudah aktif.\n";
+        }
+        
         // 1. Buat halaman selamat datang / beranda kustom jika belum ada
         $homepage_title = 'Selamat Datang di Lefanna Experience';
         $homepage = get_page_by_title($homepage_title);
@@ -239,7 +247,9 @@ function lefanna_setup_database_pages() {
             update_option('page_on_front', $post_id);
             echo "[OK] Halaman utama dibuat: \"{$homepage_title}\" (ID: {$post_id})\n";
         } else {
-            echo "[INFO] Halaman utama \"{$homepage_title}\" sudah ada.\n";
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', $homepage->ID);
+            echo "[INFO] Halaman utama \"{$homepage_title}\" sudah ada. Memastikan pengaturan halaman depan aktif.\n";
         }
 
         // 2. Buat halaman Hotels & Resorts jika belum ada
