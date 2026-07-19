@@ -17,26 +17,31 @@ echo "Active Theme: " . get_stylesheet() . "\n";
 echo "Active Plugins:\n";
 print_r(get_option('active_plugins'));
 
-echo "\nChecking wp-content/themes/lefanna/ directory:\n";
-$theme_dir = wp_normalize_path(get_theme_file_path());
-echo "Theme Path: $theme_dir\n";
+echo "\nChecking directories:\n";
+$document_root = $_SERVER['DOCUMENT_ROOT'];
+echo "DOCUMENT_ROOT: $document_root\n";
 
-if (is_dir($theme_dir)) {
-    $files = scandir($theme_dir);
+if (is_dir($document_root)) {
+    $files = scandir($document_root);
+    echo "Files in DOCUMENT_ROOT:\n";
     foreach ($files as $file) {
         if ($file === '.' || $file === '..') continue;
-        $path = $theme_dir . '/' . $file;
+        $path = $document_root . '/' . $file;
         echo "- $file (" . (is_dir($path) ? "DIR" : filesize($path) . " bytes") . ")\n";
-        if (is_dir($path) && $file === 'templates') {
-            $templates = scandir($path);
-            foreach ($templates as $tmpl) {
-                if ($tmpl === '.' || $tmpl === '..') continue;
-                echo "  |- $tmpl (" . filesize($path . '/' . $tmpl) . " bytes)\n";
-            }
-        }
     }
-} else {
-    echo "[ERROR] Theme directory does not exist!\n";
+    
+    // Check if there is public_html/public_html
+    $nested_public = $document_root . '/public_html';
+    if (is_dir($nested_public)) {
+        echo "\n[FOUND] Nested public_html exists! Listing its contents:\n";
+        $nested_files = scandir($nested_public);
+        foreach ($nested_files as $nfile) {
+            if ($nfile === '.' || $nfile === '..') continue;
+            echo "  |- $nfile\n";
+        }
+    } else {
+        echo "\n[INFO] No nested public_html directory found.\n";
+    }
 }
 
 echo "\nPHP Version: " . phpversion() . "\n";
