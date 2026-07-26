@@ -234,7 +234,7 @@ function lefanna_setup_database_pages() {
         }
         
         // 1. Buat halaman selamat datang / beranda kustom jika belum ada
-        $homepage_title = 'Selamat Datang di Lefanna Experience';
+        $homepage_title = 'Selamat Datang di Lefanna';
         $homepage = get_page_by_title($homepage_title);
         if (!$homepage) {
             $post_id = wp_insert_post(array(

@@ -14,8 +14,8 @@
     {
       "step": "setSiteOptions",
       "options": {
-        "blogname": "Lefanna Experience",
-        "blogdescription": "Lefanna Experience Local Development",
+        "blogname": "Lefanna",
+        "blogdescription": "Lefanna Local Development",
         "posts_per_page": 5
       }
     },
