@@ -1443,8 +1443,8 @@
         }
       ],
       mapUrl: "https://maps.google.com/maps?q=Ubud,+Bali&t=&z=13&ie=UTF8&iwloc=&output=embed",
-      mapsLink: null,
-      bookingUrl: null,
+      mapsLink: "#",
+      bookingUrl: "#",
       address: "Jl. Sri Wedari, Ubud, Kabupaten Gianyar, Bali 80571",
       phone: "+62 821 6231 889",
       email: "intouch@lefanna.com"
@@ -1584,10 +1584,26 @@
         if (bookHeroBtn) {
           bookHeroBtn.style.display = 'inline-flex';
           bookHeroBtn.href = data.bookingUrl;
+          if (data.bookingUrl === '#') {
+            bookHeroBtn.onclick = function(e) {
+              e.preventDefault();
+              alert('Link Booking.com untuk Umah Ukir akan segera hadir!');
+            };
+          } else {
+            bookHeroBtn.onclick = null;
+          }
         }
         if (bookContactWrapper && bookContactBtn) {
           bookContactWrapper.style.display = 'block';
           bookContactBtn.href = data.bookingUrl;
+          if (data.bookingUrl === '#') {
+            bookContactBtn.onclick = function(e) {
+              e.preventDefault();
+              alert('Link Booking.com untuk Umah Ukir akan segera hadir!');
+            };
+          } else {
+            bookContactBtn.onclick = null;
+          }
         }
       } else {
         if (bookHeroBtn) bookHeroBtn.style.display = 'none';
@@ -1598,6 +1614,14 @@
         if (mapsLinkHeroBtn) {
           mapsLinkHeroBtn.style.display = 'inline-flex';
           mapsLinkHeroBtn.href = data.mapsLink;
+          if (data.mapsLink === '#') {
+            mapsLinkHeroBtn.onclick = function(e) {
+              e.preventDefault();
+              alert('Lokasi Google Maps untuk Umah Ukir akan segera hadir!');
+            };
+          } else {
+            mapsLinkHeroBtn.onclick = null;
+          }
         }
       } else {
         if (mapsLinkHeroBtn) mapsLinkHeroBtn.style.display = 'none';
