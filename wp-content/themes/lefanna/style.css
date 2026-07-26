@@ -129,6 +129,35 @@ img, video, svg, iframe {
   }
 }
 
+/* Header Button Group */
+.header-btn-group {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1;
+  font-family: 'Jost', sans-serif;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .pill-btn {
+    padding: 8px 18px;
+    font-size: 0.7rem;
+  }
+}
+
 /* Mobile & Desktop Logo Display Control */
 .desktop-logo {
   display: none;
