@@ -642,6 +642,543 @@
     font-size: 0.8rem;
     color: #8E867E;
   }
+
+  /* Corporate Page Banner */
+  @keyframes corporateSlideshow {
+    0%, 20% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
+    }
+    25%, 45% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80');
+    }
+    50%, 70% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1600&q=80');
+    }
+    75%, 95% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
+    }
+    100% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
+    }
+  }
+
+  .corporate-banner {
+    position: relative;
+    padding: 160px 40px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #EAE3D2;
+    margin-bottom: 80px;
+    animation: corporateSlideshow 24s infinite ease-in-out;
+  }
+  .banner-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #C5A880;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  .banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.2rem;
+    font-weight: 300;
+    color: #FFFFFF;
+    letter-spacing: 0.08em;
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Luxury Grid Sections */
+  .luxury-section {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media(min-width: 992px) {
+    .luxury-section {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+    .luxury-section.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+  }
+
+  .luxury-text-block {
+    font-family: 'Jost', sans-serif;
+    color: #5C5650;
+    line-height: 1.8;
+  }
+  .luxury-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #C5A880;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .luxury-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: #2C2621;
+    line-height: 1.25;
+    margin: 0 0 25px 0;
+    font-weight: 400;
+  }
+  .luxury-divider {
+    width: 60px;
+    height: 1px;
+    background-color: #C5A880;
+    margin-bottom: 30px;
+  }
+  .luxury-paragraph {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+  }
+
+  /* Overlapping Image Collage */
+  .collage-wrapper {
+    position: relative;
+    width: 100%;
+    height: 480px;
+  }
+  .collage-img-main {
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.6s ease;
+  }
+  .collage-img-sub {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 55%;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 8px solid #FAF8F5;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    transition: transform 0.6s ease;
+  }
+  .collage-wrapper:hover .collage-img-main {
+    transform: translateY(-8px);
+  }
+  .collage-wrapper:hover .collage-img-sub {
+    transform: translate(8px, -4px);
+  }
+
+  /* Grid of Partner Reasons */
+  .partners-section {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
+  }
+  .partners-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .partners-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: #2C2621;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  .partner-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    padding: 40px 30px;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #C5A880;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+  .partner-card:hover {
+    border-color: #C5A880;
+    box-shadow: 0 15px 35px rgba(138, 115, 85, 0.08);
+    transform: translateY(-5px);
+  }
+  .partner-card:hover::before {
+    transform: scaleX(1);
+  }
+  .partner-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #C5A880;
+    font-weight: 300;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.8;
+  }
+  .partner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #2C2621;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  .partner-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    color: #645D55;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* What We Do Section - Dark Gold Theme */
+  .whatwedo-section {
+    background-color: #2C2621;
+    color: #FAF8F5;
+    padding: 100px 40px;
+    border-top: 1px solid #3E3630;
+    border-bottom: 1px solid #3E3630;
+    margin-bottom: 100px;
+  }
+  .whatwedo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .whatwedo-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .whatwedo-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #C5A880;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .whatwedo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #FFFFFF;
+    font-weight: 300;
+    margin: 0;
+  }
+  .whatwedo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+  .whatwedo-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(197, 168, 128, 0.15);
+    padding: 40px 30px;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+  }
+  .whatwedo-card:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: #C5A880;
+    transform: translateY(-5px);
+  }
+  .whatwedo-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #C5A880;
+    font-weight: 300;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .whatwedo-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    font-weight: 400;
+  }
+  .whatwedo-card-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    color: #B5AEA4;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Team Section Styling */
+  .team-section {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
+  }
+  .team-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .team-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #2C2621;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .team-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.05rem;
+    color: #645D55;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  .team-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    border-radius: 6px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+  }
+  .team-card:hover {
+    border-color: #C5A880;
+    box-shadow: 0 15px 35px rgba(138, 115, 85, 0.08);
+    transform: translateY(-5px);
+  }
+
+  /* Circular Avatar Sprite */
+  .team-avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #FAF8F5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: border-color 0.4s ease;
+  }
+  .team-card:hover .team-avatar-wrapper {
+    border-color: #C5A880;
+  }
+  .team-avatar {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    transition: transform 0.6s ease;
+  }
+  .team-card:hover .team-avatar {
+    transform: scale(1.08);
+  }
+
+  /* Specific background sprites for group 1 (6 people, 573x534) */
+  .team-sprite-group-1 {
+    background-image: url('/wp-content/themes/lefanna/images/team-grid-1.png');
+    background-size: 300% 200%;
+  }
+  .team-member-windu {
+    background-position: 0% 0%;
+  }
+  .team-member-pande {
+    background-position: 50% 0%;
+  }
+  .team-member-oka {
+    background-position: 100% 0%;
+  }
+  .team-member-alit {
+    background-position: 0% 100%;
+  }
+  .team-member-agus {
+    background-position: 50% 100%;
+  }
+  .team-member-yoga {
+    background-position: 100% 100%;
+  }
+
+  /* Specific background sprites for group 2 (4 people, 573x556) */
+  .team-sprite-group-2 {
+    background-image: url('/wp-content/themes/lefanna/images/team-grid-2.png');
+    background-size: 200% 200%;
+  }
+  .team-member-yudi {
+    background-position: 0% 0%;
+  }
+  .team-member-trisna {
+    background-position: 100% 0%;
+  }
+  .team-member-fitri {
+    background-position: 0% 100%;
+  }
+  .team-member-arisma {
+    background-position: 100% 100%;
+  }
+
+  .team-info {
+    flex-grow: 1;
+  }
+  .team-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    color: #2C2621;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+  }
+  .team-role {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8E867E;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+  }
+  .team-contact {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    color: #C5A880;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  .team-contact:hover {
+    color: #2C2621;
+  }
+
+  /* Call-To-Action Partnership Banner */
+  .partner-cta-section {
+    background-color: #FAF8F5;
+    border-top: 1px solid #EAE3D2;
+    padding: 100px 40px;
+    text-align: center;
+  }
+  .partner-cta-block {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    padding: 60px 40px;
+    border-radius: 6px;
+    box-shadow: 0 15px 45px rgba(138, 115, 85, 0.04);
+  }
+  .partner-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #2C2621;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 400;
+  }
+  .partner-cta-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    color: #645D55;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  .partner-cta-btn {
+    display: inline-block;
+    background-color: #C5A880;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    padding: 15px 40px;
+    font-weight: 600;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(197, 168, 128, 0.25);
+    transition: all 0.3s ease;
+  }
+  .partner-cta-btn:hover {
+    background-color: #2C2621;
+    color: #C5A880;
+    box-shadow: 0 8px 25px rgba(44, 38, 33, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive media queries */
+  @media(max-width: 991px) {
+    .collage-wrapper {
+      height: 380px;
+      margin-top: 20px;
+    }
+    .luxury-heading {
+      font-size: 2.2rem;
+    }
+    .luxury-section {
+      gap: 40px;
+      margin-bottom: 70px;
+      padding: 0 20px;
+    }
+    .partners-section {
+      padding: 0 20px;
+      margin-bottom: 70px;
+    }
+    .partners-title {
+      font-size: 2.2rem;
+    }
+    .whatwedo-section {
+      padding: 70px 20px;
+      margin-bottom: 70px;
+    }
+    .whatwedo-title {
+      font-size: 2.2rem;
+    }
+    .team-section {
+      padding: 0 20px;
+      margin-bottom: 70px;
+    }
+    .team-title {
+      font-size: 2.2rem;
+    }
+    .partner-cta-section {
+      padding: 70px 20px;
+    }
+    .partner-cta-block {
+      padding: 40px 20px;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .lefanna-header {
+      padding: 15px 20px;
+    }
+    .header-btn-group {
+      display: none;
+    }
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: #8E867E;
+  }
 </style>
 <!-- /wp:html -->
 
@@ -694,9 +1231,13 @@
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
         <li><a href="/careers/" class="drawer-submenu-link">Careers</a></li>
-        <li><a href="/newsrooms/" class="drawer-submenu-link">Newsroom</a></li>
         <li><a href="/contact-us/" class="drawer-submenu-link">Contact Us</a></li>
       </ul>
+    </li>
+    
+    <!-- 6.5. Newsroom -->
+    <li class="drawer-menu-item">
+      <a href="/newsrooms/" class="drawer-menu-link">Newsroom</a>
     </li>
     <li class="drawer-menu-item">
       <a href="/lefanna-leisure-unlimited-services/" class="drawer-menu-link">Plus</a>
@@ -769,10 +1310,10 @@
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
             <li><a href="/careers/">Careers</a></li>
-            <li><a href="/newsrooms/">Newsroom</a></li>
             <li><a href="/contact-us/">Contact Us</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a href="/newsrooms/" class="nav-link">Newsroom</a></li>
         <li class="nav-item"><a href="/lefanna-leisure-unlimited-services/" class="nav-link">Plus</a></li>
       </ul>
     </nav>
@@ -780,7 +1321,6 @@
 
   <div class="header-right">
     <div class="header-btn-group">
-      <a href="/wp-admin/" class="pill-btn pill-btn-reserve">Reserve</a>
       <a href="/wp-admin/" class="pill-btn pill-btn-member">Member</a>
     </div>
   </div>
@@ -791,37 +1331,209 @@
   <!-- Hero Banner -->
   <section class="corporate-banner">
     <span class="banner-subtitle">Partnerships & Growth</span>
-    <h2 class="banner-title">Investor Relations</h2>
+    <h1 class="banner-title">Investor Relations</h1>
   </section>
 
-  <!-- Corporate Content -->
-  <article class="corporate-content">
-    <p class="corporate-paragraph">Lefanna Experience offers strategic solutions for owners seeking high returns on boutique hotel and villa assets in Indonesia. Through customized management systems and localized Balinese styling, we optimize revenue performance while safeguarding luxury assets.</p>
+  <!-- Section 1: Intro / Why Partner split -->
+  <section class="luxury-section">
+    <div class="luxury-text-block">
+      <span class="luxury-tag">Owner Partnership</span>
+      <h2 class="luxury-heading">Villa & Hotel Asset Optimization in Indonesia</h2>
+      <div class="luxury-divider"></div>
+      <p class="luxury-paragraph">Lefanna Experience offers strategic solutions for owners seeking high returns on boutique hotel and villa assets in Indonesia. Through customized management systems and localized Balinese styling, we optimize revenue performance while safeguarding luxury assets.</p>
+      <p class="luxury-paragraph">By choosing LEFANNA as your partner, you gain access to a dedicated team, sophisticated distribution channels, and a philosophy committed to authentic and meaningful Balinese hospitality.</p>
+    </div>
+    <div class="collage-wrapper">
+      <img src="/wp-content/themes/lefanna/images/jungle-sari-1.jpg" alt="Lefanna Resort View" class="collage-img-main">
+      <img src="/wp-content/themes/lefanna/images/jungle-sari-2.jpg" alt="Lefanna Resort interior" class="collage-img-sub">
+    </div>
+  </section>
 
-    <h3 class="corporate-section-title">Our Business Models</h3>
-    <div class="values-grid">
-      <div class="value-card">
-        <h4 class="value-title">Management Contract</h4>
-        <p class="value-desc">Full operational and marketing control under the Lefanna Experience brand, maximizing occupancy and guest service ratings.</p>
+  <!-- Section 2: Why Partner with LEFANNA grid -->
+  <section class="partners-section">
+    <div class="partners-header">
+      <h2 class="partners-title">Why Partner with LEFANNA?</h2>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <span class="partner-number">01</span>
+        <h3 class="partner-title">Thoughtfully Curated Properties</h3>
+        <p class="partner-desc">LEFANNA focuses on managing properties that reflect character, intention, and timeless hospitality. Every destination is carefully selected and managed with a personalized approach to ensure quality, consistency, and meaningful guest experiences.</p>
       </div>
-      <div class="value-card">
-        <h4 class="value-title">Joint Venture</h4>
-        <p class="value-desc">Equity partnership for the development of new boutique resorts and private villa properties in high-demand tourist zones.</p>
+      <div class="partner-card">
+        <span class="partner-number">02</span>
+        <h3 class="partner-title">Elevated Hospitality Standards</h3>
+        <p class="partner-desc">From daily operations to guest experiences, LEFANNA emphasizes attentive service, refined operational flow, and detail-oriented hospitality. Our team is committed to creating seamless experiences that feel effortless, warm, and genuinely memorable.</p>
       </div>
-      <div class="value-card">
-        <h4 class="value-title">Consultancy Services</h4>
-        <p class="value-desc">Pre-opening systems, architectural design consult, staff training, and pre-sales services for independent hotel owners.</p>
+      <div class="partner-card">
+        <span class="partner-number">03</span>
+        <h3 class="partner-title">Sustainable Property Value</h3>
+        <p class="partner-desc">LEFANNA believes exceptional property management goes beyond maintaining operations. Through consistent care, strategic oversight, and long-term vision, we ensure every property continues to grow in value while preserving its unique identity and atmosphere.</p>
+      </div>
+      <div class="partner-card">
+        <span class="partner-number">04</span>
+        <h3 class="partner-title">Intentional Guest Experiences</h3>
+        <p class="partner-desc">LEFANNA believes memorable hospitality is created through thoughtful moments and genuine emotional connection. Every experience is designed with intention, allowing guests to feel comfort, tranquility, and a deeper sense of belonging throughout their stay.</p>
       </div>
     </div>
+  </section>
 
-    <div style="border: 1px solid #EAE3D2; padding: 40px; margin-top: 50px; text-align: center; background-color: #FCFBF9;">
-      <h4 style="font-family:'Cormorant Garamond', serif; font-size: 1.6rem; color: #2C2621; margin-bottom: 15px; font-weight: 500;">Interested in Partnering With Us?</h4>
-      <p style="font-size: 0.95rem; margin-bottom: 25px;">Contact our development team to request our corporate credentials and financial case studies.</p>
-      <a href="mailto:info@lefannaexperience.com" style="display: inline-block; background-color: #C5A880; color: #FFFFFF; font-family:'Jost', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; padding: 14px 35px; font-weight: 500; transition: background-color 0.3s ease;">Contact Development</a>
+  <!-- Section 3: What We Do (Dark Theme grid) -->
+  <section class="whatwedo-section">
+    <div class="whatwedo-container">
+      <div class="whatwedo-header">
+        <span class="whatwedo-tag">Services & Capabilities</span>
+        <h2 class="whatwedo-title">What We Do?</h2>
+      </div>
+      <div class="whatwedo-grid">
+        <div class="whatwedo-card">
+          <span class="whatwedo-card-num">01</span>
+          <h3 class="whatwedo-card-title">Sales & Marketing Strategy</h3>
+          <p class="whatwedo-card-desc">LEFANNA develops tailored sales and marketing strategies to strengthen property visibility, attract the right audience, and enhance brand presence across relevant platforms. Through thoughtful positioning and strategic promotion, we ensure each property reaches its full market potential while maintaining its unique identity.</p>
+        </div>
+        <div class="whatwedo-card">
+          <span class="whatwedo-card-num">02</span>
+          <h3 class="whatwedo-card-title">Revenue & Performance Optimization</h3>
+          <p class="whatwedo-card-desc">Through strategic pricing, market analysis, and performance-driven planning, LEFANNA focuses on maximizing property potential while maintaining sustainable long-term growth and value.</p>
+        </div>
+        <div class="whatwedo-card">
+          <span class="whatwedo-card-num">03</span>
+          <h3 class="whatwedo-card-title">Financial Reporting & Transparency</h3>
+          <p class="whatwedo-card-desc">LEFANNA prioritizes clear and transparent financial reporting to ensure property owners remain informed about operational and revenue performance. Through structured reporting and consistent communication, we provide valuable insights that support sustainable growth and informed decision-making.</p>
+        </div>
+      </div>
     </div>
-  </article>
+  </section>
+
+  <!-- Section 4: Our Team Grid -->
+  <section class="team-section">
+    <div class="team-header">
+      <h2 class="team-title">Our Team</h2>
+      <p class="team-subtitle">Behind every LEFANNA destination is a dedicated team driven by thoughtful hospitality, seamless operations, and meaningful guest experiences. With a hands-on and detail-oriented approach, we manage each property with care, intention, and a commitment to creating experiences that are deeply felt and genuinely remembered.</p>
+    </div>
+    <div class="team-grid">
+      <!-- Member 1 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-1 team-member-windu"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Windu Suputra</h3>
+          <p class="team-role">Founder & Business Advisor</p>
+          <a href="tel:+6281238743090" class="team-contact">+62 812 3874 3090</a>
+        </div>
+      </div>
+      <!-- Member 2 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-1 team-member-pande"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Pande Kariawan</h3>
+          <p class="team-role">Room Division</p>
+          <a href="tel:+6281805381646" class="team-contact">+62 818 0538 1646</a>
+        </div>
+      </div>
+      <!-- Member 3 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-1 team-member-oka"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Oka Sundari</h3>
+          <p class="team-role">Quality Assurance</p>
+          <a href="tel:+628170666636" class="team-contact">+62 817 0666 636</a>
+        </div>
+      </div>
+      <!-- Member 4 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-1 team-member-alit"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Alit Kumarajaya</h3>
+          <p class="team-role">Project & Development</p>
+          <a href="tel:+6287848963933" class="team-contact">+62 878 4896 3933</a>
+        </div>
+      </div>
+      <!-- Member 5 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-1 team-member-agus"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Agus Ambarden</h3>
+          <p class="team-role">Food & Beverages</p>
+          <a href="tel:+62881037668294" class="team-contact">+62 881 0376 68294</a>
+        </div>
+      </div>
+      <!-- Member 6 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-1 team-member-yoga"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Yoga Asmara</h3>
+          <p class="team-role">HR & Legal</p>
+          <a href="tel:+6282236505965" class="team-contact">+62 822 3650 5965</a>
+        </div>
+      </div>
+      <!-- Member 7 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-2 team-member-yudi"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Yudi Widiartana</h3>
+          <p class="team-role">Creative Designer</p>
+          <a href="tel:+6285337922007" class="team-contact">+62 853 3792 2007</a>
+        </div>
+      </div>
+      <!-- Member 8 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-2 team-member-trisna"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Trisna Dewi</h3>
+          <p class="team-role">E-Commerce</p>
+          <a href="tel:+6285829150311" class="team-contact">+62 858 2915 0311</a>
+        </div>
+      </div>
+      <!-- Member 9 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-2 team-member-fitri"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Fitri Pradiska</h3>
+          <p class="team-role">Finance</p>
+          <a href="tel:+628174764025" class="team-contact">+62 817 4764 025</a>
+        </div>
+      </div>
+      <!-- Member 10 -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">
+          <div class="team-avatar team-sprite-group-2 team-member-arisma"></div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Arisma Darmayani</h3>
+          <p class="team-role">Marketing Communication</p>
+          <a href="tel:+6281236420584" class="team-contact">+62 812 3642 0584</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Call to Action Partnership -->
+  <section class="partner-cta-section">
+    <div class="partner-cta-block">
+      <h3 class="partner-cta-title">Interested in Partnering With Us?</h3>
+      <p class="partner-cta-desc">Contact our development team to request our corporate credentials, detailed property management plans, and financial case studies.</p>
+      <a href="mailto:info@lefannaexperience.com" class="partner-cta-btn">Contact Development</a>
+    </div>
+  </section>
 </main>
-
 <!-- Footer -->
 <footer class="footer-container">
   <div class="footer-grid">

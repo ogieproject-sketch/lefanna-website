@@ -652,6 +652,91 @@
     font-size: 0.8rem;
     color: #8E867E;
   }
+
+  /* Newsroom 3-Column Grid Styles */
+  .newsroom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px 40px;
+  }
+  .newsroom-grid-3col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px 30px;
+    margin-top: 40px;
+  }
+  @media(min-width: 768px) {
+    .newsroom-grid-3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .newsroom-card-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .newsroom-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .newsroom-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .newsroom-card-item:hover .newsroom-img-wrapper img {
+    transform: scale(1.03);
+  }
+  .newsroom-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: #2C2621;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .newsroom-card-title:hover {
+    color: #C5A880;
+  }
+  .newsroom-tag {
+    display: inline-block;
+    background-color: #3C3530;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+  .newsroom-date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    color: #9E978E;
+    margin-bottom: 12px;
+  }
+  .newsroom-date-icon {
+    width: 12px;
+    height: 12px;
+    fill: #9E978E;
+  }
+  .newsroom-excerpt-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #645D55;
+    margin: 0;
+  }
 </style>
 <!-- /wp:html -->
 
@@ -678,11 +763,7 @@
       <a href="/" class="drawer-menu-link">Home</a>
     </li>
     <li class="drawer-menu-item">
-      <a href="#" class="drawer-menu-link drawer-parent-link">Find & Reserve <span class="arrow-indicator">▾</span></a>
-      <ul class="drawer-submenu">
-        <li><a href="/hotels-resorts/" class="drawer-submenu-link">Find A Hotels & Resorts</a></li>
-        <li><a href="/villas-in-bali/" class="drawer-submenu-link">GenuineHost</a></li>
-      </ul>
+      <a href="/hotels-resorts/" class="drawer-menu-link">Find & Reserve</a>
     </li>
     <li class="drawer-menu-item">
       <a href="/offers/" class="drawer-menu-link">Offers</a>
@@ -704,9 +785,13 @@
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
         <li><a href="/careers/" class="drawer-submenu-link">Careers</a></li>
-        <li><a href="/newsrooms/" class="drawer-submenu-link">Newsroom</a></li>
         <li><a href="/contact-us/" class="drawer-submenu-link">Contact Us</a></li>
       </ul>
+    </li>
+    
+    <!-- 6.5. Newsroom -->
+    <li class="drawer-menu-item">
+      <a href="/newsrooms/" class="drawer-menu-link">Newsroom</a>
     </li>
     <li class="drawer-menu-item">
       <a href="/lefanna-leisure-unlimited-services/" class="drawer-menu-link">Plus</a>
@@ -755,13 +840,7 @@
     <nav class="top-nav-menu">
       <ul class="nav-list">
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Find & Reserve <span class="nav-arrow">▾</span></a>
-          <ul class="nav-dropdown">
-            <li><a href="/hotels-resorts/">Find A Hotels & Resorts</a></li>
-            <li><a href="/villas-in-bali/">GenuineHost</a></li>
-          </ul>
-        </li>
+        <li class="nav-item"><a href="/hotels-resorts/" class="nav-link">Find & Reserve</a></li>
         <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
         <li class="nav-item has-dropdown">
           <a href="#" class="nav-link">Experiences <span class="nav-arrow">▾</span></a>
@@ -779,10 +858,10 @@
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
             <li><a href="/careers/">Careers</a></li>
-            <li><a href="/newsrooms/">Newsroom</a></li>
             <li><a href="/contact-us/">Contact Us</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a href="/newsrooms/" class="nav-link">Newsroom</a></li>
         <li class="nav-item"><a href="/lefanna-leisure-unlimited-services/" class="nav-link">Plus</a></li>
       </ul>
     </nav>
@@ -790,7 +869,6 @@
 
   <div class="header-right">
     <div class="header-btn-group">
-      <a href="/wp-admin/" class="pill-btn pill-btn-reserve">Reserve</a>
       <a href="/wp-admin/" class="pill-btn pill-btn-member">Member</a>
     </div>
   </div>
@@ -798,37 +876,82 @@
 
 <!-- Main Page Content -->
 <main>
-  <!-- Hero Banner -->
-  <section class="corporate-banner">
-    <span class="banner-subtitle">Latest Press & Awards</span>
-    <h2 class="banner-title">Newsrooms</h2>
+  <!-- Centered Newsroom Header -->
+  <section class="newsroom-header" style="text-align: center; padding: 60px 0 20px 0; font-family: 'Jost', sans-serif;">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 12px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="32" height="26" style="fill:none; stroke:#C5A880; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;">
+        <path d="M50,15 C45,35 45,55 50,70 C55,55 55,35 50,15 Z" />
+        <path d="M50,30 C30,45 35,60 50,70 C42,55 42,40 50,30 Z" />
+        <path d="M50,30 C70,45 65,60 50,70 C58,55 58,40 50,30 Z" />
+        <path d="M50,45 C15,55 25,72 50,70 C30,65 35,55 50,45 Z" />
+        <path d="M50,45 C85,55 75,72 50,70 C70,65 65,55 50,45 Z" />
+      </svg>
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: #8A7355; line-height: 1; margin-top: 6px;">Lefanna Experience</div>
+    </div>
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: #2C2621; margin: 0; letter-spacing: 0.05em;">Newsroom</h1>
   </section>
 
   <!-- Corporate Content -->
-  <article class="corporate-content">
-    <div class="news-grid">
-      <!-- News 1 -->
-      <div class="news-card">
-        <span class="news-date">October 12, 2025</span>
-        <h3 class="news-title">Lefanna Experience Launches New Eco-Luxury Resort in Kintamani</h3>
-        <p class="news-excerpt">Lefanna Zahill Kintamani opens its doors, offering guests an unforgettable mountain valley stay with direct views of Mount Batur's volcanic crater and sunrise trekking routes.</p>
-        <a href="/wp-admin/" class="read-more-link">Read Press Release</a>
+  <article class="newsroom-container">
+    <div class="newsroom-grid-3col">
+      <!-- Article 1: Unlock Hidden Blessings -->
+      <div class="newsroom-card-item">
+        <a href="/newsrooms/unlock-hidden-blessings-goa-giri-putri-temple-nusa-penida/" class="newsroom-img-wrapper">
+          <img src="/wp-content/themes/lefanna/images/unlock-hidden-blessings.jpg" alt="Unlock Hidden Blessings at Goa Giri Putri Temple Nusa Penida">
+        </a>
+        <a href="/newsrooms/unlock-hidden-blessings-goa-giri-putri-temple-nusa-penida/" class="newsroom-card-title">
+          Unlock Hidden Blessings at Goa Giri Putri Temple Nusa Penida
+        </a>
+        <span class="newsroom-tag">Wellness</span>
+        <div class="newsroom-date-wrapper">
+          <svg class="newsroom-date-icon" viewBox="0 0 24 24">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
+          </svg>
+          July 7, 2026
+        </div>
+        <p class="newsroom-excerpt-text">
+          Nusa Penida, Bali. Discover the sacred beauty of Goa Giri Putri Temple Nusa Penida. Join Seven Dreams - A Pramana Experience and uncover hidden blessings through Bali’s spiritual traditions and culture.
+        </p>
       </div>
 
-      <!-- News 2 -->
-      <div class="news-card">
-        <span class="news-date">August 24, 2025</span>
-        <h3 class="news-title">Lefanna Watu Kurung Honored in Condé Nast Traveler Awards</h3>
-        <p class="news-excerpt">We are proud to announce that Lefanna Watu Kurung has been named one of the top luxury resorts in Southeast Asia, celebrating our commitment to Balinese architecture preservation.</p>
-        <a href="/wp-admin/" class="read-more-link">Read Press Release</a>
+      <!-- Article 2: Endless Summer Escape -->
+      <div class="newsroom-card-item">
+        <a href="/newsrooms/endless-summer-escape/" class="newsroom-img-wrapper">
+          <img src="/wp-content/themes/lefanna/images/endless-summer-escape.jpg" alt="Endless Summer Escape">
+        </a>
+        <a href="/newsrooms/endless-summer-escape/" class="newsroom-card-title">
+          Endless Summer Escape
+        </a>
+        <span class="newsroom-tag">Events</span>
+        <div class="newsroom-date-wrapper">
+          <svg class="newsroom-date-icon" viewBox="0 0 24 24">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
+          </svg>
+          July 1, 2026
+        </div>
+        <p class="newsroom-excerpt-text">
+          For a limited time, enjoy an additional 10% OFF on accommodation across selected Pramana Experience collections and discover inspiring destinations where genuine hospitality meets extraordinary experiences.
+        </p>
       </div>
 
-      <!-- News 3 -->
-      <div class="news-card">
-        <span class="news-date">June 15, 2025</span>
-        <h3 class="news-title">Protecting Bali's Waterways: Our Rivers Protection Initiative</h3>
-        <p class="news-excerpt">In collaboration with local village councils in Singakerta and Melinggih, Lefanna launches its annual river conservation program to safeguard natural spring streams in Ubud.</p>
-        <a href="/wp-admin/" class="read-more-link">Read Press Release</a>
+      <!-- Article 3: Maggot Movement -->
+      <div class="newsroom-card-item">
+        <a href="/newsrooms/maggot-movement/" class="newsroom-img-wrapper">
+          <img src="/wp-content/themes/lefanna/images/maggot-movement.jpg" alt="Maggot Movement">
+        </a>
+        <a href="/newsrooms/maggot-movement/" class="newsroom-card-title">
+          Maggot Movement
+        </a>
+        <span class="newsroom-tag">Sustainability</span>
+        <div class="newsroom-date-wrapper">
+          <svg class="newsroom-date-icon" viewBox="0 0 24 24">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
+          </svg>
+          May 28, 2026
+        </div>
+        <p class="newsroom-excerpt-text">
+          One of these initiatives is the Maggot Movement, implemented at Sumitra Luxury Villas & Resort as part of the property’s sustainability journey and operational waste management efforts.
+        </p>
       </div>
     </div>
   </article>
@@ -852,7 +975,6 @@
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
         <li><a href="/hotels-resorts/">Hotels & Resorts</a></li>
-        <li><a href="/villas-in-bali/">Villas in Bali</a></li>
         <li><a href="/offers/">Offers</a></li>
       </ul>
     </div>
@@ -873,8 +995,8 @@
     <div class="footer-col">
       <h5 class="footer-heading">Get in Touch</h5>
       <p class="footer-contact-item">
-        Jl. Padang Getas, Singakerta, Ubud, Bali – Indonesia<br>
-        Phone: <a href="tel:+62361975950">+62 361 975 950</a><br>
+        Jalan Raya Denpasar-Gilimanuk, Kediri, Tabanan-Bali, Indonesia<br>
+        Phone: <a href="tel:+628216231889">+62 821 6231 889</a><br>
         Email: <a href="mailto:info@lefannaexperience.com">info@lefannaexperience.com</a>
       </p>
       <div>

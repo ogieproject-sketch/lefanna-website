@@ -510,6 +510,258 @@
       padding: 50px 20px 30px 20px !important;
     }
   }
+
+  /* Detail View Styles */
+  .detail-nav-bar {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+  }
+  .detail-back-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #8A7355;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .detail-back-link:hover {
+    color: #2C2621;
+  }
+  .detail-hero-section {
+    max-width: 800px;
+    margin: 40px auto 60px auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .detail-subtitle-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #8A7355;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+  }
+  .detail-main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #2C2621;
+    margin-bottom: 25px;
+    line-height: 1.1;
+  }
+  .detail-lead-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #645D55;
+    font-weight: 400;
+  }
+  .detail-gallery-section {
+    width: 100%;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .gallery-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  .gallery-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+  }
+  .gallery-container::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gallery-img-item {
+    flex: 0 0 450px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.5s ease;
+  }
+  @media (max-width: 768px) {
+    .gallery-img-item {
+      flex: 0 0 85vw;
+      height: 240px;
+    }
+  }
+  .gallery-img-item:hover {
+    transform: scale(1.02);
+  }
+  .gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    color: #2C2621;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  .gallery-nav-btn:hover {
+    background: #2C2621;
+    color: #FFFFFF;
+    border-color: #2C2621;
+  }
+  .gallery-nav-btn.prev {
+    left: 20px;
+  }
+  .gallery-nav-btn.next {
+    right: 20px;
+  }
+  .detail-rooms-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+  }
+  .detail-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 0.05em;
+    color: #2C2621;
+  }
+  .detail-rooms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  @media (min-width: 768px) {
+    .detail-rooms-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .detail-room-card {
+    background: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    padding: 0 0 35px 0;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  .detail-room-card:hover {
+    border-color: #C5A880;
+    box-shadow: 0 15px 35px rgba(138, 115, 85, 0.05);
+  }
+  .detail-room-img-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+  .detail-room-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .detail-room-card:hover .detail-room-img {
+    transform: scale(1.05);
+  }
+  .detail-room-info {
+    padding: 0 30px;
+  }
+  .detail-room-category {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8A7355;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 600;
+  }
+  .detail-room-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin: 5px 0 15px 0;
+    color: #2C2621;
+    font-weight: 400;
+  }
+  .detail-room-desc {
+    font-size: 0.9rem;
+    color: #645D55;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  .detail-info-section {
+    background: #FAF8F5;
+    border-top: 1px solid #EAE3D2;
+    padding: 80px 0;
+  }
+  .detail-info-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 0 20px;
+  }
+  @media (min-width: 992px) {
+    .detail-info-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+  .detail-info-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #2C2621;
+    margin-bottom: 30px;
+  }
+  .contact-item {
+    margin-bottom: 25px;
+  }
+  .contact-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #8A7355;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .contact-item p, .contact-item a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    color: #2C2621;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+  .contact-item a:hover {
+    color: #C5A880;
+  }
+
   /* Premium Footer Styles */
   .footer-container {
     background-color: #1A1613;
@@ -715,9 +967,13 @@
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
         <li><a href="/careers/" class="drawer-submenu-link">Careers</a></li>
-        <li><a href="/newsrooms/" class="drawer-submenu-link">Newsroom</a></li>
         <li><a href="/contact-us/" class="drawer-submenu-link">Contact Us</a></li>
       </ul>
+    </li>
+    
+    <!-- 6.5. Newsroom -->
+    <li class="drawer-menu-item">
+      <a href="/newsrooms/" class="drawer-menu-link">Newsroom</a>
     </li>
     <li class="drawer-menu-item">
       <a href="/lefanna-leisure-unlimited-services/" class="drawer-menu-link">Plus</a>
@@ -790,10 +1046,10 @@
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
             <li><a href="/careers/">Careers</a></li>
-            <li><a href="/newsrooms/">Newsroom</a></li>
             <li><a href="/contact-us/">Contact Us</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a href="/newsrooms/" class="nav-link">Newsroom</a></li>
         <li class="nav-item"><a href="/lefanna-leisure-unlimited-services/" class="nav-link">Plus</a></li>
       </ul>
     </nav>
@@ -801,7 +1057,6 @@
 
   <div class="header-right">
     <div class="header-btn-group">
-      <a href="/wp-admin/" class="pill-btn pill-btn-reserve">Reserve</a>
       <a href="/wp-admin/" class="pill-btn pill-btn-member">Member</a>
     </div>
   </div>
@@ -809,117 +1064,144 @@
 
 <!-- Main Page Content -->
 <main>
-  <!-- Hero Banner -->
-  <section class="hotels-banner">
-    <span class="banner-subtitle">Lefanna Experience Collections</span>
-    <h2 class="banner-title">Hotels & Resorts</h2>
-  </section>
+  <div id="hotels-grid-container">
+    <!-- Hero Banner -->
+    <section class="hotels-banner">
+      <span class="banner-subtitle">Lefanna Experience Collections</span>
+      <h2 class="banner-title">Hotels & Resorts</h2>
+    </section>
 
-  <!-- Hotels Grid -->
-  <div class="hotels-grid">
-    <!-- Hotel 1 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Lefanna Watu Kurung">
+    <!-- Hotels Grid -->
+    <div class="hotels-grid">
+      <!-- Hotel 1: Amalla Lodge Penida -->
+      <div class="hotel-card">
+        <div class="hotel-img-wrapper">
+          <img class="hotel-img" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Amalla Lodge Penida">
+        </div>
+        <div class="hotel-info">
+          <span class="hotel-location">HOTEL – NUSA PENIDA – BALI</span>
+          <h3 class="hotel-name">Amalla Lodge Penida</h3>
+          <p class="hotel-desc">A stunning cliffside sanctuary on the exotic island of Nusa Penida. Experience breathtaking ocean sunsets and serene luxury.</p>
+          <a href="#details-amalla" class="hotel-btn">View details</a>
+        </div>
       </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Kedewatan, Ubud – Bali</span>
-        <h3 class="hotel-name">Lefanna Watu Kurung</h3>
-        <p class="hotel-desc">Sheltered within a Balinese village that is poised above the Ayung River valley in Kedewatan Ubud, offering a royal estate ambiance.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
+
+      <!-- Hotel 2: Kojong House -->
+      <div class="hotel-card">
+        <div class="hotel-img-wrapper">
+          <img class="hotel-img" src="/wp-content/themes/lefanna/images/kojong-house-1.jpg" alt="Kojong House">
+        </div>
+        <div class="hotel-info">
+          <span class="hotel-location">HOTEL – UBUD – BALI</span>
+          <h3 class="hotel-name">Kojong House</h3>
+          <p class="hotel-desc">An architectural masterpiece nestled in the lush jungles of Ubud, blending traditional craftsmanship with contemporary eco-luxury.</p>
+          <a href="#details-kojong" class="hotel-btn">View details</a>
+        </div>
+      </div>
+
+      <!-- Hotel 3: The Jungle Sari -->
+      <div class="hotel-card">
+        <div class="hotel-img-wrapper">
+          <img class="hotel-img" src="/wp-content/themes/lefanna/images/jungle-sari-4.jpg" alt="The Jungle Sari">
+        </div>
+        <div class="hotel-info">
+          <span class="hotel-location">RESORT – TEGALLALANG, UBUD – BALI</span>
+          <h3 class="hotel-name">The Jungle Sari</h3>
+          <p class="hotel-desc">Perched above the majestic Tegallalang rice terraces, offering an immersive jungle retreat and unparalleled Balinese hospitality.</p>
+          <a href="#details-jungle" class="hotel-btn">View details</a>
+        </div>
+      </div>
+
+      <!-- Hotel 4: Grita Apsari Lodge -->
+      <div class="hotel-card">
+        <div class="hotel-img-wrapper">
+          <img class="hotel-img" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" alt="Grita Apsari Lodge">
+        </div>
+        <div class="hotel-info">
+          <span class="hotel-location">HOTEL – MELINGGIH, PAYANGAN – BALI</span>
+          <h3 class="hotel-name">Grita Apsari Lodge</h3>
+          <p class="hotel-desc">A hidden sanctuary of peace and rejuvenation, designed to align mind, body, and soul in the highlands of Payangan.</p>
+          <a href="#details-grita" class="hotel-btn">View details</a>
+        </div>
+      </div>
+
+      <!-- Hotel 5: Navodaya Villa -->
+      <div class="hotel-card">
+        <div class="hotel-img-wrapper">
+          <img class="hotel-img" src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="Navodaya Villa">
+        </div>
+        <div class="hotel-info">
+          <span class="hotel-location">HOTEL – PAYANGAN – BALI</span>
+          <h3 class="hotel-name">Navodaya Villa</h3>
+          <p class="hotel-desc">An exclusive private villa retreat offering absolute tranquility, modern comforts, and a direct view of the valley.</p>
+          <a href="#details-navodaya" class="hotel-btn">View details</a>
+        </div>
+      </div>
+
+      <!-- Hotel 6: Umah Ukir -->
+      <div class="hotel-card">
+        <div class="hotel-img-wrapper">
+          <img class="hotel-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Umah Ukir">
+        </div>
+        <div class="hotel-info">
+          <span class="hotel-location">HOTEL – UBUD – BALI</span>
+          <h3 class="hotel-name">Umah Ukir</h3>
+          <p class="hotel-desc">A beautiful boutique villa featuring hand-carved details and Balinese design elements, just minutes from the heart of Ubud.</p>
+          <a href="#details-umah" class="hotel-btn">View details</a>
+        </div>
       </div>
     </div>
+  </div>
 
-    <!-- Hotel 2 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" alt="Lefanna Giri Kusuma">
-      </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Melinggih, Ubud – Bali</span>
-        <h3 class="hotel-name">Lefanna Giri Kusuma</h3>
-        <p class="hotel-desc">On the sacred Giri Kusuma River, connected to the very foundations of Balinese life, jungle surroundings, and natural spring waters.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
-      </div>
+  <!-- Hotel Details Section -->
+  <div id="hotel-details-container" style="display:none;">
+    <div class="detail-nav-bar">
+      <a href="#" id="detail-back-btn" class="detail-back-link">
+        <span class="arrow">&larr;</span> Back to Collections
+      </a>
     </div>
 
-    <!-- Hotel 3 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Lefanna Nusa Ceningan">
-      </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Nusa Ceningan – Bali</span>
-        <h3 class="hotel-name">Lefanna Nusa Ceningan</h3>
-        <p class="hotel-desc">Perched gracefully above the turquoise waters of Nusa Ceningan, this is a secluded cliffside sanctuary featuring amazing sunset views.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
-      </div>
-    </div>
+    <section class="detail-hero-section">
+      <span class="detail-subtitle-tag" id="detail-subtitle"></span>
+      <h1 class="detail-main-title" id="detail-title"></h1>
+      <p class="detail-lead-desc" id="detail-description"></p>
+    </section>
 
-    <!-- Hotel 4 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Lefanna Zahill Kintamani">
+    <section class="detail-gallery-section">
+      <div class="gallery-wrapper">
+        <button class="gallery-nav-btn prev" id="detail-gallery-prev" aria-label="Previous">&larr;</button>
+        <div class="gallery-container" id="detail-gallery-container"></div>
+        <button class="gallery-nav-btn next" id="detail-gallery-next" aria-label="Next">&rarr;</button>
       </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Kintamani – Bali</span>
-        <h3 class="hotel-name">Lefanna Zahill Kintamani</h3>
-        <p class="hotel-desc">Mount Batur's gaze covers you as the spectacular white clouds of Kintamani roll over the mystical and cold mountain Zahill Retreat.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
-      </div>
-    </div>
+    </section>
 
-    <!-- Hotel 5 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Tapa Tepi Kali Canggu">
-      </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Canggu – Bali</span>
-        <h3 class="hotel-name">Tapa Tepi Kali Canggu</h3>
-        <p class="hotel-desc">Nestled in Canggu area, a coastal village which combines active surf culture and tranquility beside a flowing river stream.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
-      </div>
-    </div>
+    <section class="detail-rooms-section">
+      <h2 class="detail-section-title">Rooms &amp; Villas</h2>
+      <div class="detail-rooms-grid" id="detail-rooms-container"></div>
+    </section>
 
-    <!-- Hotel 6 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=800&q=80" alt="The Hava Ubud">
+    <section class="detail-info-section">
+      <div class="detail-info-grid">
+        <div class="detail-info-map">
+          <iframe id="detail-map-iframe" src="" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="detail-info-contact">
+          <h3 class="contact-heading">Location &amp; Contact</h3>
+          <div class="contact-item">
+            <h4 class="contact-label">Address</h4>
+            <p id="detail-address"></p>
+          </div>
+          <div class="contact-item">
+            <h4 class="contact-label">Phone</h4>
+            <p><a id="detail-phone" href=""></a></p>
+          </div>
+          <div class="contact-item">
+            <h4 class="contact-label">Email</h4>
+            <p><a id="detail-email" href=""></a></p>
+          </div>
+        </div>
       </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Penestanan, Ubud – Bali</span>
-        <h3 class="hotel-name">The Hava Ubud</h3>
-        <p class="hotel-desc">Surrounded by Penestanan artist village which was once a place of ancient worship, featuring modern luxury rooms in the jungle.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
-      </div>
-    </div>
-
-    <!-- Hotel 7 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1537953773315-2213cdc2769c?auto=format&fit=crop&w=800&q=80" alt="Tapa Ratan Uluwatu">
-      </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Uluwatu – Bali</span>
-        <h3 class="hotel-name">Tapa Ratan Uluwatu</h3>
-        <p class="hotel-desc">A tropical resort offering rattan and wood interior stay experience, unique traditional wooden lumbung houses and private pool.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
-      </div>
-    </div>
-
-    <!-- Hotel 8 -->
-    <div class="hotel-card">
-      <div class="hotel-img-wrapper">
-        <img class="hotel-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" alt="Swan Paradise Keramas">
-      </div>
-      <div class="hotel-info">
-        <span class="hotel-location">Keramas Beach – Bali</span>
-        <h3 class="hotel-name">Swan Paradise Resort</h3>
-        <p class="hotel-desc">A sanctuary full of natural delights, seaside breezes, black sand beaches, and fascinating spaces in the Keramas area.</p>
-        <a href="/wp-admin/" class="hotel-btn">View details</a>
-      </div>
-    </div>
+    </section>
   </div>
 </main>
 
@@ -962,8 +1244,8 @@
     <div class="footer-col">
       <h5 class="footer-heading">Get in Touch</h5>
       <p class="footer-contact-item">
-        Jl. Padang Getas, Singakerta, Ubud, Bali – Indonesia<br>
-        Phone: <a href="tel:+62361975950">+62 361 975 950</a><br>
+        Jalan Raya Denpasar-Gilimanuk, Kediri, Tabanan-Bali, Indonesia<br>
+        Phone: <a href="tel:+628216231889">+62 821 6231 889</a><br>
         Email: <a href="mailto:info@lefannaexperience.com">info@lefannaexperience.com</a>
       </p>
       <div>
@@ -984,7 +1266,192 @@
 
 <!-- wp:html -->
 <script>
+  // 1. Data Store for all properties
+  const propertiesData = {
+    amalla: {
+      title: "Amalla Lodge Penida",
+      location: "HOTEL – NUSA PENIDA – BALI",
+      description: "A stunning cliffside sanctuary on the exotic island of Nusa Penida. Perched high above the turquoise waters of the Indian Ocean, Amalla Lodge Penida offers an unparalleled retreat where raw natural beauty meets modern refined luxury. Designed to harmonize with its dramatic oceanfront surroundings, the lodge features private pool villas, open-air dining, and panoramic views of the cliffs.",
+      photos: [
+        "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+      ],
+      rooms: [
+        {
+          category: "AMALLA SUITES",
+          name: "Oceanfront Suite",
+          desc: "Wake up to unobstructed views of the Indian Ocean. Features a spacious private balcony, luxury bathroom, and local artisan decor.",
+          photo: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          category: "AMALLA VILLAS",
+          name: "Cliffside Pool Villa",
+          desc: "An exclusive villa featuring a private infinity pool hanging over the Penida cliffs, a spacious lounge, and an outdoor shower.",
+          photo: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      mapUrl: "https://maps.google.com/maps?q=Nusa%20Penida,%20Bali&t=&z=13&ie=UTF8&iwloc=&output=embed",
+      address: "Jl. Raya Toyapakeh, Ped, Nusa Penida, Kabupaten Klungkung, Bali 80771",
+      phone: "+62 821 6231 889",
+      email: "amalla@lefannaexperience.com"
+    },
+    jungle: {
+      title: "The Jungle Sari",
+      location: "RESORT – TEGALLALANG, UBUD – BALI",
+      description: "Perched above the majestic Tegallalang rice terraces, offering an immersive jungle retreat and unparalleled Balinese hospitality. The Jungle Sari is a sanctuary of peace where the rustling leaves and sound of the river create a natural symphony. Designed using sustainable local materials, the resort offers guests a authentic connection to Bali's cultural heartland.",
+      photos: [
+        "/wp-content/themes/lefanna/images/jungle-sari-4.jpg",
+        "/wp-content/themes/lefanna/images/jungle-sari-1.jpg",
+        "/wp-content/themes/lefanna/images/jungle-sari-3.jpg",
+        "/wp-content/themes/lefanna/images/jungle-sari-2.jpg",
+        "/wp-content/themes/lefanna/images/jungle-sari-5.jpg"
+      ],
+      rooms: [
+        {
+          category: "SARI SUITES",
+          name: "Jungle View Canopy Suite",
+          desc: "Located on the upper floors, offering a panoramic view of the forest canopy. Features a private outdoor daybed and wooden bathtub.",
+          photo: "/wp-content/themes/lefanna/images/jungle-sari-3.jpg"
+        },
+        {
+          category: "SARI VILLAS",
+          name: "Valley Rim Pool Villa",
+          desc: "Featuring an infinity pool overlooking the deep valley, private sundeck, and traditional Balinese straw roof pavilion.",
+          photo: "/wp-content/themes/lefanna/images/jungle-sari-1.jpg"
+        }
+      ],
+      mapUrl: "https://maps.google.com/maps?q=Tegallalang%20Rice%20Terrace,%20Bali&t=&z=13&ie=UTF8&iwloc=&output=embed",
+      address: "Jl. Raya Tegallalang, Tegallalang, Kabupaten Gianyar, Bali 80561",
+      phone: "+62 821 6231 889",
+      email: "junglesari@lefannaexperience.com"
+    },
+    grita: {
+      title: "Grita Apsari Lodge",
+      location: "HOTEL – MELINGGIH, PAYANGAN – BALI",
+      description: "A hidden sanctuary of peace and rejuvenation, designed to align mind, body, and soul in the mist-veiled highlands of Bali. Flanked by ancient pine forests and rolling river valleys, Grita Apsari Lodge offers a cooler, serene mountain retreat. Experience bespoke wellness programs, organic farm-to-table dining, and wellness paths that let you rediscover your inner peace.",
+      photos: [
+        "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80"
+      ],
+      rooms: [
+        {
+          category: "APSARI SUITES",
+          name: "Apsari Forest Suite",
+          desc: "Overlook the peaceful pine forests from a plush king bed. Accented with natural stone and local wood finishes.",
+          photo: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          category: "APSARI VILLAS",
+          name: "Rejuvenation Spa Villa",
+          desc: "Includes an in-villa massage area, private heated plunge pool, and direct access to the holistic spa gardens.",
+          photo: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      mapUrl: "https://maps.google.com/maps?q=Payangan,%20Gianyar,%20Bali&t=&z=13&ie=UTF8&iwloc=&output=embed",
+      address: "Jl. Raya Payangan, Melinggih, Payangan, Kabupaten Gianyar, Bali 80572",
+      phone: "+62 821 6231 889",
+      email: "gritaapsari@lefannaexperience.com"
+    },
+    kojong: {
+      title: "Kojong House",
+      location: "HOTEL – UBUD – BALI",
+      description: "An architectural masterpiece nestled in the lush jungles of Ubud, blending traditional craftsmanship with contemporary eco-luxury. Inspired by the traditional Indonesian 'Kojong' cone shape, the villa features soaring bamboo structures and open-plan living that invites the cool valley breezes. The ultimate luxury eco-escape.",
+      photos: [
+        "/wp-content/themes/lefanna/images/kojong-house-1.jpg",
+        "/wp-content/themes/lefanna/images/kojong-house-2.jpg",
+        "/wp-content/themes/lefanna/images/kojong-house-3.jpg",
+        "/wp-content/themes/lefanna/images/kojong-house-4.jpg",
+        "/wp-content/themes/lefanna/images/kojong-house-5.jpg"
+      ],
+      rooms: [
+        {
+          category: "KOJONG SUITES",
+          name: "Bamboo Canopy Suite",
+          desc: "A beautiful bamboo room set high on the structure with a 360-degree view of the canopy, hammock floor, and open sky shower.",
+          photo: "/wp-content/themes/lefanna/images/kojong-house-2.jpg"
+        },
+        {
+          category: "KOJONG VILLAS",
+          name: "Forest View Pool Suite",
+          desc: "Located on the ground level, featuring a private natural stone plunge pool, a deck under the trees, and outdoor luxury bath.",
+          photo: "/wp-content/themes/lefanna/images/kojong-house-1.jpg"
+        }
+      ],
+      mapUrl: "https://maps.google.com/maps?q=Singakerta,%20Ubud,%20Bali&t=&z=13&ie=UTF8&iwloc=&output=embed",
+      address: "Jalan Raya Denpasar-Gilimanuk, Kediri, Tabanan-Bali, Indonesia",
+      phone: "+62 821 6231 889",
+      email: "kojong@lefannaexperience.com"
+    },
+    navodaya: {
+      title: "Navodaya Villa",
+      location: "HOTEL – PAYANGAN – BALI",
+      description: "An exclusive private villa retreat offering absolute tranquility, modern comforts, and a direct view of the valley. Navodaya, meaning 'New Sunrise', is perfectly situated to catch the golden morning rays breaking over the eastern mountains. Designed for total privacy and family comfort, the villa boasts a large infinity pool.",
+      photos: [
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      ],
+      rooms: [
+        {
+          category: "NAVODAYA VILLAS",
+          name: "Sunrise Master Villa",
+          desc: "The crown jewel of the estate, featuring a grand canopy king bed, glass walls facing the valley, and a private outdoor jacuzzi.",
+          photo: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          category: "NAVODAYA SUITES",
+          name: "Valley View Suite",
+          desc: "Comfortable guest suite with private terrace, study area, and semi-open air bathroom featuring a stone carved tub.",
+          photo: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      mapUrl: "https://maps.google.com/maps?q=Payangan,%20Gianyar,%20Bali&t=&z=13&ie=UTF8&iwloc=&output=embed",
+      address: "Jl. Raya Payangan, Payangan, Kabupaten Gianyar, Bali 80572",
+      phone: "+62 821 6231 889",
+      email: "navodaya@lefannaexperience.com"
+    },
+    umah: {
+      title: "Umah Ukir",
+      location: "HOTEL – UBUD – BALI",
+      description: "A beautiful boutique villa featuring hand-carved details and Balinese design elements, just minutes from the heart of Ubud. Umah Ukir (Carved House) honors the rich legacy of Balinese woodcarving. Every door, beam, and piece of furniture has been lovingly hand-carved by local master craftsmen from Mas village.",
+      photos: [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80"
+      ],
+      rooms: [
+        {
+          category: "LEFANNA SUITE",
+          name: "Puspa Suite Room",
+          desc: "Experience the warm touch of Ubud wood carvings in the Puspa Suite. Traditional Balinese elements blend with modern comforts for a memorable escape.",
+          photo: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          category: "LEFANNA VILLAS",
+          name: "One Bedroom Wooden Pool Villa",
+          desc: "Surrounded by luxury greenery and peaceful atmosphere, our pool villa offers an intimate retreat with private deck, pool, and open-air shower.",
+          photo: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      mapUrl: "https://maps.google.com/wp-admin/",
+      address: "Jl. Sri Wedari, Ubud, Kabupaten Gianyar, Bali 80571",
+      phone: "+62 821 6231 889",
+      email: "umahukir@lefannaexperience.com"
+    }
+  };
+
   document.addEventListener('DOMContentLoaded', function() {
+    // 2. Navigation Sidebar Drawer Logic
     const menuBtn = document.getElementById('lefanna-menu-trigger');
     const closeBtn = document.getElementById('lefanna-drawer-close');
     const drawer = document.getElementById('lefanna-sidebar-drawer');
@@ -1024,6 +1491,116 @@
         }
       });
     });
+
+    // 3. Details View Rendering and Routing
+    const gridContainer = document.getElementById('hotels-grid-container');
+    const detailsContainer = document.getElementById('hotel-details-container');
+    
+    // UI elements to update
+    const detailSubtitle = document.getElementById('detail-subtitle');
+    const detailTitle = document.getElementById('detail-title');
+    const detailDescription = document.getElementById('detail-description');
+    const detailGallery = document.getElementById('detail-gallery-container');
+    const detailRooms = document.getElementById('detail-rooms-container');
+    const detailMap = document.getElementById('detail-map-iframe');
+    const detailAddress = document.getElementById('detail-address');
+    const detailPhone = document.getElementById('detail-phone');
+    const detailEmail = document.getElementById('detail-email');
+    
+    const backBtn = document.getElementById('detail-back-btn');
+    if (backBtn) {
+      backBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.hash = '';
+      });
+    }
+
+    // Gallery navigation
+    const galleryPrev = document.getElementById('detail-gallery-prev');
+    const galleryNext = document.getElementById('detail-gallery-next');
+    if (galleryPrev && galleryNext && detailGallery) {
+      galleryPrev.addEventListener('click', () => {
+        detailGallery.scrollBy({ left: -450, behavior: 'smooth' });
+      });
+      galleryNext.addEventListener('click', () => {
+        detailGallery.scrollBy({ left: 450, behavior: 'smooth' });
+      });
+    }
+
+    function renderDetails(id) {
+      const data = propertiesData[id];
+      if (!data) return;
+
+      // Header
+      detailSubtitle.textContent = data.location;
+      detailTitle.textContent = data.title;
+      detailDescription.textContent = data.description;
+
+      // Gallery Slider
+      detailGallery.innerHTML = '';
+      data.photos.forEach(photoUrl => {
+        const img = document.createElement('img');
+        img.className = 'gallery-img-item';
+        img.src = photoUrl;
+        img.alt = data.title;
+        detailGallery.appendChild(img);
+      });
+
+      // Rooms
+      detailRooms.innerHTML = '';
+      data.rooms.forEach(room => {
+        const card = document.createElement('div');
+        card.className = 'detail-room-card';
+        
+        card.innerHTML = `
+          <div class="detail-room-img-wrapper">
+            <img class="detail-room-img" src="${room.photo}" alt="${room.name}">
+          </div>
+          <div class="detail-room-info">
+            <span class="detail-room-category">${room.category}</span>
+            <h3 class="detail-room-name">${room.name}</h3>
+            <p class="detail-room-desc">${room.desc}</p>
+          </div>
+        `;
+        detailRooms.appendChild(card);
+      });
+
+      // Map & Contacts
+      detailMap.src = data.mapUrl;
+      detailAddress.textContent = data.address;
+      detailPhone.textContent = data.phone;
+      detailPhone.href = `tel:${data.phone.replace(/\s+/g, '')}`;
+      detailEmail.textContent = data.email;
+      detailEmail.href = `mailto:${data.email}`;
+    }
+
+    function handleRoute() {
+      const hash = window.location.hash;
+      if (hash.startsWith('#details-')) {
+        const id = hash.replace('#details-', '');
+        if (propertiesData[id]) {
+          renderDetails(id);
+          gridContainer.style.display = 'none';
+          detailsContainer.style.display = 'block';
+          window.scrollTo(0, 0);
+        } else {
+          showGrid();
+        }
+      } else {
+        showGrid();
+      }
+    }
+
+    function showGrid() {
+      gridContainer.style.display = 'block';
+      detailsContainer.style.display = 'none';
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('hashchange', handleRoute);
+    
+    // Initial route check
+    handleRoute();
   });
 </script>
 <!-- /wp:html -->

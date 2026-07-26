@@ -1,9 +1,10 @@
 <!-- wp:html -->
 <style>
   /* Base Styles & Fonts */
-  body {
+  html, body {
     background-color: #FAF8F5;
     color: #2C2621;
+    overflow-x: hidden;
   }
 
     /* Header Wrapper & Layout */
@@ -119,12 +120,7 @@
     font-family: 'Jost', sans-serif;
   }
   .pill-btn-reserve {
-    color: #2C2621;
-    border: 1px solid #9E978E;
-  }
-  .pill-btn-reserve:hover {
-    border-color: #C5A880;
-    color: #C5A880;
+    display: none !important;
   }
   .pill-btn-member {
     color: #2C2621;
@@ -377,6 +373,10 @@
 
   .luxury-hero {
     position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     height: 580px;
     overflow: hidden;
     border-bottom: 1px solid #EAE3D2;
@@ -740,11 +740,7 @@
     
     <!-- 2. Find & Reserve -->
     <li class="drawer-menu-item">
-      <a href="#" class="drawer-menu-link drawer-parent-link">Find & Reserve <span class="arrow-indicator">▾</span></a>
-      <ul class="drawer-submenu">
-        <li><a href="/hotels-resorts/" class="drawer-submenu-link">Find A Hotels & Resorts</a></li>
-        <li><a href="/villas-in-bali/" class="drawer-submenu-link">GenuineHost</a></li>
-      </ul>
+      <a href="/hotels-resorts/" class="drawer-menu-link">Find & Reserve</a>
     </li>
     
     <!-- 3. Offers -->
@@ -774,9 +770,13 @@
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
         <li><a href="/careers/" class="drawer-submenu-link">Careers</a></li>
-        <li><a href="/newsrooms/" class="drawer-submenu-link">Newsroom</a></li>
         <li><a href="/contact-us/" class="drawer-submenu-link">Contact Us</a></li>
       </ul>
+    </li>
+    
+    <!-- 6.5. Newsroom -->
+    <li class="drawer-menu-item">
+      <a href="/newsrooms/" class="drawer-menu-link">Newsroom</a>
     </li>
     
     <!-- 7. PLUS -->
@@ -827,13 +827,7 @@
     <nav class="top-nav-menu">
       <ul class="nav-list">
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Find & Reserve <span class="nav-arrow">▾</span></a>
-          <ul class="nav-dropdown">
-            <li><a href="/hotels-resorts/">Find A Hotels & Resorts</a></li>
-            <li><a href="/villas-in-bali/">GenuineHost</a></li>
-          </ul>
-        </li>
+        <li class="nav-item"><a href="/hotels-resorts/" class="nav-link">Find & Reserve</a></li>
         <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
         <li class="nav-item has-dropdown">
           <a href="#" class="nav-link">Experiences <span class="nav-arrow">▾</span></a>
@@ -851,10 +845,10 @@
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
             <li><a href="/careers/">Careers</a></li>
-            <li><a href="/newsrooms/">Newsroom</a></li>
             <li><a href="/contact-us/">Contact Us</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a href="/newsrooms/" class="nav-link">Newsroom</a></li>
         <li class="nav-item"><a href="/lefanna-leisure-unlimited-services/" class="nav-link">Plus</a></li>
       </ul>
     </nav>
@@ -862,7 +856,6 @@
 
   <div class="header-right">
     <div class="header-btn-group">
-      <a href="/wp-admin/" class="pill-btn pill-btn-reserve">Reserve</a>
       <a href="/wp-admin/" class="pill-btn pill-btn-member">Member</a>
     </div>
   </div>
@@ -876,17 +869,13 @@
     <!-- Slideshow Track -->
     <div class="hero-slider-track">
       <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1600&q=80');"></div>
-      <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('/wp-content/themes/lefanna/images/jungle-sari-4.jpg');"></div>
       <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');"></div>
       <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1600&q=80');"></div>
     </div>
     
-    <!-- Hero Content Overlay -->
+    <!-- Hero Content Overlay (Hidden/Removed text) -->
     <div class="hero-content">
-      <span class="hero-subtitle">Boutique Hotels, Resorts & Villas</span>
-      <h1 class="hero-title">Experience Genuine Balinese Hospitality</h1>
-      <p class="hero-desc">Immerse yourself in the rich culture, pristine natural beauty, and warm-hearted care of Bali's premier destinations.</p>
-      <a href="/wp-admin/" class="pill-btn pill-btn-reserve" style="display:inline-block; border-color:#C5A880; color:#C5A880; margin-top:20px;">Discover Our Collections</a>
     </div>
   </section>
 
@@ -901,49 +890,319 @@
   </section>
 
   <!-- Resort Collections Showcase Section -->
+  <!-- Resort Collections Showcase Section (Premium Sliding Carousel) -->
+  <style>
+    /* Collections Carousel Styles */
+    .collections-carousel-container {
+      position: relative;
+      width: 100%;
+      margin-bottom: 80px;
+      padding: 0 40px; /* space for arrow buttons */
+      box-sizing: border-box;
+    }
+    .collections-carousel-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+    .collections-carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      gap: 30px;
+      width: 100%;
+    }
+    .collections-carousel-item {
+      flex: 0 0 calc(33.333% - 20px); /* Desktop: 3 items visible */
+      box-sizing: border-box;
+    }
+    @media (max-width: 1024px) {
+      .collections-carousel-item {
+        flex: 0 0 calc(50% - 15px); /* Tablet: 2 items visible */
+      }
+    }
+    @media (max-width: 600px) {
+      .collections-carousel-item {
+        flex: 0 0 100%; /* Mobile: 1 item visible */
+      }
+    }
+    
+    /* Carousel Navigation Buttons */
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #EAE3D2;
+      color: #2C2621;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .carousel-nav-btn:hover {
+      background-color: #C5A880;
+      color: #FFFFFF;
+      border-color: #C5A880;
+    }
+    .carousel-btn-prev {
+      left: -10px;
+    }
+    .carousel-btn-next {
+      right: -10px;
+    }
+    @media (max-width: 768px) {
+      .collections-carousel-container {
+        padding: 0;
+      }
+      .carousel-nav-btn {
+        display: none; /* touch scroll / dots on mobile */
+      }
+    }
+    
+    /* Carousel Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #EAE3D2;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+    .carousel-dot.is-active {
+      background-color: #C5A880;
+      transform: scale(1.2);
+    }
+  </style>
+
   <section style="max-width:1200px; margin:0 auto 80px auto; padding:0 20px;">
     <h3 style="font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:300; text-align:center; margin-bottom:50px; letter-spacing:0.05em; color:#2C2621;">Our Collections</h3>
-    <div class="resort-grid">
-      <!-- Collection 1 -->
-      <div class="resort-card">
-        <div style="width:100%; height:250px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Lefanna Watu Kurung" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div class="resort-card-content">
-          <h4 class="resort-card-title">Lefanna Watu Kurung</h4>
-          <div class="gold-divider" style="margin:15px auto;"></div>
-          <p class="resort-card-text">A boutique resort perched on the edge of the Ayung River valley, Ubud. Designed to reflect the ancient Balinese royal heritage.</p>
-          <a href="/hotels-resorts/" class="resort-card-link">Explore Resort</a>
-        </div>
-      </div>
+    
+    <div class="collections-carousel-container">
+      <div class="collections-carousel-viewport">
+        <div class="collections-carousel-track">
+          <!-- 1. Amalla Lodge Penida by Lefanna -->
+          <div class="collections-carousel-item">
+            <div class="resort-card">
+              <div style="width:100%; height:250px; overflow:hidden;">
+                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80" alt="Amalla Lodge Penida" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="resort-card-content">
+                <h4 class="resort-card-title">Amalla Lodge Penida</h4>
+                <div class="gold-divider" style="margin:15px auto;"></div>
+                <p class="resort-card-text">A stunning cliffside sanctuary on the exotic island of Nusa Penida. Experience breathtaking ocean sunsets and serene luxury.</p>
+                <a href="/hotels-resorts/#details-amalla" class="resort-card-link">Explore Lodge</a>
+              </div>
+            </div>
+          </div>
 
-      <!-- Collection 2 -->
-      <div class="resort-card">
-        <div style="width:100%; height:250px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" alt="Lefanna Giri Kusuma" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div class="resort-card-content">
-          <h4 class="resort-card-title">Lefanna Giri Kusuma</h4>
-          <div class="gold-divider" style="margin:15px auto;"></div>
-          <p class="resort-card-text">A serene sanctuary surrounded by jungle forests and sacred spring water in Payangan. The ultimate wellness retreat.</p>
-          <a href="/hotels-resorts/" class="resort-card-link">Explore Resort</a>
-        </div>
-      </div>
+          <!-- 2. Kojong House by Lefanna -->
+          <div class="collections-carousel-item">
+            <div class="resort-card">
+              <div style="width:100%; height:250px; overflow:hidden;">
+                <img src="/wp-content/themes/lefanna/images/kojong-house-1.jpg" alt="Kojong House" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="resort-card-content">
+                <h4 class="resort-card-title">Kojong House</h4>
+                <div class="gold-divider" style="margin:15px auto;"></div>
+                <p class="resort-card-text">An architectural masterpiece nestled in the lush jungles of Ubud, blending traditional craftsmanship with contemporary eco-luxury.</p>
+                <a href="/hotels-resorts/#details-kojong" class="resort-card-link">Explore House</a>
+              </div>
+            </div>
+          </div>
 
-      <!-- Collection 3 -->
-      <div class="resort-card">
-        <div style="width:100%; height:250px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80" alt="GenuineHost Villas" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div class="resort-card-content">
-          <h4 class="resort-card-title">GenuineHost Villas</h4>
-          <div class="gold-divider" style="margin:15px auto;"></div>
-          <p class="resort-card-text">Private pool villas offering modern comfort integrated with traditional architecture and personalized butler services.</p>
-          <a href="/villas-in-bali/" class="resort-card-link">Explore Villas</a>
+          <!-- 3. The Jungle Sari by Lefanna -->
+          <div class="collections-carousel-item">
+            <div class="resort-card">
+              <div style="width:100%; height:250px; overflow:hidden;">
+                <img src="/wp-content/themes/lefanna/images/jungle-sari-4.jpg" alt="The Jungle Sari" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="resort-card-content">
+                <h4 class="resort-card-title">The Jungle Sari</h4>
+                <div class="gold-divider" style="margin:15px auto;"></div>
+                <p class="resort-card-text">Perched above the majestic Tegalalang rice terraces, offering an immersive jungle retreat and unparalleled Balinese hospitality.</p>
+                <a href="/hotels-resorts/#details-jungle" class="resort-card-link">Explore Resort</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Grita Apsari Lodge by Lefanna -->
+          <div class="collections-carousel-item">
+            <div class="resort-card">
+              <div style="width:100%; height:250px; overflow:hidden;">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" alt="Grita Apsari Lodge" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="resort-card-content">
+                <h4 class="resort-card-title">Grita Apsari Lodge</h4>
+                <div class="gold-divider" style="margin:15px auto;"></div>
+                <p class="resort-card-text">A hidden sanctuary of peace and rejuvenation, designed to align mind, body, and soul in the highlands of Payangan.</p>
+                <a href="/hotels-resorts/#details-grita" class="resort-card-link">Explore Lodge</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Navodaya Villa by Lefanna -->
+          <div class="collections-carousel-item">
+            <div class="resort-card">
+              <div style="width:100%; height:250px; overflow:hidden;">
+                <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="Navodaya Villa" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="resort-card-content">
+                <h4 class="resort-card-title">Navodaya Villa</h4>
+                <div class="gold-divider" style="margin:15px auto;"></div>
+                <p class="resort-card-text">An exclusive private villa retreat offering absolute tranquility, modern comforts, and a direct view of the valley.</p>
+                <a href="/hotels-resorts/#details-navodaya" class="resort-card-link">Explore Villa</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Umah Ukir by Lefanna -->
+          <div class="collections-carousel-item">
+            <div class="resort-card">
+              <div style="width:100%; height:250px; overflow:hidden;">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Umah Ukir" style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="resort-card-content">
+                <h4 class="resort-card-title">Umah Ukir</h4>
+                <div class="gold-divider" style="margin:15px auto;"></div>
+                <p class="resort-card-text">A beautiful boutique villa featuring hand-carved details and Balinese design elements, just minutes from the heart of Ubud.</p>
+                <a href="/hotels-resorts/#details-umah" class="resort-card-link">Explore Villa</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      
+      <!-- Navigation Controls -->
+      <button class="carousel-nav-btn carousel-btn-prev" aria-label="Previous">&larr;</button>
+      <button class="carousel-nav-btn carousel-btn-next" aria-label="Next">&rarr;</button>
     </div>
+    
+    <!-- Dots Indicators -->
+    <div class="carousel-dots"></div>
   </section>
+
+  <!-- Javascript for Carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.querySelector('.collections-carousel-track');
+      const prevBtn = document.querySelector('.carousel-btn-prev');
+      const nextBtn = document.querySelector('.carousel-btn-next');
+      const dotsContainer = document.querySelector('.carousel-dots');
+      const items = document.querySelectorAll('.collections-carousel-item');
+      
+      if (!track || items.length === 0) return;
+      
+      let currentIndex = 0;
+      let itemsPerView = getItemsPerView();
+      let maxIndex = items.length - itemsPerView;
+      
+      function getItemsPerView() {
+        if (window.innerWidth > 1024) return 3;
+        if (window.innerWidth > 600) return 2;
+        return 1;
+      }
+      
+      function createDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        itemsPerView = getItemsPerView();
+        const numDots = Math.max(1, items.length - itemsPerView + 1);
+        for (let i = 0; i < numDots; i++) {
+          const dot = document.createElement('button');
+          dot.classList.add('carousel-dot');
+          if (i === currentIndex) dot.classList.add('is-active');
+          dot.addEventListener('click', () => {
+            goToSlide(i);
+            resetAutoSlide();
+          });
+          dotsContainer.appendChild(dot);
+        }
+      }
+      
+      function goToSlide(index) {
+        itemsPerView = getItemsPerView();
+        maxIndex = Math.max(0, items.length - itemsPerView);
+        
+        if (index < 0) {
+          index = maxIndex;
+        } else if (index > maxIndex) {
+          index = 0;
+        }
+        
+        currentIndex = index;
+        
+        const gap = 30; // Gap width in pixels
+        const itemWidth = items[0].getBoundingClientRect().width;
+        const amountToMove = currentIndex * (itemWidth + gap);
+        
+        track.style.transform = `translateX(-${amountToMove}px)`;
+        
+        // Update Dots
+        const dots = document.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, idx) => {
+          if (idx === currentIndex) {
+            dot.classList.add('is-active');
+          } else {
+            dot.classList.remove('is-active');
+          }
+        });
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          goToSlide(currentIndex + 1);
+          resetAutoSlide();
+        });
+      }
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          goToSlide(currentIndex - 1);
+          resetAutoSlide();
+        });
+      }
+      
+      // Auto Slide Left (increment index) every 5 seconds
+      let autoSlideInterval = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 5000);
+      
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+          goToSlide(currentIndex + 1);
+        }, 5000);
+      }
+      
+      // Initialize
+      createDots();
+      goToSlide(0);
+      
+      // Handle Resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          createDots();
+          goToSlide(Math.min(currentIndex, Math.max(0, items.length - getItemsPerView())));
+        }, 100);
+      });
+    });
+  </script>
 
   <!-- Showcase / Query Section -->
   <!-- wp:heading {"level":3,"align":"center","style":{"typography":{"fontSize":"2.2rem","fontWeight":"300"}},"spacing":{"margin":{"bottom":"50px"}}} -->
@@ -987,7 +1246,6 @@
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
         <li><a href="/hotels-resorts/">Hotels & Resorts</a></li>
-        <li><a href="/villas-in-bali/">Villas in Bali</a></li>
         <li><a href="/offers/">Offers</a></li>
       </ul>
     </div>
@@ -1008,8 +1266,8 @@
     <div class="footer-col">
       <h5 class="footer-heading">Get in Touch</h5>
       <p class="footer-contact-item">
-        Jl. Padang Getas, Singakerta, Ubud, Bali – Indonesia<br>
-        Phone: <a href="tel:+62361975950">+62 361 975 950</a><br>
+        Jalan Raya Denpasar-Gilimanuk, Kediri, Tabanan-Bali, Indonesia<br>
+        Phone: <a href="tel:+628216231889">+62 821 6231 889</a><br>
         Email: <a href="mailto:info@lefannaexperience.com">info@lefannaexperience.com</a>
       </p>
       <div>

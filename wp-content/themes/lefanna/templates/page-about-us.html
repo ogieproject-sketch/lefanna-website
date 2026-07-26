@@ -1,9 +1,10 @@
 <!-- wp:html -->
 <style>
   /* Base Styles & Fonts */
-  body {
+  html, body {
     background-color: #FAF8F5;
     color: #2C2621;
+    overflow-x: hidden;
   }
 
     /* Header Wrapper & Layout */
@@ -119,12 +120,7 @@
     font-family: 'Jost', sans-serif;
   }
   .pill-btn-reserve {
-    color: #2C2621;
-    border: 1px solid #9E978E;
-  }
-  .pill-btn-reserve:hover {
-    border-color: #C5A880;
-    color: #C5A880;
+    display: none !important;
   }
   .pill-btn-member {
     color: #2C2621;
@@ -359,35 +355,39 @@
       /* Corporate Page Banner */
   @keyframes corporateSlideshow {
     0%, 20% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
     }
     25%, 45% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1600&q=80');
     }
     50%, 70% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80');
     }
     75%, 95% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
     }
     100% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
     }
   }
 
   .corporate-banner {
     position: relative;
-    padding: 120px 40px;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 160px 40px;
     text-align: center;
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid #EAE3D2;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     animation: corporateSlideshow 24s infinite ease-in-out;
   }
   .banner-subtitle {
     font-size: 0.85rem;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: #C5A880;
     margin-bottom: 15px;
@@ -397,69 +397,343 @@
   }
   .banner-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.8rem;
+    font-size: 4.2rem;
     font-weight: 300;
     color: #FFFFFF;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     margin: 0;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   }
 
-  /* Content Wrapper */
-  .corporate-content {
-    max-width: 800px;
-    margin: 0 auto 80px auto;
-    padding: 0 20px;
-    font-family: 'Jost', sans-serif;
-    line-height: 1.8;
-    color: #645D55;
+  /* Luxury Grid Sections */
+  .luxury-section {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media(min-width: 992px) {
+    .luxury-section {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+    .luxury-section.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
   }
 
-  .corporate-section-title {
+  .luxury-text-block {
+    font-family: 'Jost', sans-serif;
+    color: #5C5650;
+    line-height: 1.8;
+  }
+  .luxury-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #C5A880;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .luxury-heading {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: #2C2621;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    line-height: 1.25;
+    margin: 0 0 25px 0;
     font-weight: 400;
+  }
+  .luxury-divider {
+    width: 60px;
+    height: 1px;
+    background-color: #C5A880;
+    margin-bottom: 30px;
+  }
+  .luxury-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-style: italic;
+    color: #3C3530;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    border-left: 2px solid #C5A880;
+    padding-left: 20px;
+  }
+  .luxury-paragraph {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+  }
+
+  /* Image Collage Layout */
+  .collage-wrapper {
+    position: relative;
+    width: 100%;
+    height: 480px;
+  }
+  .collage-img-main {
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.6s ease;
+  }
+  .collage-img-sub {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 55%;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 8px solid #FAF8F5;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    transition: transform 0.6s ease;
+  }
+  .collage-wrapper:hover .collage-img-main {
+    transform: translateY(-8px);
+  }
+  .collage-wrapper:hover .collage-img-sub {
+    transform: translate(8px, -4px);
+  }
+
+  /* Split row landscape layout */
+  .luxury-wide-img-wrapper {
+    width: 100%;
+    height: 450px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  }
+  .luxury-wide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+  .luxury-wide-img-wrapper:hover .luxury-wide-img {
+    transform: scale(1.04);
+  }
+
+  /* Destinations Grid styling */
+  .destinations-section {
+    background-color: #F6F3ED;
+    padding: 100px 40px;
+    border-top: 1px solid #EAE3D2;
+    border-bottom: 1px solid #EAE3D2;
+    margin-bottom: 100px;
+  }
+  .destinations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .destinations-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .destinations-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: #2C2621;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  .destinations-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.05rem;
+    color: #645D55;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  .destination-card {
+    position: relative;
+    height: 380px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+  }
+  .destination-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+  }
+  .destination-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(26, 22, 19, 0.85) 0%, rgba(26, 22, 19, 0.3) 50%, rgba(26, 22, 19, 0.1) 100%);
+    z-index: 2;
+    transition: background 0.4s ease;
+  }
+  .destination-card-content {
+    position: relative;
+    z-index: 3;
+    color: #FFFFFF;
+    transform: translateY(0);
+    transition: transform 0.4s ease;
+  }
+  .destination-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.05em;
+  }
+  .destination-card-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    color: #D8D1C5;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .destination-card-border {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid rgba(197, 168, 128, 0);
+    z-index: 4;
+    transition: border-color 0.4s ease;
+    pointer-events: none;
+  }
+  .destination-card:hover .destination-card-bg {
+    transform: scale(1.05);
+  }
+  .destination-card:hover .destination-card-overlay {
+    background: linear-gradient(to top, rgba(26, 22, 19, 0.9) 0%, rgba(26, 22, 19, 0.4) 50%, rgba(26, 22, 19, 0.2) 100%);
+  }
+  .destination-card:hover .destination-card-border {
+    border-color: rgba(197, 168, 128, 0.5);
+  }
+
+  /* Values Section Styling */
+  .values-section {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
     text-align: center;
   }
-
-  .corporate-paragraph {
-    font-size: 1.05rem;
-    margin-bottom: 25px;
-  }
-
-  /* Highlights / Values Grid */
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+  .values-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: #2C2621;
+    font-weight: 400;
     margin-bottom: 40px;
   }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
   .value-card {
-    background-color: #FFFFFF;
+    background-color: #FAF8F5;
     border: 1px solid #EAE3D2;
-    padding: 30px;
+    padding: 45px 35px;
     text-align: center;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #C5A880;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
   }
   .value-card:hover {
+    background-color: #FFFFFF;
     border-color: #C5A880;
-    box-shadow: 0 10px 25px rgba(138, 115, 85, 0.05);
+    box-shadow: 0 15px 35px rgba(138, 115, 85, 0.08);
+    transform: translateY(-5px);
+  }
+  .value-card:hover::before {
+    transform: scaleX(1);
+  }
+  .value-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #C5A880;
+    font-weight: 300;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.8;
   }
   .value-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     color: #2C2621;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 500;
   }
   .value-desc {
-    font-size: 0.9rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
     color: #645D55;
+    line-height: 1.6;
+  }
+
+  @media(max-width: 991px) {
+    .collage-wrapper {
+      height: 380px;
+      margin-top: 20px;
+    }
+    .luxury-heading {
+      font-size: 2.2rem;
+    }
+    .luxury-quote {
+      font-size: 1.25rem;
+    }
+    .luxury-section {
+      gap: 40px;
+      margin-bottom: 70px;
+      padding: 0 20px;
+    }
+    .destinations-section {
+      padding: 70px 20px;
+      margin-bottom: 70px;
+    }
+    .destinations-title {
+      font-size: 2.2rem;
+    }
+    .values-section {
+      padding: 0 20px;
+      margin-bottom: 70px;
+    }
+    .values-section-title {
+      font-size: 2.2rem;
+    }
   }
 
   @media(max-width: 768px) {
@@ -641,6 +915,283 @@
     font-size: 0.8rem;
     color: #8E867E;
   }
+
+  /* Vision & Mission Styling */
+  .vision-mission-section {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: #2C2621;
+    color: #FAF8F5;
+    padding: 100px 40px;
+    text-align: center;
+    border-top: 1px solid #3E3630;
+    border-bottom: 1px solid #3E3630;
+    margin-bottom: 100px;
+  }
+  .vision-mission-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .vision-mission-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #C5A880;
+    margin-bottom: 20px;
+    display: block;
+    font-weight: 600;
+  }
+  .vision-mission-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+  }
+  .vision-mission-intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #D8D1C5;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .vision-mission-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #C5A880;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    border-top: 1px solid rgba(197, 168, 128, 0.2);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+    padding: 30px 0;
+  }
+  .vision-mission-desc {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #B5AEA4;
+  }
+
+  /* Philosophy (Acronym) Styling */
+  .philosophy-section {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 40px;
+  }
+  .philosophy-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .philosophy-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #2C2621;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .philosophy-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.05rem;
+    color: #645D55;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  @media(min-width: 768px) {
+    .philosophy-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media(min-width: 1024px) {
+    .philosophy-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .philosophy-grid-item.align-center-bottom {
+      grid-column: span 3;
+      justify-self: center;
+      width: 100%;
+      max-width: 360px;
+    }
+  }
+  .philosophy-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    padding: 40px 30px;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .philosophy-card:hover {
+    border-color: #C5A880;
+    box-shadow: 0 15px 35px rgba(138, 115, 85, 0.06);
+    transform: translateY(-5px);
+  }
+  .philosophy-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    color: #C5A880;
+    font-weight: 300;
+    line-height: 1;
+    text-shadow: 2px 2px 0px rgba(197, 168, 128, 0.15);
+  }
+  .philosophy-content {
+    flex: 1;
+  }
+  .philosophy-term {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    color: #2C2621;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+  }
+  .philosophy-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    color: #645D55;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Rate Card Styling */
+  .ratecard-section {
+    background-color: #FAF8F5;
+    border-top: 1px solid #EAE3D2;
+    padding: 100px 40px;
+    margin-bottom: 0px;
+  }
+  .ratecard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .ratecard-header-badge {
+    display: inline-block;
+    background-color: #2C2621;
+    color: #C5A880;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 25px rgba(44, 38, 33, 0.15);
+  }
+  .ratecard-block {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    border-radius: 6px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+    margin-bottom: 50px;
+    text-align: left;
+  }
+  .ratecard-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: #2C2621;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+    border-bottom: 1px solid #F4EFE6;
+    padding-bottom: 15px;
+  }
+  .ratecard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Jost', sans-serif;
+    margin-bottom: 20px;
+  }
+  .ratecard-table th {
+    text-align: left;
+    padding: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #8E867E;
+    border-bottom: 1px solid #EAE3D2;
+    font-weight: 500;
+  }
+  .ratecard-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #F4EFE6;
+    color: #5C5650;
+    font-size: 0.95rem;
+  }
+  .ratecard-table tr:last-child td {
+    border-bottom: none;
+  }
+  .ratecard-category {
+    font-weight: 600;
+    color: #2C2621;
+  }
+  .ratecard-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #C5A880;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .ratecard-basis {
+    font-size: 0.85rem;
+    color: #8E867E;
+  }
+
+  /* Marketing Scope & Note Columns */
+  .ratecard-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-top: 30px;
+    text-align: left;
+  }
+  @media(min-width: 768px) {
+    .ratecard-details-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .ratecard-details-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #2C2621;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 1px solid #F4EFE6;
+    padding-bottom: 10px;
+  }
+  .ratecard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ratecard-list-item {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    color: #5C5650;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+  }
+  .ratecard-list-item::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #C5A880;
+  }
 </style>
 <!-- /wp:html -->
 
@@ -693,9 +1244,13 @@
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
         <li><a href="/careers/" class="drawer-submenu-link">Careers</a></li>
-        <li><a href="/newsrooms/" class="drawer-submenu-link">Newsroom</a></li>
         <li><a href="/contact-us/" class="drawer-submenu-link">Contact Us</a></li>
       </ul>
+    </li>
+    
+    <!-- 6.5. Newsroom -->
+    <li class="drawer-menu-item">
+      <a href="/newsrooms/" class="drawer-menu-link">Newsroom</a>
     </li>
     <li class="drawer-menu-item">
       <a href="/lefanna-leisure-unlimited-services/" class="drawer-menu-link">Plus</a>
@@ -768,10 +1323,10 @@
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
             <li><a href="/careers/">Careers</a></li>
-            <li><a href="/newsrooms/">Newsroom</a></li>
             <li><a href="/contact-us/">Contact Us</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a href="/newsrooms/" class="nav-link">Newsroom</a></li>
         <li class="nav-item"><a href="/lefanna-leisure-unlimited-services/" class="nav-link">Plus</a></li>
       </ul>
     </nav>
@@ -779,7 +1334,6 @@
 
   <div class="header-right">
     <div class="header-btn-group">
-      <a href="/wp-admin/" class="pill-btn pill-btn-reserve">Reserve</a>
       <a href="/wp-admin/" class="pill-btn pill-btn-member">Member</a>
     </div>
   </div>
@@ -789,37 +1343,255 @@
 <main>
   <!-- Hero Banner -->
   <section class="corporate-banner">
-    <span class="banner-subtitle">Corporate Profile</span>
-    <h2 class="banner-title">About Us</h2>
+    <span class="banner-subtitle">Lefanna Experience</span>
+    <h1 class="banner-title">About Us</h1>
   </section>
 
-  <!-- Corporate Content -->
-  <article class="corporate-content">
-    <h3 class="corporate-section-title">Who We Are</h3>
-    <p class="corporate-paragraph">Lefanna Experience is an award-winning Balinese hotel and villa management company, founded on the values of traditional Balinese wisdom, environmental conservation, and local community empowerment.</p>
-    <p class="corporate-paragraph">We specialize in boutique hotels, luxury resorts, and private pool villa retreats located in some of Bali's and Lombok's most mystical spots—from the lush rainforest slopes of Ubud to the cold mountain mist of Kintamani and beachside sunsets of Gili Trawangan.</p>
-    
-    <div style="border-left: 2px solid #C5A880; padding-left: 25px; margin: 40px 0; font-style: italic;">
-      <h4 style="font-family:'Cormorant Garamond', serif; font-size: 1.4rem; color: #2C2621; font-weight: 500; margin-bottom: 10px;">Our Vision</h4>
-      <p style="font-size: 1.05rem; margin: 0;">"To be a leader in authentic Balinese hospitality that creates unique experiences for travelers while maintaining harmony with nature, local culture, and community spiritual values."</p>
+  <!-- Section 1: Who We Are / Intro -->
+  <section class="luxury-section">
+    <div class="luxury-text-block">
+      <span class="luxury-tag">Villa & Hotel Resort Management</span>
+      <h2 class="luxury-heading">Villa & Hotel Resort Management in Bali</h2>
+      <div class="luxury-divider"></div>
+      <blockquote class="luxury-quote">
+        "Luxury is not defined by grandeur, but by the way it is quietly experienced. An intentional presence, thoughtful in every detail, and deeply felt in every moment."
+      </blockquote>
+      <p class="luxury-paragraph">At LEFANNA, we believe hospitality is more than creating beautiful destinations, it is about shaping experiences that feel timeless, effortless, and meaningful. Every property under our management is approached with care and intention, allowing its character to naturally unfold while maintaining a seamless standard of hospitality. Through a hands-on management philosophy, we focus on creating spaces that offer tranquility, warmth, and a genuine connection to their surroundings.</p>
     </div>
+    <div class="collage-wrapper">
+      <img src="/wp-content/themes/lefanna/images/jungle-sari-4.jpg" alt="Jungle Sari Pool View" class="collage-img-main">
+      <img src="/wp-content/themes/lefanna/images/kojong-house-2.jpg" alt="Detail Balinese Hospitality" class="collage-img-sub">
+    </div>
+  </section>
 
-    <h3 class="corporate-section-title">Our Values</h3>
+  <!-- Section 2: Management & Curation -->
+  <section class="luxury-section reverse">
+    <div class="luxury-wide-img-wrapper">
+      <img src="/wp-content/themes/lefanna/images/kojong-house-1.jpg" alt="Lefanna Luxury Villa Exterior" class="luxury-wide-img">
+    </div>
+    <div class="luxury-text-block">
+      <span class="luxury-tag">Our Standard</span>
+      <h2 class="luxury-heading">A Curator of Tailored Experiences</h2>
+      <div class="luxury-divider"></div>
+      <p class="luxury-paragraph">Our dedicated team oversees each aspect of the guest experience and property operations with precision and consistency, ensuring that every destination continues to grow sustainably while preserving its distinctive atmosphere and value. We believe true luxury is found in subtle details, intuitive service, and experiences that leave a lasting emotional impression.</p>
+      <p class="luxury-paragraph">More than a management company, LEFANNA is a curator of experiences, creating destinations that are not only seen, but deeply felt and genuinely remembered.</p>
+    </div>
+  </section>
+
+  <!-- Section 2.5: Vision & Mission -->
+  <section class="vision-mission-section">
+    <div class="vision-mission-container">
+      <span class="vision-mission-tag">Vision & Mission</span>
+      <h2 class="vision-mission-title">Our Vision & Mission</h2>
+      <p class="vision-mission-intro">LEFANNA carries a clear vision and mission in shaping meaningful hospitality experiences.</p>
+      <blockquote class="vision-mission-quote">
+        "More than a management company, LEFANNA is a curator of experiences — creating destinations that are not only seen, but deeply felt and genuinely remembered."
+      </blockquote>
+      <p class="vision-mission-desc">This vision reflects LEFANNA's commitment to creating hospitality destinations that prioritize emotional connection, intentional service, and timeless experiences. Through a thoughtful and refined management approach, LEFANNA aims to deliver a sense of quiet luxury that leaves a lasting impression on every guest and property it manages.</p>
+    </div>
+  </section>
+
+  <!-- Section 2.6: L.E.F.A.N.N.A Philosophy -->
+  <section class="philosophy-section">
+    <div class="philosophy-header">
+      <h2 class="philosophy-title">The L.E.F.A.N.N.A Philosophy</h2>
+      <p class="philosophy-subtitle">LEFANNA is built upon a philosophy that reflects intentional hospitality, meaningful connection, and refined living. Every word within LEFANNA represents the values that shape the way experiences are created, felt, and remembered.</p>
+    </div>
+    <div class="philosophy-grid">
+      <div class="philosophy-card">
+        <span class="philosophy-letter">L</span>
+        <div class="philosophy-content">
+          <h3 class="philosophy-term">Luminescence</h3>
+          <p class="philosophy-desc">A quiet radiance that comes from warmth, authenticity, and experiences that naturally leave a lasting impression.</p>
+        </div>
+      </div>
+      <div class="philosophy-card">
+        <span class="philosophy-letter">E</span>
+        <div class="philosophy-content">
+          <h3 class="philosophy-term">Elegance</h3>
+          <p class="philosophy-desc">An understated sense of beauty expressed through thoughtful details, timeless design, and refined simplicity.</p>
+        </div>
+      </div>
+      <div class="philosophy-card">
+        <span class="philosophy-letter">F</span>
+        <div class="philosophy-content">
+          <h3 class="philosophy-term">Flow</h3>
+          <p class="philosophy-desc">The seamless harmony between space, service, and experience, creating stays that feel effortless and intuitive.</p>
+        </div>
+      </div>
+      <div class="philosophy-card">
+        <span class="philosophy-letter">A</span>
+        <div class="philosophy-content">
+          <h3 class="philosophy-term">Awareness</h3>
+          <p class="philosophy-desc">A mindful approach to hospitality that values presence, intention, and a deep understanding of guest experiences and surroundings.</p>
+        </div>
+      </div>
+      <div class="philosophy-card">
+        <span class="philosophy-letter">N</span>
+        <div class="philosophy-content">
+          <h3 class="philosophy-term">Nurture</h3>
+          <p class="philosophy-desc">A commitment to care, comfort, and genuine hospitality that allows every guest and property to feel valued and supported.</p>
+        </div>
+      </div>
+      <div class="philosophy-card">
+        <span class="philosophy-letter">N</span>
+        <div class="philosophy-content">
+          <h3 class="philosophy-term">Nexus</h3>
+          <p class="philosophy-desc">The meaningful connection between people, culture, nature, and experiences that come together within every LEFANNA destination.</p>
+        </div>
+      </div>
+      <div class="philosophy-card philosophy-grid-item align-center-bottom">
+        <span class="philosophy-letter">A</span>
+        <div class="philosophy-content">
+          <h3 class="philosophy-term">Alignment</h3>
+          <p class="philosophy-desc">A balance between vision, purpose, and hospitality — ensuring every element works together in harmony to create experiences that are deeply felt and genuinely remembered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Destinations Grid -->
+  <section class="destinations-section">
+    <div class="destinations-container">
+      <div class="destinations-header">
+        <h2 class="destinations-title">Our Destinations</h2>
+        <p class="destinations-subtitle">Currently, LEFANNA proudly manages 4 distinctive hospitality properties located across Bali's most captivating destinations. Surrounded by natural beauty and cultural richness, each property offers a unique interpretation of quiet luxury and meaningful escape.</p>
+      </div>
+      <div class="destinations-grid">
+        <a href="/hotels-resorts/" class="destination-card">
+          <div class="destination-card-bg" style="background-image: url('/wp-content/themes/lefanna/images/jungle-sari-3.jpg');"></div>
+          <div class="destination-card-overlay"></div>
+          <div class="destination-card-content">
+            <h3 class="destination-card-title">Ubud</h3>
+            <span class="destination-card-desc">Rainforest & River Valleys</span>
+          </div>
+          <div class="destination-card-border"></div>
+        </a>
+        <a href="/hotels-resorts/" class="destination-card">
+          <div class="destination-card-bg" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="destination-card-overlay"></div>
+          <div class="destination-card-content">
+            <h3 class="destination-card-title">Tegalalang</h3>
+            <span class="destination-card-desc">Lush Rice Terraces</span>
+          </div>
+          <div class="destination-card-border"></div>
+        </a>
+        <a href="/hotels-resorts/" class="destination-card">
+          <div class="destination-card-bg" style="background-image: url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="destination-card-overlay"></div>
+          <div class="destination-card-content">
+            <h3 class="destination-card-title">Nusa Penida</h3>
+            <span class="destination-card-desc">Coastal Cliffs & Escapes</span>
+          </div>
+          <div class="destination-card-border"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Our Values -->
+  <section class="values-section">
+    <h2 class="values-section-title">Our Values</h2>
     <div class="values-grid">
       <div class="value-card">
-        <h4 class="value-title">Culture</h4>
-        <p class="value-desc">Preserving traditional arts, Balinese rituals, and native village aesthetics.</p>
+        <span class="value-number">01</span>
+        <h3 class="value-title">Culture</h3>
+        <p class="value-desc">Preserving traditional arts, Balinese rituals, and native village aesthetics that breathe life into each destination.</p>
       </div>
       <div class="value-card">
-        <h4 class="value-title">Conservation</h4>
-        <p class="value-desc">Protecting natural river basins, rice fields, and minimizing plastic waste.</p>
+        <span class="value-number">02</span>
+        <h3 class="value-title">Conservation</h3>
+        <p class="value-desc">Protecting natural river basins, majestic rice fields, and minimizing plastic waste to preserve mother nature.</p>
       </div>
       <div class="value-card">
-        <h4 class="value-title">Community</h4>
-        <p class="value-desc">Partnering with local villagers and generating shared economic progress.</p>
+        <span class="value-number">03</span>
+        <h3 class="value-title">Community</h3>
+        <p class="value-desc">Partnering with local villagers and generating shared economic progress to ensure harmonious living.</p>
       </div>
     </div>
-  </article>
+  </section>
+
+  <!-- Section 5: Rate Card -->
+  <section class="ratecard-section">
+    <div class="ratecard-container">
+      <span class="ratecard-header-badge">Property Management Rate Card</span>
+      
+      <div class="ratecard-block">
+        <h3 class="ratecard-title">Management Fee Structure</h3>
+        <table class="ratecard-table">
+          <thead>
+            <tr>
+              <th>Property Category</th>
+              <th>Management Fee</th>
+              <th>Basis Calculation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ratecard-category">Homestay / Guest House</td>
+              <td class="ratecard-value">10%</td>
+              <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
+            </tr>
+            <tr>
+              <td class="ratecard-category">Private Villa / Luxury Villa</td>
+              <td class="ratecard-value">12%</td>
+              <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
+            </tr>
+            <tr>
+              <td class="ratecard-category">Hotel / Boutique Resort</td>
+              <td class="ratecard-value">14%</td>
+              <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ratecard-block">
+        <h3 class="ratecard-title">Marketing & Advertising Service</h3>
+        <table class="ratecard-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Charge</th>
+              <th>Coverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ratecard-category">Digital Marketing & OTA Optimization</td>
+              <td class="ratecard-value">3%</td>
+              <td class="ratecard-basis">From Room ARR (Average Room Rate)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="ratecard-details-grid">
+          <div>
+            <h4 class="ratecard-details-title">Marketing Scope Includes:</h4>
+            <ul class="ratecard-list">
+              <li class="ratecard-list-item">OTA management and optimization</li>
+              <li class="ratecard-list-item">Social media management</li>
+              <li class="ratecard-list-item">Online advertising campaigns</li>
+              <li class="ratecard-list-item">Promotion strategy and campaign planning</li>
+              <li class="ratecard-list-item">Basic content coordination</li>
+              <li class="ratecard-list-item">Market positioning support</li>
+              <li class="ratecard-list-item">Revenue and pricing strategy support</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="ratecard-details-title">Notes & Terms:</h4>
+            <ul class="ratecard-list">
+              <li class="ratecard-list-item">Management fee is calculated based on monthly Gross Operating Profit (GOP).</li>
+              <li class="ratecard-list-item">Marketing fee is calculated separately from room ARR revenue.</li>
+              <li class="ratecard-list-item">Advertising budget spending is excluded and billed separately based on campaign requirements.</li>
+              <li class="ratecard-list-item">Custom operational structures and service scopes may be adjusted depending on property size and operational complexity.</li>
+              <li class="ratecard-list-item">Long-term management partnerships may receive customized commercial arrangements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- Footer -->

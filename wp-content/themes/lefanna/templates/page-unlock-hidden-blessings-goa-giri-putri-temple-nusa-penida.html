@@ -356,27 +356,26 @@
     color: #C5A880;
   }
 
-  /* Culture Page Banner */
-    /* Experiences Page Banner */
-  @keyframes experiencesSlideshow {
+      /* Corporate Page Banner */
+  @keyframes corporateSlideshow {
     0%, 20% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
     }
     25%, 45% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
     }
     50%, 70% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&q=80');
     }
     75%, 95% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
     }
     100% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80');
     }
   }
 
-  .experiences-banner {
+  .corporate-banner {
     position: relative;
     padding: 120px 40px;
     text-align: center;
@@ -384,7 +383,7 @@
     background-position: center;
     border-bottom: 1px solid #EAE3D2;
     margin-bottom: 60px;
-    animation: experiencesSlideshow 24s infinite ease-in-out;
+    animation: corporateSlideshow 24s infinite ease-in-out;
   }
   .banner-subtitle {
     font-size: 0.85rem;
@@ -406,82 +405,71 @@
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   }
 
-  /* Grid Layout & Experience Cards */
-  .experiences-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 50px 40px;
-    max-width: 1200px;
+  /* Content Wrapper */
+  .corporate-content {
+    max-width: 800px;
     margin: 0 auto 80px auto;
     padding: 0 20px;
+    font-family: 'Jost', sans-serif;
+    line-height: 1.8;
+    color: #645D55;
   }
-  
-  .exp-card {
+
+  .news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .news-card {
     background-color: #FFFFFF;
     border: 1px solid #EAE3D2;
-    padding: 0px 0px 45px 0px;
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
-    overflow: hidden;
+    padding: 40px;
+    transition: all 0.3s ease;
   }
-  .exp-card:hover {
+  .news-card:hover {
     border-color: #C5A880;
-    box-shadow: 0 20px 40px rgba(138, 115, 85, 0.05);
-    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(138, 115, 85, 0.04);
   }
-  .exp-img-wrapper {
-    width: 100%;
-    height: 260px;
-    overflow: hidden;
-  }
-  .exp-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .exp-card:hover .exp-img {
-    transform: scale(1.05);
-  }
-  .exp-info {
-    padding: 0 30px;
-  }
-  .exp-location {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
+
+  .news-date {
+    font-size: 0.8rem;
     text-transform: uppercase;
+    letter-spacing: 0.15em;
     color: #8A7355;
-    margin-top: 25px;
-    margin-bottom: 5px;
     display: block;
+    margin-bottom: 10px;
     font-weight: 600;
   }
-  .exp-name {
+
+  .news-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    margin: 5px 0 15px 0;
+    font-size: 1.8rem;
     color: #2C2621;
+    margin: 0 0 15px 0;
     font-weight: 400;
+    line-height: 1.3;
   }
-  .exp-desc {
+
+  .news-excerpt {
     font-size: 0.95rem;
     color: #645D55;
-    line-height: 1.7;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
-  .exp-btn {
+
+  .read-more-link {
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     color: #C5A880;
     text-decoration: none;
     font-weight: 600;
     border-bottom: 1px solid transparent;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
     transition: all 0.3s ease;
   }
-  .exp-card:hover .exp-btn {
+  .news-card:hover .read-more-link {
     border-bottom-color: #C5A880;
   }
 
@@ -664,6 +652,91 @@
     font-size: 0.8rem;
     color: #8E867E;
   }
+
+  /* Newsroom 3-Column Grid Styles */
+  .newsroom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px 40px;
+  }
+  .newsroom-grid-3col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px 30px;
+    margin-top: 40px;
+  }
+  @media(min-width: 768px) {
+    .newsroom-grid-3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .newsroom-card-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .newsroom-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .newsroom-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .newsroom-card-item:hover .newsroom-img-wrapper img {
+    transform: scale(1.03);
+  }
+  .newsroom-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: #2C2621;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .newsroom-card-title:hover {
+    color: #C5A880;
+  }
+  .newsroom-tag {
+    display: inline-block;
+    background-color: #3C3530;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+  .newsroom-date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    color: #9E978E;
+    margin-bottom: 12px;
+  }
+  .newsroom-date-icon {
+    width: 12px;
+    height: 12px;
+    fill: #9E978E;
+  }
+  .newsroom-excerpt-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #645D55;
+    margin: 0;
+  }
 </style>
 <!-- /wp:html -->
 
@@ -802,67 +875,118 @@
 </header>
 
 <!-- Main Page Content -->
+
+<style>
+  .detail-container {
+    max-width: 800px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    font-family: 'Jost', sans-serif;
+  }
+  .back-to-newsrooms {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C5A880;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+  }
+  .back-to-newsrooms:hover {
+    color: #2C2621;
+  }
+  .detail-tag {
+    display: inline-block;
+    background-color: #3C3530;
+    color: #FFFFFF;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    margin-right: 12px;
+    line-height: 1.5;
+  }
+  .detail-date {
+    font-size: 0.8rem;
+    color: #9E978E;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .detail-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #2C2621;
+    line-height: 1.25;
+    margin: 20px 0 30px 0;
+  }
+  .detail-img-container {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .detail-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .detail-body-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #645D55;
+  }
+  .detail-body-text p {
+    margin-bottom: 25px;
+  }
+  @media(max-width: 768px) {
+    .detail-title {
+      font-size: 2rem;
+    }
+  }
+</style>
 <main>
-  <!-- Hero Banner -->
-  <section class="experiences-banner">
-    <span class="banner-subtitle">Experiences by Lefanna</span>
-    <h2 class="banner-title">Culture & Conservations</h2>
-  </section>
-
-  <!-- Experiences Grid -->
-  <div class="experiences-grid">
-    <!-- Culture 1 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=800&q=80" alt="Canang Sari Lesson">
-      </div>
-      <div class="exp-info">
-        <span class="exp-location">Lefanna Hotels & Resorts</span>
-        <h3 class="exp-name">Canang Sari (Offering) Lesson</h3>
-        <p class="exp-desc">Learn the beautiful art of crafting daily Balinese offerings. Experience the spirituality and symbolic meanings behind palm leaf weaving.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
-      </div>
+  <!-- News Detail Content -->
+  <article class="detail-container">
+    <a href="/newsrooms/" class="back-to-newsrooms">&larr; Back to Newsroom</a>
+    
+    <div>
+      <span class="detail-tag">Wellness</span>
+      <span class="detail-date">July 7, 2026</span>
     </div>
-
-    <!-- Culture 2 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=800&q=80" alt="Balinese Dance Introduction">
-      </div>
-      <div class="exp-info">
-        <span class="exp-location">Lefanna Watu Kurung</span>
-        <h3 class="exp-name">Balinese Dance Lesson</h3>
-        <p class="exp-desc">Step into the integrated body movements, hand guestures, and expressions that make traditional Balinese dance a mesmerizing art form.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
-      </div>
+    
+    <h1 class="detail-title">Unlock Hidden Blessings at Goa Giri Putri Temple Nusa Penida</h1>
+    
+    <div class="detail-img-container">
+      <img src="/wp-content/themes/lefanna/images/unlock-hidden-blessings.jpg" alt="Unlock Hidden Blessings at Goa Giri Putri Temple Nusa Penida">
     </div>
-
-    <!-- Culture 3 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80" alt="Traditional Wood Carving">
-      </div>
-      <div class="exp-info">
-        <span class="exp-location">Lefanna Giri Kusuma</span>
-        <h3 class="exp-name">Wood Carving Masterclass</h3>
-        <p class="exp-desc">Work with local Balinese wood sculptors. Discover ancient patterns and carve your own wood souvenir to take home.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
-      </div>
+    
+    <div class="detail-body-text">
+      <p>When people think of Nusa Penida, dramatic coastlines and turquoise waters often come to mind. Yet beyond its breathtaking landscapes lies another side of the island—one rich in spirituality, culture, and timeless traditions.</p>
+          <p>At Seven Dreams – A Pramana Experience, we invite you to discover this deeper connection through an immersive journey to one of Nusa Penida&#8217;s most sacred destinations: Goa Giri Putri Temple</p>
+          <p>Nestled inside a limestone hill, Goa Giri Putri Temple is unlike any other temple in Bali. Visitors enter through a small, narrow opening in the rock that gradually unfolds into an expansive sacred cave, revealing shrines, prayer spaces, and an atmosphere of profound serenity.</p>
+          <p>For generations, the temple has been a place where Balinese Hindus gather to pray, seek blessings, and reconnect with their spiritual roots. The natural beauty of the cave, combined with its sacred energy, creates an experience that is both humbling and unforgettable.</p>
+          <p>Unlike most Balinese temples, which are built in open courtyards surrounded by traditional gates and pavilions, Goa Giri Putri is entirely housed within a natural cave. The journey itself is symbolic: visitors must bow and carefully pass through a narrow entrance before emerging into a vast cavern.</p>
+          <p>In Balinese philosophy, this passage represents humility, surrender, and spiritual rebirth. It is a reminder that meaningful blessings often require us to slow down, let go of our ego, and approach life with gratitude and respect.</p>
+          <p>The cave is also unique for housing several sacred shrines dedicated to different manifestations of divine energy, making it not only a place of worship but also a spiritual sanctuary where devotees seek purification, blessings, and inner peace.</p>
+          <p>The gentle sounds of prayer, the scent of incense, and the natural formation of the cave create an atmosphere that cannot be replicated elsewhere in Bali.</p>
+          <p>More than a cultural excursion, visiting Goa Giri Putri is an invitation to embrace Bali&#8217;s philosophy of harmony and gratitude. Surrounded by ancient traditions and the peaceful ambiance of the cave, guests are encouraged to slow down, reflect, and experience a side of Bali that often remains hidden from ordinary travel itineraries.</p>
+          <p>Whether you seek a meaningful cultural encounter, a moment of tranquility, or simply wish to discover the island beyond its scenic viewpoints, this journey offers an enriching and memorable experience.</p>
+          <p>To ensure an authentic and comfortable experience, the journey includes carefully prepared cultural elements, including traditional Balinese attire, offerings for prayer rituals, refreshments, and dedicated assistance throughout your visit.</p>
+          <p>At Seven Dreams – A Pramana Experience, we believe that travel is most meaningful when it creates genuine connections, not only with places, but also with their stories, traditions, and spirit.</p>
+          <p>Some of Bali&#8217;s greatest treasures are not only found in its landscapes but also in the experiences that touch the heart.</p>
+          <p>Embark on a spiritual journey to Goa Giri Putri Temple and uncover one of Nusa Penida&#8217;s hidden blessings, a timeless sanctuary where culture, devotion, and natural beauty come together in perfect harmony.</p>
+          <p>Stay at Seven Dreams – A Pramana Experience and discover the spiritual soul of Nusa Penida, one meaningful journey at a time.</p>
+          <p>Pramana Experience is a Bali-based hospitality management company managing a growing collection of resorts, villas, experience stays, restaurants, wellness destinations, and lifestyle experiences across Bali and surrounding islands.</p>
+          <p>Rooted in the philosophy, Pramana Experience combines authentic hospitality, cultural connection, and sustainable growth to create meaningful travel experiences while continuously developing environmentally conscious initiatives across its hospitality ecosystem.</p>
     </div>
-
-    <!-- Culture 4 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=800&q=80" alt="Traditional Village Walk">
-      </div>
-      <div class="exp-info">
-        <span class="exp-location">The Alena Resort Ubud</span>
-        <h3 class="exp-name">Silungan Village Walk</h3>
-        <p class="exp-desc">Stroll through beautiful rural villages, meet the friendly local villagers, and see their daily Balinese lifestyle and temple yards.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
-      </div>
-    </div>
-  </div>
+  </article>
 </main>
 
 <!-- Footer -->
