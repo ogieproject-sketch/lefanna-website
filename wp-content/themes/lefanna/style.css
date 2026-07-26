@@ -151,6 +151,17 @@ img, video, svg, iframe {
   transition: all 0.3s ease;
 }
 
+.pill-btn-reserve {
+  color: #2C2621;
+  border: 1px solid #9E978E;
+  background-color: transparent;
+}
+.pill-btn-reserve:hover {
+  border-color: #C5A880;
+  color: #C5A880;
+  background-color: rgba(197, 168, 128, 0.05);
+}
+
 @media (min-width: 768px) {
   .pill-btn {
     padding: 8px 18px;
