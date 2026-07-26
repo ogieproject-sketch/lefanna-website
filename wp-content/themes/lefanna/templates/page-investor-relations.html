@@ -2,6 +2,7 @@
 <style>
   /* Base Styles & Fonts */
   body {
+    padding-top: 75px;
     background-color: #FAF8F5;
     color: #2C2621;
   }
@@ -15,9 +16,11 @@
     background-color: #FAF8F5;
     border-bottom: 1px solid #EAE3D2;
     font-family: 'Jost', sans-serif;
-    position: relative;
-    
-    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
   
   .header-left {
@@ -469,8 +472,13 @@
 
   @media(max-width: 768px) {
     .lefanna-header {
-      padding: 15px 20px;
-    }
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
     .header-btn-group {
       display: flex !important;
     }
@@ -1195,8 +1203,13 @@
 
   @media(max-width: 768px) {
     .lefanna-header {
-      padding: 15px 20px;
-    }
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
     .header-btn-group {
       display: flex !important;
     }
