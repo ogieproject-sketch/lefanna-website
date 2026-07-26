@@ -331,7 +331,10 @@ function lefanna_setup_database_pages() {
             'Careers' => 'Explore hotel job vacancies.',
             'Newsrooms' => 'Latest press releases and awards.',
             'Contact Us' => 'Get in touch with our office.',
-            'Lefanna Leisure Unlimited Services' => 'PLUS corporate services.'
+            'Lefanna Leisure Unlimited Services' => 'PLUS corporate services.',
+            'Endless Summer Escape' => 'Special offer story.',
+            'Maggot Movement' => 'Sustainability movement story.',
+            'Unlock Hidden Blessings Goa Giri Putri Temple Nusa Penida' => 'Cultural journey story.'
         );
 
         foreach ($corporate_pages as $corp_title => $corp_desc) {
