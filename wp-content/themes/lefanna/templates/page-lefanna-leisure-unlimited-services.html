@@ -644,6 +644,157 @@
     font-size: 0.8rem;
     color: #8E867E;
   }
+
+  /* Enhanced Luxury PLUS Page Styles */
+  .corporate-content {
+    max-width: 1140px !important;
+    margin: 0 auto 60px auto !important;
+    padding: 0 20px !important;
+  }
+  .plus-intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 70px;
+    background: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    padding: 40px;
+    border-radius: 4px;
+  }
+  @media(max-width: 900px) {
+    .plus-intro-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  .plus-intro-img-wrapper {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .plus-intro-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .plus-intro-section:hover .plus-intro-img {
+    transform: scale(1.04);
+  }
+
+  /* 2x2 Luxury Services Grid */
+  .services-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .service-card-luxury {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card-luxury:hover {
+    border-color: #C5A880;
+    box-shadow: 0 15px 35px rgba(138, 115, 85, 0.08);
+    transform: translateY(-6px);
+  }
+  .service-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .service-card-luxury:hover .service-img {
+    transform: scale(1.08);
+  }
+  .service-body {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Property Logo Portfolio Grid */
+  .portfolio-section {
+    max-width: 1140px;
+    margin: 90px auto 80px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .property-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  .property-brand-card {
+    background: #FFFFFF;
+    border: 1px solid #EAE3D2;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 25px;
+    text-align: center;
+  }
+  .property-brand-card:hover {
+    border-color: #C5A880;
+    box-shadow: 0 15px 35px rgba(197, 168, 128, 0.12);
+    transform: translateY(-5px);
+  }
+  .property-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.08));
+  }
+  .property-thumb-wrapper {
+    width: 100%;
+    height: 180px;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .property-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .property-brand-card:hover .property-thumb-img {
+    transform: scale(1.06);
+  }
+  .property-brand-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: #2C2621;
+    margin: 10px 0 4px 0;
+    font-weight: 500;
+  }
+  .property-brand-location {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8A7355;
+    font-weight: 600;
+  }
+
 </style>
 <!-- /wp:html -->
 
@@ -773,31 +924,140 @@
 
   <!-- Corporate Content -->
   <article class="corporate-content">
-    <p class="corporate-paragraph">PLUS (Lefanna Leisure Unlimited Services) is our premium corporate solutions division. We provide full-scope advisory services, brand consultation, and operational support to resort developers and private estate owners across Indonesia.</p>
-
-    <h3 class="corporate-section-title">Our Consultancy Scope</h3>
-    <div class="services-list">
-      <div class="service-card">
-        <h4 class="service-title">1. Pre-Opening Advisory</h4>
-        <p class="service-desc">Providing detailed market feasibility studies, spatial concept development, branding design guidelines, software system selection, and initial pre-sales marketing strategies.</p>
+    
+    <!-- Intro Section with Visual -->
+    <div class="plus-intro-section">
+      <div>
+        <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #C5A880; font-weight: 600; display: block; margin-bottom: 10px;">Corporate Division</span>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: #2C2621; margin: 0 0 15px 0; font-weight: 400;">Excellence in Hospitality Management</h3>
+        <p class="corporate-paragraph" style="margin-bottom: 0;">PLUS (Lefanna Leisure Unlimited Services) is our premier corporate advisory and resort management division. We deliver full-scope advisory, spatial design consultation, revenue optimization, and operational management to luxury boutique developers, private estate owners, and resort investors across Bali and Indonesia.</p>
       </div>
-
-      <div class="service-card">
-        <h4 class="service-title">2. Operational Management Systems</h4>
-        <p class="service-desc">Creating standard operating procedures (SOP), kitchen hygiene protocols, front-desk hospitality workflows, housekeeping guidelines, and vendor supply chain logistics.</p>
-      </div>
-
-      <div class="service-card">
-        <h4 class="service-title">3. Sales & Marketing Management</h4>
-        <p class="service-desc">Handling localized social media advertising, revenue management systems, channel manager connection, corporate contracting, and global travel agent relations.</p>
-      </div>
-
-      <div class="service-card">
-        <h4 class="service-title">4. Human Resources & Training</h4>
-        <p class="service-desc">Recruiting high-caliber staff, conducting customer service workshops, and training teams in the authentic Balinese hospitality philosophies.</p>
+      <div class="plus-intro-img-wrapper">
+        <img class="plus-intro-img" src="/wp-content/themes/lefanna/images/navodaya-1.jpg" alt="Lefanna Corporate Resort Management">
       </div>
     </div>
+
+    <!-- Consultancy Scope Grid -->
+    <h3 class="corporate-section-title">Our Consultancy Scope</h3>
+    <div class="services-grid-2x2">
+      
+      <!-- Service Card 1 -->
+      <div class="service-card-luxury">
+        <div class="service-img-wrapper">
+          <img class="service-img" src="/wp-content/themes/lefanna/images/amalla-4.jpg" alt="Pre-Opening Advisory">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">1. Pre-Opening Advisory</h4>
+          <p class="service-desc">Providing detailed market feasibility studies, spatial concept development, luxury branding design guidelines, software system selection, and strategic pre-sales marketing launch campaigns.</p>
+        </div>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="service-card-luxury">
+        <div class="service-img-wrapper">
+          <img class="service-img" src="/wp-content/themes/lefanna/images/grita-apsari-1.jpg" alt="Operational Management Systems">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">2. Operational Management Systems</h4>
+          <p class="service-desc">Creating standard operating procedures (SOP), fine-dining kitchen hygiene protocols, front-desk hospitality workflows, housekeeping standards, and eco-friendly vendor supply chain logistics.</p>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="service-card-luxury">
+        <div class="service-img-wrapper">
+          <img class="service-img" src="/wp-content/themes/lefanna/images/navodaya-2.jpg" alt="Sales & Marketing Management">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">3. Sales &amp; Marketing Management</h4>
+          <p class="service-desc">Handling targeted social media campaigns, automated yield revenue management, multi-OTA channel manager connectivity, corporate contracting, and global luxury travel agency networks.</p>
+        </div>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="service-card-luxury">
+        <div class="service-img-wrapper">
+          <img class="service-img" src="/wp-content/themes/lefanna/images/jungle-sari-1.jpg" alt="Human Resources & Training">
+        </div>
+        <div class="service-body">
+          <h4 class="service-title">4. Human Resources &amp; Training</h4>
+          <p class="service-desc">Recruiting high-caliber hospitality talent, conducting customer service excellence workshops, and training operational teams in authentic Balinese warmth and luxury service philosophy.</p>
+        </div>
+      </div>
+
+    </div>
   </article>
+
+  <!-- Managed Property Portfolio & Logo Collection Section -->
+  <section class="portfolio-section">
+    <span style="font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: #C5A880; font-weight: 600; display: block; margin-bottom: 10px;">Brand Collection</span>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: #2C2621; margin: 0 0 15px 0;">Our Portfolio of Managed Properties</h2>
+    <p style="font-size: 1rem; color: #645D55; max-width: 680px; margin: 0 auto 50px auto; line-height: 1.7;">Explore the collection of luxury boutique lodges, private pool villas, and eco-sanctuaries managed under the Lefanna Experience umbrella across Bali.</p>
+
+    <div class="property-logo-grid">
+      
+      <!-- Brand Logo Card 1: Amalla Lodge Penida -->
+      <a href="/hotels-resorts/#details-amalla" class="property-brand-card">
+        <img src="/wp-content/themes/lefanna/images/lefanna-logo.png" alt="Amalla Lodge Penida Logo" class="property-logo-img">
+        <div class="property-thumb-wrapper">
+          <img src="/wp-content/themes/lefanna/images/amalla-1.jpg" alt="Amalla Lodge Penida" class="property-thumb-img">
+        </div>
+        <h4 class="property-brand-title">Amalla Lodge</h4>
+        <span class="property-brand-location">Nusa Penida – Bali</span>
+      </a>
+
+      <!-- Brand Logo Card 2: The Jungle Sari -->
+      <a href="/hotels-resorts/#details-jungle" class="property-brand-card">
+        <img src="/wp-content/themes/lefanna/images/lefanna-logo.png" alt="The Jungle Sari Logo" class="property-logo-img">
+        <div class="property-thumb-wrapper">
+          <img src="/wp-content/themes/lefanna/images/jungle-sari-1.jpg" alt="The Jungle Sari" class="property-thumb-img">
+        </div>
+        <h4 class="property-brand-title">The Jungle Sari</h4>
+        <span class="property-brand-location">Tegallalang, Ubud – Bali</span>
+      </a>
+
+      <!-- Brand Logo Card 3: Grita Apsari Lodge -->
+      <a href="/hotels-resorts/#details-grita" class="property-brand-card">
+        <img src="/wp-content/themes/lefanna/images/lefanna-logo.png" alt="Grita Apsari Lodge Logo" class="property-logo-img">
+        <div class="property-thumb-wrapper">
+          <img src="/wp-content/themes/lefanna/images/grita-apsari-1.jpg" alt="Grita Apsari Lodge" class="property-thumb-img">
+        </div>
+        <h4 class="property-brand-title">Grita Apsari Lodge</h4>
+        <span class="property-brand-location">Payangan – Bali</span>
+      </a>
+
+      <!-- Brand Logo Card 4: Kojong House -->
+      <a href="/hotels-resorts/#details-kojong" class="property-brand-card">
+        <img src="/wp-content/themes/lefanna/images/lefanna-logo.png" alt="Kojong House Logo" class="property-logo-img">
+        <div class="property-thumb-wrapper">
+          <img src="/wp-content/themes/lefanna/images/kojong-house-1.jpg" alt="Kojong House" class="property-thumb-img">
+        </div>
+        <h4 class="property-brand-title">Kojong House</h4>
+        <span class="property-brand-location">Ubud – Bali</span>
+      </a>
+
+      <!-- Brand Logo Card 5: Navodaya Villa -->
+      <a href="/hotels-resorts/#details-navodaya" class="property-brand-card">
+        <img src="/wp-content/themes/lefanna/images/lefanna-logo.png" alt="Navodaya Villa Logo" class="property-logo-img">
+        <div class="property-thumb-wrapper">
+          <img src="/wp-content/themes/lefanna/images/navodaya-1.jpg" alt="Navodaya Villa" class="property-thumb-img">
+        </div>
+        <h4 class="property-brand-title">Navodaya Villa</h4>
+        <span class="property-brand-location">Payangan – Bali</span>
+      </a>
+
+      <!-- Brand Logo Card 6: Umah Ukir -->
+      <a href="/hotels-resorts/#details-umah" class="property-brand-card">
+        <img src="/wp-content/themes/lefanna/images/lefanna-logo.png" alt="Umah Ukir Logo" class="property-logo-img">
+        <div class="property-thumb-wrapper">
+          <img src="/wp-content/themes/lefanna/images/amalla-3.jpg" alt="Umah Ukir" class="property-thumb-img">
+        </div>
+        <h4 class="property-brand-title">Umah Ukir</h4>
+        <span class="property-brand-location">Ubud – Bali</span>
+      </a>
+
+    </div>
+  </section>
 </main>
 
 <!-- Footer -->
