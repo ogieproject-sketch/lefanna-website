@@ -179,6 +179,14 @@
     margin: 0;
   }
   .nav-item {
+  /* Hidden Menu Toggle (Experiences) */
+  .nav-item-experiences,
+  .drawer-item-experiences,
+  .nav-item:has(a[href*="/experiences/"]),
+  .drawer-menu-item:has(a[href*="/experiences/"]) {
+    display: none !important;
+  }
+
     position: relative;
   }
   .nav-link {
@@ -732,7 +740,7 @@
       <a href="/offers/" class="drawer-menu-link">Offers</a>
     </li>
     
-    <li class="drawer-menu-item">
+    <li class="drawer-menu-item drawer-item-experiences" style="display: none !important;">
       <a href="#" class="drawer-menu-link drawer-parent-link">Experiences <span class="arrow-indicator">▾</span></a>
       <ul class="drawer-submenu">
         <li><a href="/experiences/journeys/" class="drawer-submenu-link">Journeys</a></li>
@@ -791,7 +799,7 @@
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="/hotels-resorts/" class="nav-link">Find & Reserve</a></li>
         <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
-        <li class="nav-item has-dropdown">
+        <li class="nav-item has-dropdown nav-item-experiences" style="display: none !important;">
           <a href="#" class="nav-link">Experiences <span class="nav-arrow">▾</span></a>
           <ul class="nav-dropdown">
             <li><a href="/experiences/journeys/">Journeys</a></li>

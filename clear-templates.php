@@ -18,16 +18,8 @@ $posts = get_posts($args);
 echo "Found " . count($posts) . " custom templates in the database:\n";
 foreach ($posts as $post) {
     echo "- ID: {$post->ID}, Name: {$post->post_name}, Title: {$post->post_title}, Type: {$post->post_type}\n";
-    // Let's delete the customized index template
-    if ($post->post_name === 'index' || $post->post_name === 'lefanna//index') {
-        wp_delete_post($post->ID, true);
-        echo "  --> DELETED customized index template!\n";
-    }
-    // Let's delete customized front-page template if any
-    if ($post->post_name === 'front-page' || $post->post_name === 'lefanna//front-page') {
-        wp_delete_post($post->ID, true);
-        echo "  --> DELETED customized front-page template!\n";
-    }
+    wp_delete_post($post->ID, true);
+    echo "  --> DELETED template {$post->post_name} from database!\n";
 }
 
 // Query all posts of type wp_template_part
