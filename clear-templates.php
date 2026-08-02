@@ -8,30 +8,28 @@ header('Content-Type: text/plain');
 echo "WordPress Bootstrap Loaded.\n";
 
 // Query all posts of type wp_template
-$args = array(
-    'post_type' => 'wp_template',
-    'post_status' => 'any',
-    'posts_per_page' => -1
-);
-$posts = get_posts($args);
+global $wpdb;
 
-echo "Found " . count($posts) . " custom templates in the database:\n";
-foreach ($posts as $post) {
-    echo "- ID: {$post->ID}, Name: {$post->post_name}, Title: {$post->post_title}, Type: {$post->post_type}\n";
-    wp_delete_post($post->ID, true);
-    echo "  --> DELETED template {$post->post_name} from database!\n";
+// 1. Direct DB deletion of cached templates and template parts
+$deleted_templates = $wpdb->query("DELETE FROM {$wpdb->posts} WHERE post_type IN ('wp_template', 'wp_template_part')");
+echo "Deleted {$deleted_templates} cached template records from database table wp_posts.\n";
+
+// 2. Clear WP Object Cache
+if (function_exists('wp_cache_flush')) {
+    wp_cache_flush();
+    echo "WordPress Object Cache flushed.\n";
 }
 
-// Query all posts of type wp_template_part
-$args_parts = array(
-    'post_type' => 'wp_template_part',
-    'post_status' => 'any',
-    'posts_per_page' => -1
-);
-$parts = get_posts($args_parts);
-echo "\nFound " . count($parts) . " custom template parts in the database:\n";
-foreach ($parts as $part) {
-    echo "- ID: {$part->ID}, Name: {$part->post_name}, Title: {$part->post_title}\n";
+// 3. Clear PHP OPcache
+if (function_exists('opcache_reset')) {
+    @opcache_reset();
+    echo "PHP OPcache reset.\n";
 }
 
-echo "\nDone!\n";
+// 4. Clear LiteSpeed Cache if installed
+if (class_exists('LiteSpeed\Purge')) {
+    LiteSpeed\Purge::purge_all();
+    echo "LiteSpeed Cache purged.\n";
+}
+
+echo "\nDone clearing templates and caches!\n";
