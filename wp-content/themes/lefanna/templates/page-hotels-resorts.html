@@ -496,8 +496,61 @@
     padding-bottom: 4px;
     transition: all 0.3s ease;
   }
-  .hotel-card:hover .hotel-btn {
-    border-bottom-color: #C5A880;
+  .hotel-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #F4EFE6;
+  }
+  .hotel-book-now {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #FFFFFF !important;
+    background-color: #C5A880;
+    padding: 8px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(197, 168, 128, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .hotel-book-now:hover {
+    background-color: #2C2621;
+    color: #C5A880 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(44, 38, 33, 0.2);
+  }
+  .card-top-right-wa-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    background-color: rgba(26, 22, 19, 0.85);
+    color: #C5A880 !important;
+    border: 1px solid #C5A880;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .card-top-right-wa-badge:hover {
+    background-color: #C5A880;
+    color: #1A1613 !important;
+    transform: scale(1.05);
   }
 
   @media(max-width: 768px) {
@@ -1072,6 +1125,7 @@
     <div class="hotels-grid">
       <!-- Hotel 1: Amalla Lodge Penida by Lefanna -->
       <div class="hotel-card">
+        <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Amalla%20Lodge%20Penida." target="_blank" rel="noopener noreferrer" class="card-top-right-wa-badge">Book Now 💬</a>
         <div class="hotel-img-wrapper">
           <img class="hotel-img" src="/wp-content/themes/lefanna/images/amalla-4.jpg" alt="Amalla Lodge Penida by Lefanna">
         </div>
@@ -1079,12 +1133,16 @@
           <span class="hotel-location">GUEST HOUSE – NUSA PENIDA • 7 ROOMS</span>
           <h3 class="hotel-name">Amalla Lodge Penida by Lefanna</h3>
           <p class="hotel-desc">A comfortable 7-room Guest House in Sampalan, Nusa Penida, offering spacious rooms with private bathrooms, balconies and garden or city views. Guests can enjoy both rooftop and indoor swimming pools, an on-site restaurant, garden and convenient access to Mentigi Beach.</p>
-          <a href="#details-amalla" class="hotel-btn">View details</a>
+          <div class="hotel-card-actions">
+            <a href="#details-amalla" class="hotel-btn">View details</a>
+            <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Amalla%20Lodge%20Penida." target="_blank" rel="noopener noreferrer" class="hotel-book-now">Book Now</a>
+          </div>
         </div>
       </div>
 
       <!-- Hotel 2: Kojong House by Lefanna -->
       <div class="hotel-card">
+        <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Kojong%20House." target="_blank" rel="noopener noreferrer" class="card-top-right-wa-badge">Book Now 💬</a>
         <div class="hotel-img-wrapper">
           <img class="hotel-img" src="/wp-content/themes/lefanna/images/kojong-house-1.jpg" alt="Kojong House by Lefanna">
         </div>
@@ -1092,12 +1150,16 @@
           <span class="hotel-location">GUEST HOUSE – UBUD / SUKAWATI AREA • 3 ROOMS</span>
           <h3 class="hotel-name">Kojong House by Lefanna</h3>
           <p class="hotel-desc">A small and intimate 3-room Guest House near Ubud, designed for guests looking for a peaceful stay surrounded by greenery. Kojong House offers comfortable rooms with pool views, a shared swimming pool and kitchen, making it suitable for couples, families and small groups.</p>
-          <a href="#details-kojong" class="hotel-btn">View details</a>
+          <div class="hotel-card-actions">
+            <a href="#details-kojong" class="hotel-btn">View details</a>
+            <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Kojong%20House." target="_blank" rel="noopener noreferrer" class="hotel-book-now">Book Now</a>
+          </div>
         </div>
       </div>
 
       <!-- Hotel 3: The Jungle Sari by Omanera -->
       <div class="hotel-card">
+        <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20The%20Jungle%20Sari." target="_blank" rel="noopener noreferrer" class="card-top-right-wa-badge">Book Now 💬</a>
         <div class="hotel-img-wrapper">
           <img class="hotel-img" src="/wp-content/themes/lefanna/images/jungle-sari-4.jpg" alt="The Jungle Sari by Omanera">
         </div>
@@ -1105,12 +1167,16 @@
           <span class="hotel-location">GUEST HOUSE – SUKAWATI / UBUD AREA • 5 ROOMS</span>
           <h3 class="hotel-name">The Jungle Sari by Omanera</h3>
           <p class="hotel-desc">A tranquil 5-room Guest House in the Sukawati / Ubud area, close to Tegenungan Waterfall. The property features comfortable pool-view rooms, an outdoor swimming pool, garden, shared kitchen and breakfast, offering a relaxed stay with an authentic Balinese village atmosphere.</p>
-          <a href="#details-jungle" class="hotel-btn">View details</a>
+          <div class="hotel-card-actions">
+            <a href="#details-jungle" class="hotel-btn">View details</a>
+            <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20The%20Jungle%20Sari." target="_blank" rel="noopener noreferrer" class="hotel-book-now">Book Now</a>
+          </div>
         </div>
       </div>
 
       <!-- Hotel 4: Grita Apsari Guest House by Omanera -->
       <div class="hotel-card">
+        <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Grita%20Apsari%20Guest%20House." target="_blank" rel="noopener noreferrer" class="card-top-right-wa-badge">Book Now 💬</a>
         <div class="hotel-img-wrapper">
           <img class="hotel-img" src="/wp-content/themes/lefanna/images/grita-apsari-1.jpg" alt="Grita Apsari Guest House by Omanera">
         </div>
@@ -1118,12 +1184,16 @@
           <span class="hotel-location">GUEST HOUSE – TEGALALANG, UBUD • 6 ROOMS</span>
           <h3 class="hotel-name">Grita Apsari Guest House by Omanera</h3>
           <p class="hotel-desc">A peaceful 6-room Guest House in Tegalalang, Ubud, surrounded by lush greenery and rice-field scenery. Grita Apsari offers stylish rooms with balconies, air conditioning, private bathrooms and garden views, together with swimming pools, breakfast and a relaxing tropical atmosphere.</p>
-          <a href="#details-grita" class="hotel-btn">View details</a>
+          <div class="hotel-card-actions">
+            <a href="#details-grita" class="hotel-btn">View details</a>
+            <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Grita%20Apsari%20Guest%20House." target="_blank" rel="noopener noreferrer" class="hotel-book-now">Book Now</a>
+          </div>
         </div>
       </div>
 
       <!-- Hotel 5: Navodaya Villa by Lefanna -->
       <div class="hotel-card">
+        <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Navodaya%20Villa." target="_blank" rel="noopener noreferrer" class="card-top-right-wa-badge">Book Now 💬</a>
         <div class="hotel-img-wrapper">
           <img class="hotel-img" src="/wp-content/themes/lefanna/images/navodaya-1.jpg" alt="Navodaya Villa by Lefanna">
         </div>
@@ -1131,12 +1201,16 @@
           <span class="hotel-location">PRIVATE POOL VILLA – UBUD • 4-UNIT BEDROOM VILLA</span>
           <h3 class="hotel-name">Navodaya Villa by Lefanna</h3>
           <p class="hotel-desc">A modern 4-unit bedroom Private Pool Villa in Pengosekan, Ubud. The villa offers private swimming pool, living area, fully equipped kitchen, garden and terrace. Its location provides convenient access to Ubud's cultural attractions, restaurants and Monkey Forest.</p>
-          <a href="#details-navodaya" class="hotel-btn">View details</a>
+          <div class="hotel-card-actions">
+            <a href="#details-navodaya" class="hotel-btn">View details</a>
+            <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Navodaya%20Villa." target="_blank" rel="noopener noreferrer" class="hotel-book-now">Book Now</a>
+          </div>
         </div>
       </div>
 
       <!-- Hotel 6: Umah Ukir Villa -->
       <div class="hotel-card">
+        <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Umah%20Ukir%20Villa." target="_blank" rel="noopener noreferrer" class="card-top-right-wa-badge">Book Now 💬</a>
         <div class="hotel-img-wrapper">
           <img class="hotel-img" src="/wp-content/themes/lefanna/images/umah-ukir-1.jpg" alt="Umah Ukir Villa">
         </div>
@@ -1144,7 +1218,10 @@
           <span class="hotel-location">PRIVATE POOL VILLA – SIBANG, BALI • 1 VILLA</span>
           <h3 class="hotel-name">Umah Ukir Villa</h3>
           <p class="hotel-desc">A private 1-villa Private Pool Villa retreat in Sibang, Bali, offering a peaceful tropical setting away from the busier tourist areas while remaining conveniently located for guests visiting Green School and the surrounding Bali countryside.</p>
-          <a href="#details-umah" class="hotel-btn">View details</a>
+          <div class="hotel-card-actions">
+            <a href="#details-umah" class="hotel-btn">View details</a>
+            <a href="https://wa.me/628216231889?text=Halo%20Lefanna,%20saya%20ingin%20melakukan%20reservasi%20pemesanan%20Umah%20Ukir%20Villa." target="_blank" rel="noopener noreferrer" class="hotel-book-now">Book Now</a>
+          </div>
         </div>
       </div>
     </div>
