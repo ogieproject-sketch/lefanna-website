@@ -748,15 +748,16 @@
     }
   }
 
+  /* Responsive Adjustments for Mobile and Tablet */
   @media(max-width: 768px) {
     .lefanna-header {
-    padding: 15px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
     .header-btn-group {
       display: flex !important;
     }
@@ -764,21 +765,221 @@
       padding: 6px 12px !important;
       font-size: 0.6rem !important;
     }
-  }
-  
-
-  /* Responsive Adjustments for Mobile and Tablet */
-  @media(max-width: 768px) {
     .hotels-banner, .villas-banner, .offers-banner, .experiences-banner, .corporate-banner {
-      padding: 80px 20px !important;
+      padding: 100px 20px 60px 20px !important;
+      margin-bottom: 50px !important;
     }
     .banner-title {
-      font-size: 2.3rem !important;
+      font-size: 2.4rem !important;
     }
     .banner-subtitle {
       font-size: 0.75rem !important;
-      letter-spacing: 0.15em !important;
+      letter-spacing: 0.2em !important;
     }
+
+    /* Luxury Intro & Story Mobile Styling */
+    .luxury-section {
+      padding: 0 20px !important;
+      margin-bottom: 60px !important;
+      gap: 30px !important;
+    }
+    .luxury-heading {
+      font-size: 2.0rem !important;
+      margin-bottom: 18px !important;
+    }
+    .luxury-divider {
+      margin-bottom: 20px !important;
+    }
+    .luxury-quote {
+      font-size: 1.25rem !important;
+      padding-left: 15px !important;
+      margin-bottom: 20px !important;
+    }
+    .luxury-paragraph {
+      font-size: 0.95rem !important;
+      line-height: 1.7 !important;
+    }
+
+    /* Collage Mobile Optimization */
+    .collage-wrapper {
+      height: 300px !important;
+      margin-top: 10px !important;
+    }
+    .collage-img-main {
+      width: 82% !important;
+      height: 85% !important;
+    }
+    .collage-img-sub {
+      width: 52% !important;
+      height: 52% !important;
+      border-width: 5px !important;
+    }
+
+    .luxury-wide-img-wrapper {
+      height: 240px !important;
+    }
+
+    /* Vision & Mission Mobile Optimization */
+    .vision-mission-section {
+      padding: 60px 20px !important;
+      margin-bottom: 60px !important;
+    }
+    .vision-mission-title {
+      font-size: 2.2rem !important;
+      margin-bottom: 20px !important;
+    }
+    .vision-mission-intro {
+      font-size: 1.0rem !important;
+      line-height: 1.7 !important;
+      margin-bottom: 25px !important;
+    }
+    .vision-mission-quote {
+      font-size: 1.3rem !important;
+      padding: 20px 0 !important;
+      margin-bottom: 25px !important;
+    }
+    .vision-mission-desc {
+      font-size: 0.95rem !important;
+      line-height: 1.7 !important;
+    }
+
+    /* Philosophy Acronym Mobile Optimization */
+    .philosophy-section {
+      padding: 0 20px !important;
+      margin-bottom: 60px !important;
+    }
+    .philosophy-title {
+      font-size: 2.2rem !important;
+      margin-bottom: 15px !important;
+    }
+    .philosophy-subtitle {
+      font-size: 0.95rem !important;
+    }
+    .philosophy-header {
+      margin-bottom: 35px !important;
+    }
+    .philosophy-grid {
+      gap: 15px !important;
+    }
+    .philosophy-card {
+      padding: 24px 18px !important;
+      gap: 15px !important;
+    }
+    .philosophy-letter {
+      font-size: 2.6rem !important;
+    }
+    .philosophy-term {
+      font-size: 1.3rem !important;
+      margin-bottom: 6px !important;
+    }
+    .philosophy-desc {
+      font-size: 0.9rem !important;
+    }
+    .philosophy-grid-item.align-center-bottom {
+      max-width: 100% !important;
+    }
+
+    /* Destinations Mobile Optimization */
+    .destinations-section {
+      padding: 60px 20px !important;
+      margin-bottom: 60px !important;
+    }
+    .destinations-header {
+      margin-bottom: 35px !important;
+    }
+    .destinations-title {
+      font-size: 2.2rem !important;
+    }
+    .destinations-subtitle {
+      font-size: 0.95rem !important;
+    }
+    .destination-card {
+      height: 280px !important;
+      padding: 20px !important;
+    }
+    .destination-card-title {
+      font-size: 1.5rem !important;
+    }
+
+    /* Values Mobile Optimization */
+    .values-section {
+      padding: 0 20px !important;
+      margin-bottom: 60px !important;
+    }
+    .values-section-title {
+      font-size: 2.2rem !important;
+      margin-bottom: 30px !important;
+    }
+    .values-grid {
+      gap: 18px !important;
+    }
+    .value-card {
+      padding: 30px 20px !important;
+    }
+    .value-number {
+      font-size: 2.0rem !important;
+      margin-bottom: 8px !important;
+    }
+    .value-title {
+      font-size: 1.45rem !important;
+      margin-bottom: 10px !important;
+    }
+    .value-desc {
+      font-size: 0.9rem !important;
+    }
+
+    /* Rate Card Mobile Optimization */
+    .ratecard-section {
+      padding: 60px 15px !important;
+    }
+    .ratecard-header-badge {
+      padding: 10px 22px !important;
+      font-size: 0.65rem !important;
+      letter-spacing: 0.18em !important;
+      margin-bottom: 35px !important;
+    }
+    .ratecard-block {
+      padding: 25px 16px !important;
+      margin-bottom: 35px !important;
+      border-radius: 8px !important;
+    }
+    .ratecard-title {
+      font-size: 1.6rem !important;
+      margin-bottom: 20px !important;
+      padding-bottom: 10px !important;
+    }
+    .ratecard-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 15px;
+    }
+    .ratecard-table {
+      min-width: 500px;
+    }
+    .ratecard-table th {
+      padding: 10px 8px !important;
+      font-size: 0.7rem !important;
+    }
+    .ratecard-table td {
+      padding: 14px 8px !important;
+      font-size: 0.85rem !important;
+    }
+    .ratecard-value {
+      font-size: 1.5rem !important;
+    }
+    .ratecard-details-grid {
+      gap: 30px !important;
+      margin-top: 20px !important;
+    }
+    .ratecard-details-title {
+      font-size: 1.35rem !important;
+      margin-bottom: 15px !important;
+      padding-bottom: 8px !important;
+    }
+    .ratecard-list-item {
+      font-size: 0.88rem !important;
+    }
+
     .footer-container {
       padding: 50px 20px 30px 20px !important;
     }
@@ -1514,52 +1715,56 @@
       
       <div class="ratecard-block">
         <h3 class="ratecard-title">Management Fee Structure</h3>
-        <table class="ratecard-table">
-          <thead>
-            <tr>
-              <th>Property Category</th>
-              <th>Management Fee</th>
-              <th>Basis Calculation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="ratecard-category">Homestay / Guest House</td>
-              <td class="ratecard-value">10%</td>
-              <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
-            </tr>
-            <tr>
-              <td class="ratecard-category">Private Villa / Luxury Villa</td>
-              <td class="ratecard-value">12%</td>
-              <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
-            </tr>
-            <tr>
-              <td class="ratecard-category">Hotel / Boutique Resort</td>
-              <td class="ratecard-value">14%</td>
-              <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="ratecard-table-wrapper">
+          <table class="ratecard-table">
+            <thead>
+              <tr>
+                <th>Property Category</th>
+                <th>Management Fee</th>
+                <th>Basis Calculation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ratecard-category">Homestay / Guest House</td>
+                <td class="ratecard-value">10%</td>
+                <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
+              </tr>
+              <tr>
+                <td class="ratecard-category">Private Villa / Luxury Villa</td>
+                <td class="ratecard-value">12%</td>
+                <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
+              </tr>
+              <tr>
+                <td class="ratecard-category">Hotel / Boutique Resort</td>
+                <td class="ratecard-value">14%</td>
+                <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="ratecard-block">
         <h3 class="ratecard-title">Marketing & Advertising Service</h3>
-        <table class="ratecard-table">
-          <thead>
-            <tr>
-              <th>Service</th>
-              <th>Charge</th>
-              <th>Coverage</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="ratecard-category">Digital Marketing & OTA Optimization</td>
-              <td class="ratecard-value">3%</td>
-              <td class="ratecard-basis">From Room ARR (Average Room Rate)</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="ratecard-table-wrapper">
+          <table class="ratecard-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Charge</th>
+                <th>Coverage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ratecard-category">Digital Marketing & OTA Optimization</td>
+                <td class="ratecard-value">3%</td>
+                <td class="ratecard-basis">From Room ARR (Average Room Rate)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div class="ratecard-details-grid">
           <div>
