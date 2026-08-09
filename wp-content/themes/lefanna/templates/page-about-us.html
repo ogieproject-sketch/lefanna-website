@@ -592,36 +592,39 @@
   }
   .destination-card-overlay {
     position: absolute;
-    
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(26, 22, 19, 0.85) 0%, rgba(26, 22, 19, 0.3) 50%, rgba(26, 22, 19, 0.1) 100%);
+    background: linear-gradient(to top, rgba(15, 12, 10, 0.92) 0%, rgba(15, 12, 10, 0.55) 60%, rgba(15, 12, 10, 0.25) 100%);
     z-index: 2;
     transition: background 0.4s ease;
   }
   .destination-card-content {
     position: relative;
     z-index: 3;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     transform: translateY(0);
     transition: transform 0.4s ease;
   }
   .destination-card-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #FFFFFF !important;
     margin: 0 0 8px 0;
     letter-spacing: 0.05em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
   }
   .destination-card-desc {
     font-family: 'Jost', sans-serif;
     font-size: 0.85rem;
-    color: #D8D1C5;
+    color: #C5A880 !important;
     margin: 0;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    opacity: 0.9;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
   }
   .destination-card-border {
     position: absolute;
@@ -905,7 +908,15 @@
       padding: 20px !important;
     }
     .destination-card-title {
-      font-size: 1.5rem !important;
+      font-size: 1.65rem !important;
+      color: #FFFFFF !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95) !important;
+      font-weight: 600 !important;
+    }
+    .destination-card-desc {
+      color: #C5A880 !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95) !important;
+      font-weight: 600 !important;
     }
 
     /* Values Mobile Optimization */
