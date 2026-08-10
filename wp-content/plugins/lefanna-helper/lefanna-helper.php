@@ -216,7 +216,7 @@ add_action('init', 'lefanna_run_utility_check');
  */
 function lefanna_setup_database_pages() {
     if (isset($_GET['setup_lefanna_pages'])) {
-        $bypass = isset($_GET['secret_token']) && $_GET['secret_token'] === 'omanera_sync_secret_7721';
+        $bypass = isset($_GET['secret_token']) && $_GET['secret_token'] === 'lefanna_sync_secret_7721';
         if (!$bypass && !current_user_can('manage_options')) {
             wp_die('Anda harus login sebagai Administrator untuk menggunakan fitur ini.', 'Akses Ditolak', array('response' => 403));
         }
