@@ -1040,11 +1040,12 @@
   </section>
 
   <!-- What We Do Section -->
-  <section class="what-we-do-section" style="max-width: 1200px; margin: 100px auto; padding: 0 20px; font-family: 'Jost', sans-serif;">
+  <section class="what-we-do-section" style="max-width: 1320px; margin: 100px auto; padding: 0 20px; font-family: 'Jost', sans-serif;">
     <style>
       .wwd-header {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
+        position: relative;
       }
       .wwd-main-title {
         font-family: 'Cormorant Garamond', serif;
@@ -1061,60 +1062,117 @@
         background-color: #C5A880;
         margin: 0 auto;
       }
-      .wwd-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .wwd-slider-wrapper {
+        position: relative;
+        width: 100%;
       }
-      @media(min-width: 768px) {
-        .wwd-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
-        }
+      .wwd-slider {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 15px 5px 25px 5px;
+        scrollbar-width: thin;
+        scrollbar-color: #C5A880 #F3EFE9;
       }
-      @media(min-width: 1024px) {
-        .wwd-grid {
-          gap: 50px;
-        }
+      .wwd-slider::-webkit-scrollbar {
+        height: 6px;
+      }
+      .wwd-slider::-webkit-scrollbar-track {
+        background: #F3EFE9;
+        border-radius: 4px;
+      }
+      .wwd-slider::-webkit-scrollbar-thumb {
+        background: #C5A880;
+        border-radius: 4px;
       }
       .wwd-col {
+        flex: 0 0 280px;
+        min-width: 260px;
+        scroll-snap-align: start;
         background-color: #FFFFFF;
-        padding: 40px 30px;
+        padding: 35px 25px;
         border: 1px solid #F3EFE9;
-        border-radius: 4px;
-        box-shadow: 0 10px 30px rgba(44, 38, 33, 0.02);
+        border-radius: 6px;
+        box-shadow: 0 10px 30px rgba(44, 38, 33, 0.03);
         transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      @media (min-width: 1280px) {
+        .wwd-col {
+          flex: 1 1 0px;
+          min-width: 220px;
+        }
       }
       .wwd-col:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(44, 38, 33, 0.06);
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(44, 38, 33, 0.08);
         border-color: #C5A880;
       }
       .wwd-num {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         font-weight: 300;
-        color: #C5A880; /* Gold */
+        color: #C5A880;
         line-height: 1;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .wwd-accent-line {
+        width: 30px;
+        height: 2px;
+        background-color: #C5A880;
+        margin-bottom: 20px;
         display: block;
       }
       .wwd-col-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 1.35rem;
+        font-size: 1.4rem;
         font-weight: 500;
         color: #2C2621;
         margin: 0 0 15px 0;
         line-height: 1.3;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
       }
       .wwd-col-desc {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
         color: #645D55;
-        line-height: 1.7;
+        line-height: 1.65;
         margin: 0;
-        text-align: justify;
-        text-justify: inter-word;
+        text-align: left;
+      }
+      .wwd-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        border: 1px solid #E5DEC9;
+        color: #2C2621;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+      }
+      .wwd-nav-btn:hover {
+        background: #C5A880;
+        color: #FFFFFF;
+        border-color: #C5A880;
+      }
+      .wwd-nav-prev { left: -22px; }
+      .wwd-nav-next { right: -22px; }
+      @media (max-width: 768px) {
+        .wwd-nav-btn { display: none; }
       }
     </style>
 
@@ -1123,33 +1181,60 @@
       <div class="wwd-divider"></div>
     </div>
 
-    <div class="wwd-grid">
-      <!-- Column 1 -->
-      <div class="wwd-col">
-        <span class="wwd-num">01</span>
-        <h4 class="wwd-col-title">Sales &amp; Marketing Strategy</h4>
-        <p class="wwd-col-desc">
-          LEFANNA develops tailored sales and marketing strategies to strengthen property visibility, attract the right audience, and enhance brand presence across relevant platforms. Through thoughtful positioning and strategic promotion, we ensure each property reaches its full market potential while maintaining its unique identity.
-        </p>
-      </div>
+    <div class="wwd-slider-wrapper">
+      <button class="wwd-nav-btn wwd-nav-prev" onclick="document.getElementById('wwd-slider-home').scrollBy({left: -300, behavior: 'smooth'})" aria-label="Previous">&larr;</button>
+      <div class="wwd-slider" id="wwd-slider-home">
+        <!-- Point 01 -->
+        <div class="wwd-col">
+          <span class="wwd-num">01</span>
+          <span class="wwd-accent-line"></span>
+          <h4 class="wwd-col-title">Sales &amp; Marketing Strategy</h4>
+          <p class="wwd-col-desc">
+            LEFANNA develops tailored sales and marketing strategies to strengthen property visibility, attract the right audience, and enhance brand presence across relevant platforms. Through thoughtful positioning and strategic promotion, we ensure each property reaches its full market potential while maintaining its unique identity.
+          </p>
+        </div>
 
-      <!-- Column 2 -->
-      <div class="wwd-col">
-        <span class="wwd-num">02</span>
-        <h4 class="wwd-col-title">Revenue &amp; Performance Optimization</h4>
-        <p class="wwd-col-desc">
-          Through strategic pricing, market analysis, and performance-driven planning, LEFANNA focuses on maximizing property potential while maintaining sustainable long-term growth and value.
-        </p>
-      </div>
+        <!-- Point 02 -->
+        <div class="wwd-col">
+          <span class="wwd-num">02</span>
+          <span class="wwd-accent-line"></span>
+          <h4 class="wwd-col-title">Revenue &amp; Performance Optimization</h4>
+          <p class="wwd-col-desc">
+            Through strategic pricing, market analysis, and performance-driven planning, LEFANNA focuses on maximizing property potential while maintaining sustainable long-term growth and value.
+          </p>
+        </div>
 
-      <!-- Column 3 -->
-      <div class="wwd-col">
-        <span class="wwd-num">03</span>
-        <h4 class="wwd-col-title">Financial Reporting &amp; Transparency</h4>
-        <p class="wwd-col-desc">
-          LEFANNA prioritizes clear and transparent financial reporting to ensure property owners remain informed about operational and revenue performance. Through structured reporting and consistent communication, we provide valuable insights that support sustainable growth and informed decision-making.
-        </p>
+        <!-- Point 03 -->
+        <div class="wwd-col">
+          <span class="wwd-num">03</span>
+          <span class="wwd-accent-line"></span>
+          <h4 class="wwd-col-title">Financial Reporting &amp; Transparency</h4>
+          <p class="wwd-col-desc">
+            LEFANNA prioritizes clear and transparent financial reporting to ensure property owners remain informed about operational and revenue performance. Through structured reporting and consistent communication, we provide valuable insights that support sustainable growth and informed decision-making.
+          </p>
+        </div>
+
+        <!-- Point 04 -->
+        <div class="wwd-col">
+          <span class="wwd-num">04</span>
+          <span class="wwd-accent-line"></span>
+          <h4 class="wwd-col-title">Management Operational Excellence</h4>
+          <p class="wwd-col-desc">
+            LEFANNA ensures seamless daily operations through strong leadership, efficient processes, and a people-first approach. We focus on maintaining high standards of service, team development, and continuous improvement to deliver exceptional guest experiences and long-term property value.
+          </p>
+        </div>
+
+        <!-- Point 05 -->
+        <div class="wwd-col">
+          <span class="wwd-num">05</span>
+          <span class="wwd-accent-line"></span>
+          <h4 class="wwd-col-title">ROI / Investment Optimization</h4>
+          <p class="wwd-col-desc">
+            LEFANNA is committed to maximizing return on investment through strategic decision-making, cost efficiency, and performance optimization. We evaluate opportunities, mitigate risks, and implement sustainable strategies that enhance property value and deliver strong, long-term returns.
+          </p>
+        </div>
       </div>
+      <button class="wwd-nav-btn wwd-nav-next" onclick="document.getElementById('wwd-slider-home').scrollBy({left: 300, behavior: 'smooth'})" aria-label="Next">&rarr;</button>
     </div>
   </section>
 

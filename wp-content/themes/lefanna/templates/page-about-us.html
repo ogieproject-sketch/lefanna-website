@@ -1395,42 +1395,66 @@
   .ratecard-block {
     background-color: #FFFFFF;
     border: 1px solid #EAE3D2;
-    border-radius: 6px;
-    padding: 50px 40px;
+    border-radius: 8px;
+    padding: 50px 45px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
     margin-bottom: 50px;
     text-align: left;
   }
   .ratecard-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: #2C2621;
-    margin-
-    margin-bottom: 30px;
-    font-weight: 400;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .ratecard-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.92rem;
+    color: #7A7269;
+    margin: 0 0 35px 0;
+    padding-bottom: 20px;
     border-bottom: 1px solid #F4EFE6;
-    padding-bottom: 15px;
+  }
+  .ratecard-subsection {
+    margin-bottom: 40px;
+  }
+  .ratecard-subheading {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2C2621;
+    margin: 0 0 18px 0;
+  }
+  .ratecard-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #EAE3D2;
+    border-radius: 6px;
+    margin-bottom: 10px;
   }
   .ratecard-table {
     width: 100%;
     border-collapse: collapse;
     font-family: 'Jost', sans-serif;
-    margin-bottom: 20px;
   }
   .ratecard-table th {
     text-align: left;
-    padding: 15px;
-    font-size: 0.8rem;
+    padding: 16px 20px;
+    font-size: 0.78rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #8E867E;
+    letter-spacing: 0.1em;
+    color: #6E675E;
+    background-color: #F6F3ED;
     border-bottom: 1px solid #EAE3D2;
-    font-weight: 500;
+    font-weight: 600;
   }
   .ratecard-table td {
-    padding: 20px 15px;
+    padding: 18px 20px;
     border-bottom: 1px solid #F4EFE6;
-    color: #5C5650;
+    color: #4A443E;
     font-size: 0.95rem;
   }
   .ratecard-table tr:last-child td {
@@ -1442,22 +1466,51 @@
   }
   .ratecard-value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #C5A880;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1;
   }
   .ratecard-basis {
-    font-size: 0.85rem;
-    color: #8E867E;
+    font-size: 0.9rem;
+    color: #5C5650;
   }
 
-  /* Marketing Scope & Note Columns */
-  .ratecard-details-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
-    margin-top: 30px;
+  .ratecard-details-section {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid #F4EFE6;
+  }
+  .ratecard-detail-item {
+    margin-bottom: 30px;
+  }
+  .ratecard-detail-item:last-child {
+    margin-bottom: 0;
+  }
+  .ratecard-detail-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2C2621;
+    margin: 0 0 12px 0;
+  }
+  .ratecard-detail-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.92rem;
+    color: #5C5650;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .ratecard-detail-paragraph {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.92rem;
+    color: #5C5650;
+    line-height: 1.7;
+    margin: 0 0 12px 0;
+  }
+  .ratecard-detail-paragraph:last-child {
+    margin-bottom: 0;
+  }
     text-align: left;
   }
   @media(min-width: 768px) {
@@ -1758,7 +1811,7 @@
     <div class="destinations-container">
       <div class="destinations-header">
         <h2 class="destinations-title">Our Destinations</h2>
-        <p class="destinations-subtitle">Currently, LEFANNA proudly manages 4 distinctive hospitality properties located across Bali's most captivating destinations. Surrounded by natural beauty and cultural richness, each property offers a unique interpretation of quiet luxury and meaningful escape.</p>
+        <p class="destinations-subtitle">Currently, LEFANNA proudly manages several distinctive hospitality properties located across Bali's most captivating destinations. Surrounded by natural beauty and cultural richness, each property offers a unique interpretation of quiet luxury and meaningful escape.</p>
       </div>
       <div class="destinations-grid">
         <a href="/hotels-resorts/" class="destination-card">
@@ -1821,79 +1874,98 @@
       
       <div class="ratecard-block">
         <h3 class="ratecard-title">Management Fee Structure</h3>
-        <div class="ratecard-table-wrapper">
-          <table class="ratecard-table">
-            <thead>
-              <tr>
-                <th>Property Category</th>
-                <th>Management Fee</th>
-                <th>Basis Calculation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="ratecard-category">Homestay / Guest House</td>
-                <td class="ratecard-value">10%</td>
-                <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
-              </tr>
-              <tr>
-                <td class="ratecard-category">Private Villa / Luxury Villa</td>
-                <td class="ratecard-value">12%</td>
-                <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
-              </tr>
-              <tr>
-                <td class="ratecard-category">Hotel / Boutique Resort</td>
-                <td class="ratecard-value">14%</td>
-                <td class="ratecard-basis">From Gross Operating Profit (GOP)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="ratecard-block">
-        <h3 class="ratecard-title">Marketing & Advertising Service</h3>
-        <div class="ratecard-table-wrapper">
-          <table class="ratecard-table">
-            <thead>
-              <tr>
-                <th>Service</th>
-                <th>Charge</th>
-                <th>Coverage</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="ratecard-category">Digital Marketing & OTA Optimization</td>
-                <td class="ratecard-value">3%</td>
-                <td class="ratecard-basis">From Room ARR (Average Room Rate)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="ratecard-details-grid">
-          <div>
-            <h4 class="ratecard-details-title">Marketing Scope Includes:</h4>
-            <ul class="ratecard-list">
-              <li class="ratecard-list-item">OTA management and optimization</li>
-              <li class="ratecard-list-item">Social media management</li>
-              <li class="ratecard-list-item">Online advertising campaigns</li>
-              <li class="ratecard-list-item">Promotion strategy and campaign planning</li>
-              <li class="ratecard-list-item">Basic content coordination</li>
-              <li class="ratecard-list-item">Market positioning support</li>
-              <li class="ratecard-list-item">Revenue and pricing strategy support</li>
-            </ul>
+        <p class="ratecard-subtitle">Hospitality Management Services — Full Management and Sales &amp; Marketing Only</p>
+        
+        <!-- 1. Full Management Operations -->
+        <div class="ratecard-subsection">
+          <h4 class="ratecard-subheading">1. Full Management Operations</h4>
+          <div class="ratecard-table-wrapper">
+            <table class="ratecard-table">
+              <thead>
+                <tr>
+                  <th>Property Category</th>
+                  <th>Management Fee</th>
+                  <th>Basis Calculation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ratecard-category">Homestay / Guest House</td>
+                  <td class="ratecard-value">10%</td>
+                  <td class="ratecard-basis">Gross Operating Profit (GOP)</td>
+                </tr>
+                <tr>
+                  <td class="ratecard-category">Private Villa / Luxury Villa</td>
+                  <td class="ratecard-value">12%</td>
+                  <td class="ratecard-basis">Gross Operating Profit (GOP)</td>
+                </tr>
+                <tr>
+                  <td class="ratecard-category">Hotel / Boutique Resort</td>
+                  <td class="ratecard-value">14%</td>
+                  <td class="ratecard-basis">Gross Operating Profit (GOP)</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div>
-            <h4 class="ratecard-details-title">Notes & Terms:</h4>
-            <ul class="ratecard-list">
-              <li class="ratecard-list-item">Management fee is calculated based on monthly Gross Operating Profit (GOP).</li>
-              <li class="ratecard-list-item">Marketing fee is calculated separately from room ARR revenue.</li>
-              <li class="ratecard-list-item">Advertising budget spending is excluded and billed separately based on campaign requirements.</li>
-              <li class="ratecard-list-item">Custom operational structures and service scopes may be adjusted depending on property size and operational complexity.</li>
-              <li class="ratecard-list-item">Long-term management partnerships may receive customized commercial arrangements.</li>
-            </ul>
+        </div>
+
+        <!-- 2. Sales & Marketing Management Only -->
+        <div class="ratecard-subsection">
+          <h4 class="ratecard-subheading">2. Sales &amp; Marketing Management Only</h4>
+          <div class="ratecard-table-wrapper">
+            <table class="ratecard-table">
+              <thead>
+                <tr>
+                  <th>Property Category</th>
+                  <th>Sales &amp; Marketing Fee</th>
+                  <th>Basis Calculation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ratecard-category">Homestay / Guest House</td>
+                  <td class="ratecard-value">6%</td>
+                  <td class="ratecard-basis">Gross Revenue</td>
+                </tr>
+                <tr>
+                  <td class="ratecard-category">Private Villa / Luxury Villa</td>
+                  <td class="ratecard-value">8%</td>
+                  <td class="ratecard-basis">Gross Revenue</td>
+                </tr>
+                <tr>
+                  <td class="ratecard-category">Hotel / Boutique Resort</td>
+                  <td class="ratecard-value">8%</td>
+                  <td class="ratecard-basis">Gross Revenue</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Scope & Details -->
+        <div class="ratecard-details-section">
+          <div class="ratecard-detail-item">
+            <h4 class="ratecard-detail-heading">Full Management Operations Includes</h4>
+            <p class="ratecard-detail-text">
+              General management &amp; strategic direction &bull; Operations management &bull; Front Office &bull; Housekeeping &bull; Food &amp; Beverage operations &bull; Engineering &amp; maintenance supervision &bull; Human Resources &amp; training &bull; Finance &amp; accounting supervision &bull; Procurement &amp; cost control &bull; SOP development &amp; implementation &bull; Guest experience &amp; quality control &bull; Revenue management &bull; OTA &amp; distribution management &bull; Budgeting, forecasting &amp; operational reporting
+            </p>
+          </div>
+
+          <div class="ratecard-detail-item">
+            <h4 class="ratecard-detail-heading">Sales &amp; Marketing Management Only Includes</h4>
+            <p class="ratecard-detail-text">
+              Sales strategy &bull; Digital marketing &bull; Social media management &bull; OTA sales &amp; optimization &bull; Website &amp; booking engine strategy &bull; Online reputation management &bull; Corporate / travel agent sales &bull; Campaigns &amp; promotions &bull; Partnership development &bull; Sales reporting
+            </p>
+          </div>
+
+          <div class="ratecard-detail-item">
+            <h4 class="ratecard-detail-heading">Fee Calculation &amp; Contract Definition</h4>
+            <p class="ratecard-detail-paragraph">
+              For the Full Management package, the management fee is calculated from the agreed Gross Operating Profit (GOP), before the management fee. The management agreement should clearly define the treatment of owner expenses, property tax, insurance, capital expenditure, depreciation, interest and other non-operating costs.
+            </p>
+            <p class="ratecard-detail-paragraph">
+              Sales &amp; Marketing Management is a separate service and is calculated as a percentage of Gross Revenue.
+            </p>
           </div>
         </div>
       </div>
@@ -1936,8 +2008,8 @@
     <div class="footer-col">
       <h5 class="footer-heading">Get in Touch</h5>
       <p class="footer-contact-item">
-        Jl. Padang Getas, Singakerta, Ubud, Bali – Indonesia<br>
-        Phone: <a href="tel:+62361975950">+62 361 975 950</a><br>
+        Jalan Raya Denpasar-Gilimanuk, Kediri, Tabanan-Bali, Indonesia<br>
+        Phone: <a href="tel:+628216231889">+62 821 6231 889</a><br>
         Email: <a href="mailto:intouch@lefanna.com">intouch@lefanna.com</a>
       </p>
       <div>

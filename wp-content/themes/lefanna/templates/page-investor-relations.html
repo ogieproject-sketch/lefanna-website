@@ -886,12 +886,13 @@
     margin-bottom: 100px;
   }
   .whatwedo-container {
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 0 auto;
+    position: relative;
   }
   .whatwedo-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
   .whatwedo-tag {
     font-size: 0.75rem;
@@ -909,44 +910,114 @@
     font-weight: 300;
     margin: 0;
   }
+  .whatwedo-slider-wrapper {
+    position: relative;
+    width: 100%;
+  }
   .whatwedo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 15px 5px 25px 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #C5A880 #3E3630;
+  }
+  .whatwedo-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+  .whatwedo-grid::-webkit-scrollbar-track {
+    background: #3E3630;
+    border-radius: 4px;
+  }
+  .whatwedo-grid::-webkit-scrollbar-thumb {
+    background: #C5A880;
+    border-radius: 4px;
   }
   .whatwedo-card {
+    flex: 0 0 280px;
+    min-width: 260px;
+    scroll-snap-align: start;
     background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(197, 168, 128, 0.15);
-    padding: 40px 30px;
-    border-radius: 4px;
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    padding: 35px 25px;
+    border-radius: 6px;
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  @media (min-width: 1280px) {
+    .whatwedo-card {
+      flex: 1 1 0px;
+      min-width: 220px;
+    }
   }
   .whatwedo-card:hover {
     background-color: rgba(255, 255, 255, 0.06);
     border-color: #C5A880;
-    transform: translateY(-5px);
+    transform: translateY(-6px);
   }
   .whatwedo-card-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: #C5A880;
     font-weight: 300;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    display: block;
+    line-height: 1;
+  }
+  .whatwedo-accent-line {
+    width: 30px;
+    height: 2px;
+    background-color: #C5A880;
+    margin-bottom: 20px;
     display: block;
   }
   .whatwedo-card-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #FFFFFF;
     margin-bottom: 15px;
     font-weight: 400;
+    line-height: 1.3;
   }
   .whatwedo-card-desc {
     font-family: 'Jost', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     color: #B5AEA4;
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0;
+  }
+  .whatwedo-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #2C2621;
+    border: 1px solid #C5A880;
+    color: #C5A880;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+  }
+  .whatwedo-nav-btn:hover {
+    background: #C5A880;
+    color: #2C2621;
+  }
+  .whatwedo-nav-prev { left: -22px; }
+  .whatwedo-nav-next { right: -22px; }
+  @media (max-width: 768px) {
+    .whatwedo-nav-btn { display: none; }
   }
 
   /* Team Section Styling */
@@ -1410,28 +1481,52 @@
         <span class="whatwedo-tag">Services & Capabilities</span>
         <h2 class="whatwedo-title">What We Do?</h2>
       </div>
-      <div class="whatwedo-grid">
-        <div class="whatwedo-card">
-          <span class="whatwedo-card-num">01</span>
-          <h3 class="whatwedo-card-title">Sales & Marketing Strategy</h3>
-          <p class="whatwedo-card-desc">LEFANNA develops tailored sales and marketing strategies to strengthen property visibility, attract the right audience, and enhance brand presence across relevant platforms. Through thoughtful positioning and strategic promotion, we ensure each property reaches its full market potential while maintaining its unique identity.</p>
+      <div class="whatwedo-slider-wrapper">
+        <button class="whatwedo-nav-btn whatwedo-nav-prev" onclick="document.getElementById('whatwedo-slider-ir').scrollBy({left: -300, behavior: 'smooth'})" aria-label="Previous">&larr;</button>
+        <div class="whatwedo-grid" id="whatwedo-slider-ir">
+          <!-- Card 1 -->
+          <div class="whatwedo-card">
+            <span class="whatwedo-card-num">01</span>
+            <span class="whatwedo-accent-line"></span>
+            <h3 class="whatwedo-card-title">Sales &amp; Marketing Strategy</h3>
+            <p class="whatwedo-card-desc">LEFANNA develops tailored sales and marketing strategies to strengthen property visibility, attract the right audience, and enhance brand presence across relevant platforms. Through thoughtful positioning and strategic promotion, we ensure each property reaches its full market potential while maintaining its unique identity.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="whatwedo-card">
+            <span class="whatwedo-card-num">02</span>
+            <span class="whatwedo-accent-line"></span>
+            <h3 class="whatwedo-card-title">Revenue &amp; Performance Optimization</h3>
+            <p class="whatwedo-card-desc">Through strategic pricing, market analysis, and performance-driven planning, LEFANNA focuses on maximizing property potential while maintaining sustainable long-term growth and value.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="whatwedo-card">
+            <span class="whatwedo-card-num">03</span>
+            <span class="whatwedo-accent-line"></span>
+            <h3 class="whatwedo-card-title">Financial Reporting &amp; Transparency</h3>
+            <p class="whatwedo-card-desc">LEFANNA prioritizes clear and transparent financial reporting to ensure property owners remain informed about operational and revenue performance. Through structured reporting and consistent communication, we provide valuable insights that support sustainable growth and informed decision-making.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="whatwedo-card">
+            <span class="whatwedo-card-num">04</span>
+            <span class="whatwedo-accent-line"></span>
+            <h3 class="whatwedo-card-title">Management Operational Excellence</h3>
+            <p class="whatwedo-card-desc">LEFANNA ensures seamless daily operations through strong leadership, efficient processes, and a people-first approach. We focus on maintaining high standards of service, team development, and continuous improvement to deliver exceptional guest experiences and long-term property value.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="whatwedo-card">
+            <span class="whatwedo-card-num">05</span>
+            <span class="whatwedo-accent-line"></span>
+            <h3 class="whatwedo-card-title">ROI / Investment Optimization</h3>
+            <p class="whatwedo-card-desc">LEFANNA is committed to maximizing return on investment through strategic decision-making, cost efficiency, and performance optimization. We evaluate opportunities, mitigate risks, and implement sustainable strategies that enhance property value and deliver strong, long-term returns.</p>
+          </div>
         </div>
-        <div class="whatwedo-card">
-          <span class="whatwedo-card-num">02</span>
-          <h3 class="whatwedo-card-title">Revenue & Performance Optimization</h3>
-          <p class="whatwedo-card-desc">Through strategic pricing, market analysis, and performance-driven planning, LEFANNA focuses on maximizing property potential while maintaining sustainable long-term growth and value.</p>
-        </div>
-        <div class="whatwedo-card">
-          <span class="whatwedo-card-num">03</span>
-          <h3 class="whatwedo-card-title">Financial Reporting & Transparency</h3>
-          <p class="whatwedo-card-desc">LEFANNA prioritizes clear and transparent financial reporting to ensure property owners remain informed about operational and revenue performance. Through structured reporting and consistent communication, we provide valuable insights that support sustainable growth and informed decision-making.</p>
-        </div>
+        <button class="whatwedo-nav-btn whatwedo-nav-next" onclick="document.getElementById('whatwedo-slider-ir').scrollBy({left: 300, behavior: 'smooth'})" aria-label="Next">&rarr;</button>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: Our Team Grid -->
-  <section class="team-section">
+  <!-- Section 4: Our Team Grid (Hidden) -->
+  <section class="team-section" style="display: none;">
     <div class="team-header">
       <h2 class="team-title">Our Team</h2>
       <p class="team-subtitle">Behind every LEFANNA destination is a dedicated team driven by thoughtful hospitality, seamless operations, and meaningful guest experiences. With a hands-on and detail-oriented approach, we manage each property with care, intention, and a commitment to creating experiences that are deeply felt and genuinely remembered.</p>
@@ -1555,7 +1650,7 @@
     <div class="partner-cta-block">
       <h3 class="partner-cta-title">Interested in Partnering With Us?</h3>
       <p class="partner-cta-desc">Contact our development team to request our corporate credentials, detailed property management plans, and financial case studies.</p>
-      <a href="mailto:intouch@lefanna.com" class="partner-cta-btn">Contact Development</a>
+      <a href="mailto:business@lefanna.com" class="partner-cta-btn">Contact Development</a>
     </div>
   </section>
 </main>
@@ -1598,8 +1693,8 @@
     <div class="footer-col">
       <h5 class="footer-heading">Get in Touch</h5>
       <p class="footer-contact-item">
-        Jl. Padang Getas, Singakerta, Ubud, Bali – Indonesia<br>
-        Phone: <a href="tel:+62361975950">+62 361 975 950</a><br>
+        Jalan Raya Denpasar-Gilimanuk, Kediri, Tabanan-Bali, Indonesia<br>
+        Phone: <a href="tel:+628216231889">+62 821 6231 889</a><br>
         Email: <a href="mailto:intouch@lefanna.com">intouch@lefanna.com</a>
       </p>
       <div>
