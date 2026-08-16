@@ -60,14 +60,14 @@
     "typography": {
       "fontFamilies": [
         {
-          "fontFamily": "\"Cormorant Garamond\", serif",
-          "name": "Cormorant Garamond",
-          "slug": "cormorant-garamond"
+          "fontFamily": "\"Noto Serif Display\", serif",
+          "name": "Noto Serif Display",
+          "slug": "noto-serif-display"
         },
         {
-          "fontFamily": "\"Jost\", system-ui, sans-serif",
-          "name": "Jost",
-          "slug": "jost"
+          "fontFamily": "\"Montserrat\", system-ui, sans-serif",
+          "name": "Montserrat",
+          "slug": "montserrat"
         }
       ]
     }
@@ -78,15 +78,15 @@
       "text": "var(--wp--preset--color--foreground)"
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--jost)",
+      "fontFamily": "var(--wp--preset--font-family--montserrat)",
       "fontSize": "1.05rem",
       "lineHeight": "1.7"
     },
     "elements": {
       "heading": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--cormorant-garamond)",
-          "fontWeight": "600",
+          "fontFamily": "var(--wp--preset--font-family--noto-serif-display)",
+          "fontWeight": "100",
           "lineHeight": "1.3"
         },
         "color": {
@@ -113,8 +113,8 @@
           "color": "var(--wp--preset--color--primary)"
         },
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--jost)",
-          "fontWeight": "500",
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontWeight": "100",
           "textDecoration": "none",
           "letterSpacing": "0.15em",
           "textTransform": "uppercase",
