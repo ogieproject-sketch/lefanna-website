@@ -496,17 +496,7 @@ img, video, svg, iframe {
   }
 }
 
-/* ------------------------------------------
-   HIDDEN MENU TOGGLE (MENU EXPERIENCES)
-   ------------------------------------------ */
-/* Menyembunyikan menu Experiences di navbar & drawer. 
-   Untuk mengaktifkannya kembali di kemudian hari, cukup hapus atau beri komentar pada aturan CSS di bawah ini: */
-.nav-item-experiences,
-.drawer-item-experiences,
-.nav-item:has(a[href*="/experiences/"]),
-.drawer-menu-item:has(a[href*="/experiences/"]) {
-  display: none !important;
-}
+
 
 /* ------------------------------------------
    FOOTER TYPOGRAPHY OVERRIDES (ELEGANT & THIN)
