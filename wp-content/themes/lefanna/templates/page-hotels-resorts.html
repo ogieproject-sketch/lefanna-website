@@ -432,6 +432,9 @@
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
+  
+    display: flex;
+    flex-direction: column;
   }
   .hotel-card:hover {
     border-color: #C5A880;
@@ -454,6 +457,10 @@
   }
   .hotel-info {
     padding: 0 30px;
+  
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
   .hotel-location {
     font-size: 0.75rem;
@@ -496,6 +503,8 @@
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid #F4EFE6;
+  
+    margin-top: auto;
   }
   .hotel-book-now {
     font-size: 0.72rem;
