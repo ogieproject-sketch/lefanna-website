@@ -327,7 +327,7 @@
     transition: color 0.3s ease;
   }
   .drawer-menu-link:hover {
-    color: #C5A880;
+    color: #8A7355;
   }
   
   /* Collapsible Submenus */
@@ -362,29 +362,29 @@
     transition: color 0.3s ease;
   }
   .drawer-menu-link:hover .arrow-indicator {
-    color: #C5A880;
+    color: #8A7355;
   }
 
-      /* Experiences Page Banner */
-  @keyframes experiencesSlideshow {
+    /* Offers Banner */
+  @keyframes offersSlideshow {
     0%, 20% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1920&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1920&q=80');
     }
     25%, 45% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1920&q=80');
-    }
-    50%, 70% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1920&q=80');
-    }
-    75%, 95% {
       background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=1920&q=80');
     }
+    50%, 70% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80');
+    }
+    75%, 95% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1920&q=80');
+    }
     100% {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1920&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1920&q=80');
     }
   }
 
-  .experiences-banner {
+  .offers-banner {
     position: relative;
     padding: 120px 40px;
     text-align: center;
@@ -392,7 +392,7 @@
     background-position: center;
     border-bottom: 1px solid #EAE3D2;
     margin-bottom: 60px;
-    animation: experiencesSlideshow 24s infinite ease-in-out;
+    animation: offersSlideshow 24s infinite ease-in-out;
   }
   .banner-subtitle {
     font-size: 0.85rem;
@@ -414,8 +414,8 @@
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   }
 
-  /* Grid Layout & Experience Cards */
-  .experiences-grid {
+  /* Grid Layout & Offer Cards */
+  .offers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 50px 40px;
@@ -424,7 +424,7 @@
     padding: 0 20px;
   }
   
-  .exp-card {
+  .offer-card {
     background-color: #FFFFFF;
     border: 1px solid #EAE3D2;
     padding: 0px 0px 45px 0px;
@@ -433,29 +433,29 @@
     position: relative;
     overflow: hidden;
   }
-  .exp-card:hover {
+  .offer-card:hover {
     border-color: #C5A880;
     box-shadow: 0 20px 40px rgba(138, 115, 85, 0.05);
     transform: translateY(-5px);
   }
-  .exp-img-wrapper {
+  .offer-img-wrapper {
     width: 100%;
     height: 260px;
     overflow: hidden;
   }
-  .exp-img {
+  .offer-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
-  .exp-card:hover .exp-img {
+  .offer-card:hover .offer-img {
     transform: scale(1.05);
   }
-  .exp-info {
+  .offer-info {
     padding: 0 30px;
   }
-  .exp-location {
+  .offer-location {
     font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -465,20 +465,20 @@
     display: block;
     font-weight: 100;
   }
-  .exp-name {
+  .offer-name {
     font-family: 'Noto Serif Display', serif;
     font-size: 2rem;
     margin: 5px 0 15px 0;
     color: #2C2621;
     font-weight: 100;
   }
-  .exp-desc {
+  .offer-desc {
     font-size: 0.95rem;
     color: #645D55;
     line-height: 1.7;
     margin-bottom: 30px;
   }
-  .exp-btn {
+  .offer-btn {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
@@ -489,7 +489,7 @@
     padding-bottom: 4px;
     transition: all 0.3s ease;
   }
-  .exp-card:hover .exp-btn {
+  .offer-card:hover .offer-btn {
     border-bottom-color: #C5A880;
   }
 
@@ -708,17 +708,7 @@
     <li class="drawer-menu-item">
       <a href="/offers/" class="drawer-menu-link">Offers</a>
     </li>
-    
-    <li class="drawer-menu-item drawer-item-experiences">
-      <a href="#" class="drawer-menu-link drawer-parent-link">Experiences <span class="arrow-indicator">▾</span></a>
-      <ul class="drawer-submenu">
-        <li><a href="/experiences/journeys/" class="drawer-submenu-link">Journeys</a></li>
-        <li><a href="/experiences/celebrations/" class="drawer-submenu-link">Celebrations</a></li>
-        <li><a href="/experiences/culture-conservations/" class="drawer-submenu-link">Culture & Conservations</a></li>
-        <li><a href="/experiences/active-adventure/" class="drawer-submenu-link">Active Adventure</a></li>
-        <li><a href="/experiences/wellness/" class="drawer-submenu-link">Wellness</a></li>
-      </ul>
-    </li>
+    <li class="drawer-menu-item drawer-item-experiences"><a href="/experiences/" class="drawer-menu-link">Experiences</a></li>
     <li class="drawer-menu-item">
       <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">▾</span></a>
       <ul class="drawer-submenu">
@@ -768,16 +758,7 @@
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="/hotels-resorts/" class="nav-link">Find & Reserve</a></li>
         <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
-        <li class="nav-item has-dropdown nav-item-experiences">
-          <a href="#" class="nav-link">Experiences <span class="nav-arrow">▾</span></a>
-          <ul class="nav-dropdown">
-            <li><a href="/experiences/journeys/">Journeys</a></li>
-            <li><a href="/experiences/celebrations/">Celebrations</a></li>
-            <li><a href="/experiences/culture-conservations/">Culture & Conservations</a></li>
-            <li><a href="/experiences/active-adventure/">Active Adventure</a></li>
-            <li><a href="/experiences/wellness/">Wellness</a></li>
-          </ul>
-        </li>
+        <li class="nav-item nav-item-experiences"><a href="/experiences/" class="nav-link">Experiences</a></li>
         <li class="nav-item has-dropdown">
           <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">▾</span></a>
           <ul class="nav-dropdown">
@@ -803,62 +784,33 @@
 <!-- Main Page Content -->
 <main>
   <!-- Hero Banner -->
-  <section class="experiences-banner">
-    <span class="banner-subtitle">By Lefanna</span>
-    <h2 class="banner-title">Journeys</h2>
+  <section class="offers-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/wp-content/themes/lefanna/images/mount-batur-sunrise-hike.jpg');">
+    <span class="banner-subtitle">Beyond Hospitality</span>
+    <h2 class="banner-title">Experiences</h2>
   </section>
 
-  <!-- Experiences Grid -->
-  <div class="experiences-grid">
-    <!-- Journey 1 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="/wp-content/themes/lefanna/images/mount-batur-sunrise-hike.jpg" alt="Mount Batur Sunrise Trekking">
+  <div class="offers-grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 60px auto;">
+    <div class="offer-card" style="width: 100%;">
+      <div class="offer-img-wrapper" style="height: 500px;">
+        <img class="offer-img" src="/wp-content/themes/lefanna/images/mount-batur-sunrise-hike.jpg" alt="Experience & Activity Management" style="object-position: center 30%;">
       </div>
-      <div class="exp-info">
-        <span class="exp-location">Grita Apsari Lodge</span>
-        <h3 class="exp-name">Mount Batur Sunrise Trekking</h3>
-        <p class="exp-desc">Explore the magical Mount Batur and watch the sunrise from the top while enjoying breakfast prepared by our guides.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
-      </div>
-    </div>
-
-    <!-- Journey 2 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="/wp-content/themes/lefanna/images/navodaya-2.jpg" alt="Dinner Under The Stars">
-      </div>
-      <div class="exp-info">
-        <span class="exp-location">Navodaya Villa</span>
-        <h3 class="exp-name">Amorous Dinner Under the Stars</h3>
-        <p class="exp-desc">Enjoy an intimate evening overlooking the Ayung valley with our chef's signature gourmet menu under the star-lit sky.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
-      </div>
-    </div>
-
-    <!-- Journey 3 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="/wp-content/themes/lefanna/images/ayung-river-rafting.jpg" alt="Holy Canyon River Hike">
-      </div>
-      <div class="exp-info">
-        <span class="exp-location">The Jungle Sari</span>
-        <h3 class="exp-name">Holy Canyon River Hike</h3>
-        <p class="exp-desc">Take a trip down the mystical Giri Kusuma Canyon river hike. Explore the lush valley forests accompanied by our expert guide.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
-      </div>
-    </div>
-
-    <!-- Journey 4 -->
-    <div class="exp-card">
-      <div class="exp-img-wrapper">
-        <img class="exp-img" src="/wp-content/themes/lefanna/images/news-nusa-penida-marine.jpg" alt="Sunset Trail Horse Riding">
-      </div>
-      <div class="exp-info">
-        <span class="exp-location">Amalla Lodge Penida</span>
-        <h3 class="exp-name">Sunset Beach Trail Horse Riding</h3>
-        <p class="exp-desc">Immerse yourself in the Gili Trawangan beach breeze as our horses carry you along the white sands into the sunset.</p>
-        <a href="/wp-admin/" class="exp-btn">Discover more</a>
+      <div class="offer-info" style="padding: 40px; text-align: left;">
+        <h3 class="offer-name" style="font-size: 2rem; margin-bottom: 25px; text-align: center;">Experience & Activity Management</h3>
+        <div class="offer-desc" style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+          <p style="margin-bottom: 15px;">Lefanna expand beyond hospitality management by developing an Experience & Activity Management business for our guests and customers.</p>
+          <p style="margin-bottom: 15px;">Through the Lefanna platform, we aim to offer and manage a variety of activities, including:</p>
+          <ul style="margin-bottom: 20px; padding-left: 20px; list-style-type: disc;">
+            <li>Tours and sightseeing experiences</li>
+            <li>Balinese incense stick-making experiences</li>
+            <li>Trekking and nature activities</li>
+            <li>Fast boat tickets and arrangements to Nusa Penida and other islands</li>
+            <li>Cultural and local experiences</li>
+            <li>Adventure and wellness activities</li>
+            <li>Transportation and other guest travel services</li>
+          </ul>
+          <p style="margin-bottom: 15px;">This expansion will allow Lefanna to create an additional revenue stream while providing a more complete guest journey. Rather than only managing accommodation and hospitality operations, Lefanna aims to become a trusted platform that helps customers plan, book, and enjoy their complete Bali experience.</p>
+          <p>Our goal is to connect accommodation, activities, transportation, and local experiences in one ecosystem, creating greater convenience for customers while also building partnerships with local activity providers and generating sustainable business opportunities for Lefanna.</p>
+        </div>
       </div>
     </div>
   </div>
