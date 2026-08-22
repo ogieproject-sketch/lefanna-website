@@ -1,4 +1,4 @@
-﻿<!-- wp:html -->
+<!-- wp:html -->
 <style>
   /* Base Styles & Fonts */
   body {
@@ -769,7 +769,7 @@
       <div style="font-family:'Noto Serif Display', serif; font-size:1.15rem; font-weight: 100; letter-spacing:0.18em; text-transform:uppercase; color:#C5A880; line-height:1; margin-top:4px;">Lefanna</div>
       
     </div>
-    <button class="drawer-close-btn" id="lefanna-drawer-close">âœ•</button>
+    <button class="drawer-close-btn" id="lefanna-drawer-close">✕</button>
   </div>
 
   <ul class="drawer-menu-list">
@@ -785,7 +785,7 @@
     
     <li class="drawer-menu-item drawer-item-experiences"><a href="/experiences/" class="drawer-menu-link">Experiences</a></li>
     <li class="drawer-menu-item">
-      <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">â–¾</span></a>
+      <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">▾</span></a>
       <ul class="drawer-submenu">
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
@@ -835,7 +835,7 @@
         <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
         <li class="nav-item nav-item-experiences"><a href="/experiences/" class="nav-link">Experiences</a></li>
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">â–¾</span></a>
+          <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">▾</span></a>
           <ul class="nav-dropdown">
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
@@ -1015,7 +1015,7 @@
   </div>
   
   <div class="footer-bottom">
-    <span class="footer-copy">Copyright &copy; 2026 Lefanna | Powered by ogieproject</span>
+    <span class="footer-copy">Copyright © 2026 Lefanna | Powered by WordPress Playground & Antigravity</span>
     <span class="footer-copy" style="color: #6E665E;">Handcrafted Balinese Hospitality</span>
   </div>
 </footer>
@@ -1055,9 +1055,9 @@
         const indicator = this.querySelector('.arrow-indicator');
         if (indicator) {
           if (parentLi.classList.contains('is-expanded')) {
-            indicator.textContent = ' â–´';
+            indicator.textContent = ' ▴';
           } else {
-            indicator.textContent = ' â–¾';
+            indicator.textContent = ' ▾';
           }
         }
       });
