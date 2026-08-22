@@ -1,4 +1,4 @@
-<!-- wp:html -->
+﻿<!-- wp:html -->
 <style>
   /* Base Styles & Fonts */
   body {
@@ -247,7 +247,8 @@
     
     left: 0;
     width: 100vw;
-    height: 100vh;
+    top: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.35);
     opacity: 0;
     visibility: hidden;
@@ -266,7 +267,8 @@
     left: 0;
     width: 380px;
     max-width: 85vw;
-    height: 100vh;
+    top: 0;
+    bottom: 0;
     background-color: #FCFBF9;
     box-shadow: 10px 0 45px rgba(0, 0, 0, 0.06);
     transform: translateX(-100%);
@@ -307,17 +309,17 @@
   .drawer-menu-list {
     list-style: none;
     padding: 0;
-    margin: 50px 0 0 0;
+    margin: 30px 0 0 0;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
   }
   .drawer-menu-item {
     position: relative;
   }
   .drawer-menu-link {
     font-family: 'Noto Serif Display', serif;
-    font-size: 1.55rem;
+    font-size: 1.25rem;
     color: #C5A880;
     text-decoration: none;
     font-weight: 100;
@@ -769,7 +771,7 @@
       <div style="font-family:'Noto Serif Display', serif; font-size:1.15rem; font-weight: 100; letter-spacing:0.18em; text-transform:uppercase; color:#C5A880; line-height:1; margin-top:4px;">Lefanna</div>
       
     </div>
-    <button class="drawer-close-btn" id="lefanna-drawer-close">✕</button>
+    <button class="drawer-close-btn" id="lefanna-drawer-close">âœ•</button>
   </div>
 
   <ul class="drawer-menu-list">
@@ -785,7 +787,7 @@
     
     <li class="drawer-menu-item drawer-item-experiences"><a href="/experiences/" class="drawer-menu-link">Experiences</a></li>
     <li class="drawer-menu-item">
-      <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">▾</span></a>
+      <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">â–¾</span></a>
       <ul class="drawer-submenu">
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
@@ -835,7 +837,7 @@
         <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
         <li class="nav-item nav-item-experiences"><a href="/experiences/" class="nav-link">Experiences</a></li>
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">▾</span></a>
+          <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">â–¾</span></a>
           <ul class="nav-dropdown">
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
@@ -1016,7 +1018,7 @@
   </div>
   
   <div class="footer-bottom">
-    <span class="footer-copy">Copyright © 2026 Lefanna | Powered by WordPress Playground & Antigravity</span>
+    <span class="footer-copy">Copyright Â© 2026 Lefanna | Powered by WordPress Playground & Antigravity</span>
     <span class="footer-copy" style="color: #6E665E;">Handcrafted Balinese Hospitality</span>
   </div>
 </footer>
@@ -1056,9 +1058,9 @@
         const indicator = this.querySelector('.arrow-indicator');
         if (indicator) {
           if (parentLi.classList.contains('is-expanded')) {
-            indicator.textContent = ' ▴';
+            indicator.textContent = ' â–´';
           } else {
-            indicator.textContent = ' ▾';
+            indicator.textContent = ' â–¾';
           }
         }
       });
