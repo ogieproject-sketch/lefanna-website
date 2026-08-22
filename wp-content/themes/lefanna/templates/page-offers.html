@@ -1,4 +1,4 @@
-﻿<!-- wp:html -->
+<!-- wp:html -->
 <style>
   /* Base Styles & Fonts */
   body {
@@ -247,8 +247,7 @@
     
     left: 0;
     width: 100vw;
-    top: 0;
-    bottom: 0;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.35);
     opacity: 0;
     visibility: hidden;
@@ -267,8 +266,7 @@
     left: 0;
     width: 380px;
     max-width: 85vw;
-    top: 0;
-    bottom: 0;
+    height: 100vh;
     background-color: #FCFBF9;
     box-shadow: 10px 0 45px rgba(0, 0, 0, 0.06);
     transform: translateX(-100%);
@@ -309,17 +307,17 @@
   .drawer-menu-list {
     list-style: none;
     padding: 0;
-    margin: 30px 0 0 0;
+    margin: 50px 0 0 0;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
   }
   .drawer-menu-item {
     position: relative;
   }
   .drawer-menu-link {
     font-family: 'Noto Serif Display', serif;
-    font-size: 1.25rem;
+    font-size: 1.55rem;
     color: #C5A880;
     text-decoration: none;
     font-weight: 100;
@@ -707,7 +705,7 @@
       <div style="font-family:'Noto Serif Display', serif; font-size:1.15rem; font-weight: 100; letter-spacing:0.18em; text-transform:uppercase; color:#C5A880; line-height:1; margin-top:4px;">Lefanna</div>
       
     </div>
-    <button class="drawer-close-btn" id="lefanna-drawer-close">âœ•</button>
+    <button class="drawer-close-btn" id="lefanna-drawer-close">✕</button>
   </div>
 
   <ul class="drawer-menu-list">
@@ -722,7 +720,7 @@
     </li>
     <li class="drawer-menu-item drawer-item-experiences"><a href="/experiences/" class="drawer-menu-link">Experiences</a></li>
     <li class="drawer-menu-item">
-      <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">â–¾</span></a>
+      <a href="#" class="drawer-menu-link drawer-parent-link">Corporate Sites <span class="arrow-indicator">▾</span></a>
       <ul class="drawer-submenu">
         <li><a href="/about-us/" class="drawer-submenu-link">About Us</a></li>
         <li><a href="/investor-relations/" class="drawer-submenu-link">Investor Relations</a></li>
@@ -772,7 +770,7 @@
         <li class="nav-item"><a href="/offers/" class="nav-link">Offers</a></li>
         <li class="nav-item nav-item-experiences"><a href="/experiences/" class="nav-link">Experiences</a></li>
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">â–¾</span></a>
+          <a href="#" class="nav-link">Corporate Sites <span class="nav-arrow">▾</span></a>
           <ul class="nav-dropdown">
             <li><a href="/about-us/">About Us</a></li>
             <li><a href="/investor-relations/">Investor Relations</a></li>
@@ -809,7 +807,7 @@
         <img class="offer-img" src="/wp-content/themes/lefanna/images/amalla-4.jpg" alt="Penida Cliffside Romantic Getaway">
       </div>
       <div class="offer-info">
-        <span class="offer-location">Amalla Lodge Penida â€¢ Sampalan, Nusa Penida</span>
+        <span class="offer-location">Amalla Lodge Penida • Sampalan, Nusa Penida</span>
         <h3 class="offer-name">Penida Cliffside Romantic Getaway</h3>
         <p class="offer-desc">Escape to the dramatic island atmosphere of Nusa Penida. Enjoy a comfortable stay in a boutique room with private balcony, rooftop & indoor pools, daily breakfast, and convenient access to Mentigi Beach.</p>
         <a href="/hotels-resorts/#details-amalla" class="offer-btn">Discover Offer</a>
@@ -822,7 +820,7 @@
         <img class="offer-img" src="/wp-content/themes/lefanna/images/grita-apsari-1.jpg" alt="Tegalalang Rice-Field Rejuvenation Retreat">
       </div>
       <div class="offer-info">
-        <span class="offer-location">Grita Apsari Guest House â€¢ Tegalalang, Ubud</span>
+        <span class="offer-location">Grita Apsari Guest House • Tegalalang, Ubud</span>
         <h3 class="offer-name">Tegalalang Rice-Field Rejuvenation Retreat</h3>
         <p class="offer-desc">Immerse in mist-veiled rice terraces and peaceful greenery. Includes a serene stay in a stylish room with garden-view balcony, daily breakfast, swimming pool access, and relaxing tropical atmosphere.</p>
         <a href="/hotels-resorts/#details-grita" class="offer-btn">Discover Offer</a>
@@ -835,7 +833,7 @@
         <img class="offer-img" src="/wp-content/themes/lefanna/images/kojong-house-1.jpg" alt="Intimate Garden &amp; Pool Sanctuary Escape">
       </div>
       <div class="offer-info">
-        <span class="offer-location">Kojong House â€¢ Ubud / Sukawati Area</span>
+        <span class="offer-location">Kojong House • Ubud / Sukawati Area</span>
         <h3 class="offer-name">Intimate Garden &amp; Pool Sanctuary Escape</h3>
         <p class="offer-desc">Designed for guests seeking total peace surrounded by lush greenery. Enjoy an intimate stay with pool views, shared pool & kitchen facilities, ideal for couples, families, and small groups.</p>
         <a href="/hotels-resorts/#details-kojong" class="offer-btn">Discover Offer</a>
@@ -848,7 +846,7 @@
         <img class="offer-img" src="/wp-content/themes/lefanna/images/jungle-sari-4.jpg" alt="Waterfall &amp; Jungle Nature Wellness Getaway">
       </div>
       <div class="offer-info">
-        <span class="offer-location">The Jungle Sari â€¢ Sukawati / Ubud Area</span>
+        <span class="offer-location">The Jungle Sari • Sukawati / Ubud Area</span>
         <h3 class="offer-name">Waterfall &amp; Jungle Nature Wellness Getaway</h3>
         <p class="offer-desc">Reconnect with nature near Tegenungan Waterfall. Features comfortable pool-view rooms with private balconies, daily tropical breakfast, and terrace areas for a serene getaway.</p>
         <a href="/hotels-resorts/#details-jungle" class="offer-btn">Discover Offer</a>
@@ -861,7 +859,7 @@
         <img class="offer-img" src="/wp-content/themes/lefanna/images/navodaya-1.jpg" alt="Modern Private Pool Villa Luxury Escape">
       </div>
       <div class="offer-info">
-        <span class="offer-location">Navodaya Villa â€¢ Pengosekan, Ubud</span>
+        <span class="offer-location">Navodaya Villa • Pengosekan, Ubud</span>
         <h3 class="offer-name">Modern Private Pool Villa Luxury Escape</h3>
         <p class="offer-desc">Enjoy complete privacy and modern elegance in Pengosekan, Ubud. Includes a spacious two-bedroom private pool villa, private swimming pool, living area, and fully equipped kitchen.</p>
         <a href="/hotels-resorts/#details-navodaya" class="offer-btn">Discover Offer</a>
@@ -874,7 +872,7 @@
         <img class="offer-img" src="/wp-content/themes/lefanna/images/umah-ukir-1.jpg" alt="Tropical Hideaway &amp; Green School Sanctuary">
       </div>
       <div class="offer-info">
-        <span class="offer-location">Umah Ukir Villa â€¢ Sibang, Bali</span>
+        <span class="offer-location">Umah Ukir Villa • Sibang, Bali</span>
         <h3 class="offer-name">Tropical Hideaway &amp; Green School Sanctuary</h3>
         <p class="offer-desc">Experience peaceful tropical living near Green School in Sibang, Bali. Features a private two-bedroom villa with private pool, spacious living area, and serene tropical gardens.</p>
         <a href="/hotels-resorts/#details-umah" class="offer-btn">Discover Offer</a>
@@ -938,7 +936,7 @@
   </div>
   
   <div class="footer-bottom">
-    <span class="footer-copy">Copyright Â© 2026 Lefanna | Powered by WordPress Playground & Antigravity</span>
+    <span class="footer-copy">Copyright © 2026 Lefanna | Powered by WordPress Playground & Antigravity</span>
     <span class="footer-copy" style="color: #6E665E;">Handcrafted Balinese Hospitality</span>
   </div>
 </footer>
@@ -978,9 +976,9 @@
         const indicator = this.querySelector('.arrow-indicator');
         if (indicator) {
           if (parentLi.classList.contains('is-expanded')) {
-            indicator.textContent = ' â–´';
+            indicator.textContent = ' ▴';
           } else {
-            indicator.textContent = ' â–¾';
+            indicator.textContent = ' ▾';
           }
         }
       });
