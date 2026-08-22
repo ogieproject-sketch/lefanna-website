@@ -495,6 +495,11 @@
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
+  
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+      box-sizing: border-box;
   }
   .resort-card:hover {
     border-color: #C5A880;
@@ -503,6 +508,10 @@
   }
   .resort-card-content {
     padding: 0 25px;
+  
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
   .resort-card-title {
     font-family: 'Noto Serif Display', serif;
@@ -524,6 +533,8 @@
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid #F4EFE6;
+  
+    margin-top: auto;
   }
   .resort-card-link {
     font-size: 0.75rem;
